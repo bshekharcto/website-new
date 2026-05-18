@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  cognecto-web:
+    build: .
+    container_name: cognecto-website
+    ports:
+      - "8080:80"
+    restart: always
