@@ -1693,6 +1693,13 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
 <style>
 /* --- MOBILE RESPONSIVENESS FIXES --- */
 @media (max-width: 860px) {
+        /* Heading tweaks for fewer lines */
+    h1 br, h2 br, h3 br, h4 br, h5 br, h6 br, .s-h2 br, .value-headline br, .hero h1 br {
+        display: none !important;
+    }
+    h1, h2, h3, h4, h5, h6, .s-h2, .value-headline, .hero h1 {
+        max-width: 100% !important;
+    }
     /* 1. Image resizing */
     img {
         max-width: 100% !important;
@@ -3192,3 +3199,4 @@ function toggleFaq(el){
 </script>
 </body>
 </html>
+
