@@ -1423,8 +1423,8 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
 
 /* Product screen */
 .photon-screen-wrap { margin-top: 3.5rem; position: relative; max-width: 860px; margin-left: auto; margin-right: auto; }
-.photon-screen { background: #060D1A; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 32px 80px rgba(14,27,53,0.35), 0 8px 24px rgba(8,145,178,0.2); }
-.photon-screen-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.07); }
+.photon-screen { background: #1E2538; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 32px 80px rgba(15,23,42,0.35), 0 8px 24px rgba(8,145,178,0.25); }
+.photon-screen-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: #121620; border-bottom: 1px solid rgba(255,255,255,0.06); }
 .ps-dot { width: 10px; height: 10px; border-radius: 50%; }
 .photon-live-strip { display: flex; align-items: center; gap: 8px; padding: 7px 14px; background: rgba(8,145,178,0.08); border-bottom: 1px solid rgba(8,145,178,0.18); font-family: var(--display); font-size: 11px; font-weight: 700; color: #22D3EE; letter-spacing: 0.04em; }
 .photon-live-dot { width: 7px; height: 7px; border-radius: 50%; background: #22D3EE; animation: dot-pulse 2s infinite; }
@@ -1460,6 +1460,38 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
 .pv-event-msg { font-family: var(--display); font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.75); line-height: 1.4; }
 .pv-event-msg.alert { color: #F87171; }
 .pv-event-msg.ok { color: #3ECFA0; }
+.pv-mat { border-color: #3B82F6; }
+.pv-mat .pv-bbox-label { background: #3B82F6; color: #fff; }
+.pv-scanline-sweep {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 0 8px #3B82F6;
+  animation: sweep 4s infinite ease-in-out;
+}
+@keyframes sweep {
+  0% { top: 0%; }
+  50% { top: 100%; }
+  100% { top: 0%; }
+}
+@keyframes track-roller {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(6px, 3px); }
+  100% { transform: translate(0, 0); }
+}
+.pv-bbox-roller {
+  animation: track-roller 8s infinite ease-in-out;
+}
+@keyframes track-mat {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-3px, 1px); }
+  100% { transform: translate(0, 0); }
+}
+.pv-bbox-mat {
+  animation: track-mat 12s infinite ease-in-out;
+}
 
 /* Pipeline */
 .photon-pipeline { display: grid; grid-template-columns: 1fr 40px 1fr 40px 1fr; align-items: center; }
@@ -2335,7 +2367,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
             <div class="ps-dot" style="background:#F87171;"></div>
             <div class="ps-dot" style="background:#F5BE5E;"></div>
             <div class="ps-dot" style="background:#3ECFA0;"></div>
-            <span style="font-family:var(--display);font-size:11px;color:rgba(255,255,255,0.3);margin-left:8px;">Photon · Vision AI Safety Monitor · Live</span>
+            <span style="font-family:var(--display);font-size:11px;color:rgba(255,255,255,0.4);margin-left:8px;">Photon · Quality &amp; Work Verification · Live</span>
           </div>
           <div class="photon-live-strip">
             <div class="photon-live-dot"></div>
@@ -2343,31 +2375,36 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
           </div>
           <div class="photon-viewport">
             <!-- Camera feed -->
-            <div class="pv-feed">
-              <img class="pv-feed-img" src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=900&h=500&fit=crop" alt="Construction site"/>
+            <div class="pv-feed" style="position:relative; background:#121620; overflow:hidden;">
+              <video class="pv-feed-video" autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover; display:block; opacity:0.8; filter: brightness(0.6) saturate(0.85);">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-heavy-roller-packing-fresh-asphalt-42222-large.mp4" type="video/mp4">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-road-construction-machinery-paving-asphalt-42221-large.mp4" type="video/mp4">
+                <img class="pv-feed-img" src="../../assets/images/highway_during_construction_compaction.png" alt="Road Compaction Work Verification"/>
+              </video>
               <div class="pv-scanlines"></div>
 
-              <!-- Green box — worker OK -->
-              <div class="pv-bbox pv-ok" style="left:12%;top:25%;width:14%;height:52%;">
-                <span class="pv-bbox-label" style="background:#3ECFA0;color:#000;">✓ Hardhat: OK · Vest: OK</span>
+              <!-- Roller Compaction tracking (Green) -->
+              <div class="pv-bbox pv-ok pv-bbox-roller" style="left:15%;top:20%;width:35%;height:50%;">
+                <span class="pv-bbox-label" style="background:#3ECFA0;color:#000;font-weight:700;">✓ Roller CAM-07 · 11/14 Passes</span>
               </div>
 
-              <!-- Red box — PPE violation -->
-              <div class="pv-bbox pv-alert" style="left:55%;top:20%;width:15%;height:55%;">
-                <span class="pv-bbox-label" style="background:#F87171;color:#fff;">âš  Vest: MISSING — ALERT</span>
+              <!-- Asphalt mat thermal/uniformity scan (Blue) -->
+              <div class="pv-bbox pv-mat pv-bbox-mat" style="left:55%;top:35%;width:38%;height:45%;border-color:#3B82F6;">
+                <div class="pv-scanline-sweep"></div>
+                <span class="pv-bbox-label" style="background:#3B82F6;color:#fff;font-weight:700;">✓ Mat Temp: 145°C · Uniform</span>
               </div>
 
-              <!-- Yellow no-go zone -->
-              <div class="pv-nogo" style="left:30%;top:50%;width:22%;height:38%;">
-                <span class="pv-nogo-label">âš  No-Go Zone — Restriction Active</span>
+              <!-- Edge Alignment warning (Amber) -->
+              <div class="pv-bbox pv-alert pv-bbox-edge" style="left:5%;top:70%;width:30%;height:22%;border-color:#F5BE5E;">
+                <span class="pv-bbox-label" style="background:#F5BE5E;color:#000;font-weight:700;">⚠ Edge Gap (+3.2cm)</span>
               </div>
 
-              <!-- Confidence scores -->
+              <!-- Confidence scores / Quality Metrics -->
               <div class="pv-scores">
-                <div class="pv-score"><span class="pv-score-key">Hardhat detect</span><div class="pv-score-track"><div class="pv-score-fill" style="width:94%;background:#3ECFA0;"></div></div><span class="pv-score-val">0.94</span></div>
-                <div class="pv-score"><span class="pv-score-key">Safety vest OK</span><div class="pv-score-track"><div class="pv-score-fill" style="width:89%;background:#3ECFA0;"></div></div><span class="pv-score-val">0.89</span></div>
-                <div class="pv-score"><span class="pv-score-key">Vest: MISSING</span><div class="pv-score-track"><div class="pv-score-fill" style="width:96%;background:#F87171;"></div></div><span class="pv-score-val">0.96</span></div>
-                <div class="pv-score"><span class="pv-score-key">Zone breach</span><div class="pv-score-track"><div class="pv-score-fill" style="width:78%;background:#F5BE5E;"></div></div><span class="pv-score-val">0.78</span></div>
+                <div class="pv-score"><span class="pv-score-key">Pass compliance</span><div class="pv-score-track"><div class="pv-score-fill" style="width:96%;background:#3ECFA0;"></div></div><span class="pv-score-val">0.96</span></div>
+                <div class="pv-score"><span class="pv-score-key">Mat uniformity</span><div class="pv-score-track"><div class="pv-score-fill" style="width:92%;background:#3ECFA0;"></div></div><span class="pv-score-val">0.92</span></div>
+                <div class="pv-score"><span class="pv-score-key">Thermal profile</span><div class="pv-score-track"><div class="pv-score-fill" style="width:97%;background:#3B82F6;"></div></div><span class="pv-score-val">0.97</span></div>
+                <div class="pv-score"><span class="pv-score-key">Alignment accuracy</span><div class="pv-score-track"><div class="pv-score-fill" style="width:89%;background:#F5BE5E;"></div></div><span class="pv-score-val">0.89</span></div>
               </div>
             </div>
             <!-- Event sidebar -->
@@ -2386,7 +2423,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
               </div>
               <div class="pv-event">
                 <div class="pv-event-time">10:13:41</div>
-                <div class="pv-event-msg alert">âš  Lane gap — right shoulder Ch. 43+800 (CAM-04)</div>
+                <div class="pv-event-msg alert">⚠ Lane gap — right shoulder Ch. 43+800 (CAM-04)</div>
               </div>
             </div>
           </div>
