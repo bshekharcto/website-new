@@ -2557,17 +2557,17 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
     <div class="foot-grid">
       <div>
         <div class="foot-brand">
-          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-              <circle cx="16" cy="16" r="15.5" fill="rgba(255,255,255,0.12)"/>
-              <ellipse cx="16" cy="8" rx="5" ry="5.8" fill="white" opacity="0.95"/>
-              <polygon points="11,11 21,11 16,18" fill="white" opacity="0.95"/>
-              <ellipse cx="7.5" cy="21" rx="5" ry="5.8" transform="rotate(120,7.5,21)" fill="white" opacity="0.8"/>
-              <polygon points="4.5,14 10.5,24 16,18" fill="white" opacity="0.8"/>
-              <ellipse cx="24.5" cy="21" rx="5" ry="5.8" transform="rotate(-120,24.5,21)" fill="white" opacity="0.65"/>
-              <polygon points="21.5,24 27.5,14 16,18" fill="white" opacity="0.65"/>
-          </svg>
+          <img id="cognecto-footer-logo" src="" alt="Cognecto" style="height:28px; width:28px; object-fit:contain; border-radius:50%;"/>
           cognecto
         </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var footLogo = document.getElementById('cognecto-footer-logo');
+            if (footLogo && window.LOGOS && window.LOGOS['cognecto-logo']) {
+              footLogo.src = window.LOGOS['cognecto-logo'].src;
+            }
+          });
+        </script>
         <p class="foot-tagline">Infrastructure intelligence for the physical world. Turning field data into audit-ready decisions for governments, operators, and investors — across roads, mining, water, and industrial sites.</p>
       </div>
       <div class="foot-col"><h5>Platform</h5><ul><li><a href="../platform/boson.html">Boson Listener</a></li><li><a href="../platform/photon.html">Photon Vision</a></li><li><a href="../platform/cortex.html">Cortex</a></li><li><a href="#">Integrations</a></li></ul></div>
