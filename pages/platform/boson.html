@@ -763,6 +763,88 @@ blockquote.cc-quote { font-family: var(--display); font-size: clamp(1rem,1.4vw,1
 .bmob-leg-item { display: flex; align-items: center; gap: 3px; font-family: var(--display); font-size: 7.5px; color: #374151; }
 .bmob-leg-item span { width: 8px; height: 8px; border-radius: 1.5px; flex-shrink: 0; }
 .bmob-legend-label { text-align: center; font-family: var(--display); font-size: 7px; color: #9ca3af; padding-bottom: 8px; }
+
+/* Boson Data Hub & Multi-OEM Sources Layout */
+.boson-hub-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 5px;
+}
+.boson-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 175px;
+  flex-shrink: 0;
+}
+.boson-source-card {
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 8px 10px 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  position: relative;
+  overflow: hidden;
+}
+.boson-source-badge {
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.boson-source-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+.boson-source-name {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--ink);
+  font-family: var(--display);
+}
+.boson-source-type {
+  font-size: 9px;
+  color: #6B7280;
+  font-family: var(--display);
+  font-weight: 500;
+}
+.boson-connector-desktop {
+  width: 120px;
+  height: 300px;
+  flex-shrink: 0;
+}
+.boson-connector-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .boson-hub-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .boson-sources {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 8px;
+  }
+  .boson-connector-desktop {
+    display: none;
+  }
+  .boson-connector-mobile {
+    display: block;
+    width: 100%;
+    height: 70px;
+  }
+}
+
 /* Real-time sensing animations for Boson app widget */
 .bmob-drawn-path {
   stroke-dasharray: 300;
@@ -2384,67 +2466,157 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
             LIVE &nbsp;·&nbsp; 47 passes tracked &nbsp;·&nbsp; 3 devices active &nbsp;·&nbsp; last sync: 14 secs ago
           </div>
           <div class="boson-screen-content">
-            <!-- Boson mobile app widget -->
-            <div class="bmob" style="max-width:480px;margin:0 auto;">
-              <div class="bmob-shell">
-                <div class="bmob-status">
-                  <span style="display:inline-flex;align-items:center;opacity:0.6;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 2h10M1 5h10M1 8h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-                  <span style="display:flex;align-items:center;gap:4px;margin-left:auto;">
-                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><rect x="0" y="4" width="2" height="4" rx="0.4" fill="currentColor" opacity="0.4"/><rect x="3" y="2.5" width="2" height="5.5" rx="0.4" fill="currentColor" opacity="0.6"/><rect x="6" y="1" width="2" height="7" rx="0.4" fill="currentColor"/><rect x="9" y="0" width="2" height="8" rx="0.4" fill="currentColor"/></svg>
-                  </span>
-                </div>
-                <div class="bmob-toggle"><div class="bmob-tog-btn bmob-tog-active">Bar</div><div class="bmob-tog-btn">Percentage</div></div>
-                <div class="bmob-search-row"><div class="bmob-search"><span style="opacity:0.4">Search geofence</span></div><div class="bmob-date">14 Mar - 2025</div></div>
-                <div class="bmob-map">
-                  <div class="bmob-map-bg"></div>
-                  <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 300 120" preserveAspectRatio="none">
-                    <!-- Planned alignment background path (dashed gray) -->
-                    <path d="M20 60 Q80 45 140 55 Q200 65 260 48 Q280 44 295 42" stroke="rgba(255,255,255,0.4)" stroke-width="4.5" stroke-dasharray="4,4" fill="none"/>
-                    <!-- Active tracked path drawing in real-time (solid green) -->
-                    <path class="bmob-drawn-path" d="M20 60 Q80 45 140 55 Q200 65 260 48 Q280 44 295 42" stroke="#3ECFA0" stroke-width="4.5" fill="none"/>
-                    <!-- Geofence check points / targets -->
-                    <circle cx="140" cy="55" r="4" fill="#2E4DEA" stroke="white" stroke-width="1.5"/>
-                    <circle cx="260" cy="48" r="3" fill="#F87171" stroke="white" stroke-width="1.5"/>
-                    <!-- Compactor/Roller machine dot moving along the path -->
-                    <circle r="4.5" fill="#2E4DEA" stroke="white" stroke-width="1.5">
-                      <animateMotion 
-                        path="M20 60 Q80 45 140 55 Q200 65 260 48 Q280 44 295 42" 
-                        dur="6s" 
-                        repeatCount="indefinite" 
-                        rotate="auto"
-                      />
-                    </circle>
-                  </svg>
-                </div>
-                <div class="bmob-passes">Total Passes : <strong class="bmob-passes-counter" style="color:#2E4DEA;font-size:15px;font-weight:800;display:inline-block;min-width:20px;"></strong></div>
-                <div class="bmob-chart-head">Roller Mapping Over Road</div>
-                <div class="bmob-chart">
-                  <div class="bmob-y-labels"><span>24</span><span>18</span><span>12</span><span>6</span><span>0</span></div>
-                  <div class="bmob-bars-area">
-                    <div class="bmob-bars">
-                      <div class="bmob-bar bmob-bar-anim" style="height:45%;background:#9CA3AF"></div>
-                      <div class="bmob-bar bmob-bar-anim" style="height:72%;background:#9CA3AF"></div>
-                      <div class="bmob-bar bmob-bar-anim" style="height:38%;background:#EF4444"></div>
-                      <div class="bmob-bar bmob-bar-anim" style="height:55%;background:#F5BE5E"></div>
-                      <div class="bmob-bar bmob-bar-anim" style="height:82%;background:#F5BE5E"></div>
-                      <div class="bmob-bar bmob-bar-anim" style="height:65%;background:#166534"></div>
-                      <div class="bmob-bar bmob-bar-anim" style="height:90%;background:#166534"></div>
-                      <div class="bmob-bar bmob-bar-anim" style="height:78%;background:#166534"></div>
-                      <div class="bmob-bar bmob-bar-anim" style="height:85%;background:#166534"></div>
-                      <div class="bmob-bar bmob-bar-anim" style="height:60%;background:#166534"></div>
-                      <div class="bmob-bar bmob-bar-anim" style="height:42%;background:#F5BE5E"></div>
-                      <div class="bmob-bar bmob-bar-anim" style="height:70%;background:#EF4444"></div>
-                      <div class="bmob-bar bmob-bar-anim" style="height:55%;background:#F5BE5E"></div>
-                    </div>
-                    <div class="bmob-x-axis"><span>0</span><span>400</span><span>800</span><span>1200</span><span>1500</span></div>
-                    <div class="bmob-x-unit">distance in m</div>
+            <div class="boson-hub-container">
+              <!-- Left Column: Source OEMs & Sensors -->
+              <div class="boson-sources">
+                <div class="boson-source-card">
+                  <div class="boson-source-badge" style="background:#F5BE5E"></div>
+                  <div class="boson-source-text">
+                    <span class="boson-source-name">CAT Fleet</span>
+                    <span class="boson-source-type">GPS & Telematics</span>
                   </div>
                 </div>
-                <div class="bmob-legend"><div class="bmob-leg-item"><span style="background:#9CA3AF"></span>0</div><div class="bmob-leg-item"><span style="background:#EF4444"></span>2</div><div class="bmob-leg-item"><span style="background:#F5BE5E"></span>3</div><div class="bmob-leg-item"><span style="background:#22C55E"></span>4</div><div class="bmob-leg-item"><span style="background:#166534"></span>&gt;5</div></div>
-                <div class="bmob-legend-label">Number of Times Roller Passed</div>
+                <div class="boson-source-card">
+                  <div class="boson-source-badge" style="background:#2E4DEA"></div>
+                  <div class="boson-source-text">
+                    <span class="boson-source-name">Komatsu Shovel</span>
+                    <span class="boson-source-type">Payload & Load Data</span>
+                  </div>
+                </div>
+                <div class="boson-source-card">
+                  <div class="boson-source-badge" style="background:#1F2937"></div>
+                  <div class="boson-source-text">
+                    <span class="boson-source-name">Volvo Hauler</span>
+                    <span class="boson-source-type">Engine CAN Bus</span>
+                  </div>
+                </div>
+                <div class="boson-source-card">
+                  <div class="boson-source-badge" style="background:#3ECFA0"></div>
+                  <div class="boson-source-text">
+                    <span class="boson-source-name">IoT Sensors</span>
+                    <span class="boson-source-type">Vibration (Physics AI)</span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+
+              <!-- Middle Column: Flow lines and Boson Hub -->
+              <!-- Desktop View -->
+              <svg class="boson-connector-desktop" viewBox="0 0 120 300" fill="none">
+                <!-- Connection Lines -->
+                <path d="M0 45 L60 150" stroke="#D1D5DB" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <path d="M0 115 L60 150" stroke="#D1D5DB" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <path d="M0 185 L60 150" stroke="#D1D5DB" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <path d="M0 255 L60 150" stroke="#D1D5DB" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <path d="M60 150 L120 150" stroke="#2E4DEA" stroke-width="2.5" stroke-dasharray="4,4"/>
+
+                <!-- Flowing Packets -->
+                <circle r="3.5" fill="#F5BE5E">
+                  <animateMotion path="M0 45 L60 150" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
+                <circle r="3.5" fill="#2E4DEA">
+                  <animateMotion path="M0 115 L60 150" dur="1.8s" repeatCount="indefinite" begin="0.4s"/>
+                </circle>
+                <circle r="3.5" fill="#1F2937">
+                  <animateMotion path="M0 185 L60 150" dur="2.8s" repeatCount="indefinite" begin="0.2s"/>
+                </circle>
+                <circle r="3.5" fill="#3ECFA0">
+                  <animateMotion path="M0 255 L60 150" dur="2.1s" repeatCount="indefinite" begin="0.6s"/>
+                </circle>
+
+                <!-- Aggregated output flow to Mobile App -->
+                <circle r="5" fill="#2E4DEA" opacity="0.85">
+                  <animateMotion path="M60 150 L120 150" dur="1.2s" repeatCount="indefinite"/>
+                </circle>
+                <circle r="5" fill="#3ECFA0" opacity="0.85">
+                  <animateMotion path="M60 150 L120 150" dur="1.2s" repeatCount="indefinite" begin="0.6s"/>
+                </circle>
+
+                <!-- Central Hub Circle -->
+                <circle cx="60" cy="150" r="18" fill="rgba(46,77,234,0.08)" stroke="#2E4DEA" stroke-width="1.5"/>
+                <circle cx="60" cy="150" r="9" fill="#2E4DEA">
+                  <animate attributeName="r" values="7;11;7" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <text x="60" y="182" text-anchor="middle" font-family="var(--display)" font-size="7.5px" font-weight="800" fill="#2E4DEA">BOSON HUB</text>
+              </svg>
+
+              <!-- Mobile View -->
+              <svg class="boson-connector-mobile" viewBox="0 0 300 70" fill="none">
+                <!-- Connection Lines -->
+                <path d="M50 5 Q150 5 150 35" stroke="#D1D5DB" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <path d="M250 5 Q150 5 150 35" stroke="#D1D5DB" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <path d="M150 35 L150 70" stroke="#2E4DEA" stroke-width="2.5" stroke-dasharray="4,4"/>
+
+                <!-- Flowing Packets -->
+                <circle r="3.5" fill="#F5BE5E">
+                  <animateMotion path="M50 5 Q150 5 150 35" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle r="3.5" fill="#2E4DEA">
+                  <animateMotion path="M250 5 Q150 5 150 35" dur="1.8s" repeatCount="indefinite" begin="0.4s"/>
+                </circle>
+
+                <!-- Aggregated output flow down to Mobile App -->
+                <circle r="5" fill="#2E4DEA" opacity="0.85">
+                  <animateMotion path="M150 35 L150 70" dur="1.2s" repeatCount="indefinite"/>
+                </circle>
+
+                <!-- Central Hub Circle -->
+                <circle cx="150" cy="35" r="15" fill="rgba(46,77,234,0.08)" stroke="#2E4DEA" stroke-width="1.5"/>
+                <circle cx="150" cy="35" r="8" fill="#2E4DEA">
+                  <animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite"/>
+                </circle>
+              </svg>
+
+              <!-- Right Column: Curated Live View Dashboard Mockup -->
+              <div class="bmob">
+                <div class="bmob-shell">
+                  <div class="bmob-status">
+                    <span style="display:inline-flex;align-items:center;opacity:0.6;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 2h10M1 5h10M1 8h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                    <span style="display:flex;align-items:center;gap:4px;margin-left:auto;">
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><rect x="0" y="4" width="2" height="4" rx="0.4" fill="currentColor" opacity="0.4"/><rect x="3" y="2.5" width="2" height="5.5" rx="0.4" fill="currentColor" opacity="0.6"/><rect x="6" y="1" width="2" height="7" rx="0.4" fill="currentColor"/><rect x="9" y="0" width="2" height="8" rx="0.4" fill="currentColor"/></svg>
+                    </span>
+                  </div>
+                  <div class="bmob-toggle"><div class="bmob-tog-btn bmob-tog-active">Bar</div><div class="bmob-tog-btn">Percentage</div></div>
+                  <div class="bmob-search-row"><div class="bmob-search"><span style="opacity:0.4">Search geofence</span></div><div class="bmob-date">14 Mar - 2025</div></div>
+                  <div class="bmob-map">
+                    <div class="bmob-map-bg"></div>
+                    <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 300 120" preserveAspectRatio="none">
+                      <path d="M20 60 Q80 45 140 55 Q200 65 260 48 Q280 44 295 42" stroke="rgba(255,255,255,0.4)" stroke-width="4.5" stroke-dasharray="4,4" fill="none"/>
+                      <path class="bmob-drawn-path" d="M20 60 Q80 45 140 55 Q200 65 260 48 Q280 44 295 42" stroke="#3ECFA0" stroke-width="4.5" fill="none"/>
+                      <circle cx="140" cy="55" r="4" fill="#2E4DEA" stroke="white" stroke-width="1.5"/>
+                      <circle cx="260" cy="48" r="3" fill="#F87171" stroke="white" stroke-width="1.5"/>
+                      <circle r="4.5" fill="#2E4DEA" stroke="white" stroke-width="1.5">
+                        <animateMotion 
+                          path="M20 60 Q80 45 140 55 Q200 65 260 48 Q280 44 295 42" 
+                          dur="6s" 
+                          repeatCount="indefinite" 
+                          rotate="auto"
+                        />
+                      </circle>
+                    </svg>
+                  </div>
+                  <div class="bmob-passes">Total Passes : <strong class="bmob-passes-counter" style="color:#2E4DEA;font-size:15px;font-weight:800;display:inline-block;min-width:20px;"></strong></div>
+                  <div class="bmob-chart-head">Roller Mapping Over Road</div>
+                  <div class="bmob-chart">
+                    <div class="bmob-y-labels"><span>24</span><span>18</span><span>12</span><span>6</span><span>0</span></div>
+                    <div class="bmob-bars-area">
+                      <div class="bmob-bars">
+                        <div class="bmob-bar bmob-bar-anim" style="height:45%;background:#9CA3AF"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:72%;background:#9CA3AF"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:38%;background:#EF4444"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:55%;background:#F5BE5E"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:82%;background:#F5BE5E"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:65%;background:#166534"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:90%;background:#166534"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:78%;background:#166534"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:85%;background:#166534"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:60%;background:#166534"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:42%;background:#F5BE5E"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:70%;background:#EF4444"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:55%;background:#F5BE5E"></div>
+                      </div>
+                      <div class="bmob-x-axis"><span>0</span><span>400</span><span>800</span><span>1200</span><span>1500</span></div>
+                      <div class="bmob-x-unit">distance in m</div>
+                    </div>
         </div>
       </div>
     </div>
