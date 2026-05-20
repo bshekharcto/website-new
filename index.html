@@ -1,6 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" href="favicon.png">
+
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Cognecto — AI Operating System for Physical Infrastructure</title>
@@ -714,10 +716,10 @@ blockquote.cc-quote { font-family: var(--display); font-size: clamp(1rem,1.4vw,1
 
 /* Product visual panels — real image + data overlay */
 .pr-vis { position: relative; overflow: hidden; min-height: 420px; display: flex; align-items: stretch; background: #060A14; }
-.pr-vis-img { position: absolute; inset: 0; overflow: hidden; display: none; }
-.pr-vis-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.18) saturate(0.5) contrast(1.1); color: transparent; font-size: 0; display: block; opacity: 0; transition: opacity 0.4s ease; }
+.pr-vis-img { position: absolute; inset: 0; overflow: hidden; display: block; z-index: 1; }
+.pr-vis-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9) saturate(1.1); color: transparent; font-size: 0; display: block; opacity: 0; transition: opacity 0.4s ease; }
 .pr-vis-img img.loaded { opacity: 1; }
-.pr-vis-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, #0A1020 0%, #1A2540 55%, #2E4DEA 100%); }
+.pr-vis-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,16,32,0.2) 0%, rgba(26,37,64,0.4) 55%, rgba(46,77,234,0.3) 100%); z-index: 2; pointer-events: none; }
 .pr-vis-widget { position: relative; z-index: 2; padding: 2.5rem 2rem; width: 100%; display: flex; align-items: center; justify-content: center; }
 .vis-b{width:100%;background:rgba(10,16,32,0.85);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:10px;overflow:hidden;}
 .vis-b-head{padding:.8rem 1rem;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;align-items:center;}
@@ -762,7 +764,192 @@ blockquote.cc-quote { font-family: var(--display); font-size: clamp(1rem,1.4vw,1
 .bmob-leg-item span { width: 8px; height: 8px; border-radius: 1.5px; flex-shrink: 0; }
 .bmob-legend-label { text-align: center; font-family: var(--display); font-size: 7px; color: #9ca3af; padding-bottom: 8px; }
 
-/* ═══ PHOTON VISION AI CSS ═══ */
+/* Boson Data Hub & Multi-OEM Sources Layout */
+.boson-hub-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 5px;
+  width: 100%;
+}
+.boson-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 175px;
+  flex-shrink: 0;
+}
+.boson-source-card {
+  background: #283046;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 8px 10px 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+.boson-source-badge {
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.boson-source-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+.boson-source-name {
+  font-size: 11px;
+  font-weight: 800;
+  color: #FFFFFF;
+  font-family: var(--display);
+}
+.boson-source-type {
+  font-size: 9px;
+  color: #9CA3AF;
+  font-family: var(--display);
+  font-weight: 500;
+}
+.boson-connector-desktop {
+  width: 120px;
+  height: 300px;
+  flex-shrink: 0;
+}
+.boson-connector-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .boson-hub-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .boson-sources {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 8px;
+  }
+  .boson-connector-desktop {
+    display: none;
+  }
+  .boson-connector-mobile {
+    display: block;
+    width: 100%;
+    height: 70px;
+  }
+}
+
+/* Real-time sensing animations for Boson app widget */
+.bmob-drawn-path {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: drawRoad 6s infinite linear;
+}
+@keyframes drawRoad {
+  0% { stroke-dashoffset: 300; }
+  85%, 100% { stroke-dashoffset: 0; }
+}
+.bmob-passes-counter::after {
+  content: "40";
+  animation: incrementPasses 6s infinite step-end;
+}
+@keyframes incrementPasses {
+  0% { content: "0"; }
+  10% { content: "5"; }
+  20% { content: "12"; }
+  30% { content: "18"; }
+  40% { content: "22"; }
+  50% { content: "28"; }
+  60% { content: "32"; }
+  70% { content: "38"; }
+  80% { content: "42"; }
+  90%, 100% { content: "45"; }
+}
+
+/* Photon Camera Screen & Viewport Layout (High-end mockup) */
+.photon-screen-wrap { margin-top: 1.5rem; position: relative; width: 100%; max-width: 860px; margin-left: auto; margin-right: auto; }
+.photon-screen { background: #1E2538; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 32px 80px rgba(15,23,42,0.35), 0 8px 24px rgba(8,145,178,0.25); width: 100%; }
+.photon-screen-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: #121620; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.ps-dot { width: 10px; height: 10px; border-radius: 50%; }
+.photon-live-strip { display: flex; align-items: center; gap: 8px; padding: 7px 14px; background: rgba(8,145,178,0.08); border-bottom: 1px solid rgba(8,145,178,0.18); font-family: var(--display); font-size: 11px; font-weight: 700; color: #22D3EE; letter-spacing: 0.04em; }
+.photon-live-dot { width: 7px; height: 7px; border-radius: 50%; background: #22D3EE; animation: dot-pulse 2s infinite; }
+
+/* Camera viewport */
+.photon-viewport { display: grid; grid-template-columns: 1fr 280px; min-height: 320px; width: 100%; }
+@media (max-width: 768px) {
+  .photon-viewport { grid-template-columns: 1fr; }
+  .pv-sidebar { border-left: none !important; border-top: 1px solid rgba(255,255,255,0.07); }
+}
+.pv-feed { position: relative; background: #0a0f1e; overflow: hidden; min-height: 240px; }
+.pv-feed-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4) saturate(0.8); }
+.pv-scanlines { position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.012) 3px, rgba(255,255,255,0.012) 4px); pointer-events: none; z-index: 4; }
+/* Bounding boxes */
+.pv-bbox { position: absolute; border: 2px solid; border-radius: 2px; z-index: 5; }
+.pv-bbox-label { position: absolute; top: -22px; left: 0; font-family: var(--display); font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; white-space: nowrap; }
+.pv-ok { border-color: #3ECFA0; }
+.pv-ok .pv-bbox-label { background: #3ECFA0; color: #000; }
+.pv-alert { border-color: #F87171; }
+.pv-alert .pv-bbox-label { background: #F87171; color: #fff; }
+/* No-go zone */
+.pv-nogo { position: absolute; z-index: 4; border: 2px dashed #F5BE5E; background: rgba(245,190,94,0.08); }
+.pv-nogo-label { position: absolute; top: 4px; left: 6px; font-family: var(--display); font-size: 8px; font-weight: 700; color: #F5BE5E; }
+/* Confidence scores */
+.pv-scores { position: absolute; top: 30px; right: 8px; z-index: 6; display: flex; flex-direction: column; gap: 3px; }
+.pv-score { display: flex; align-items: center; gap: 4px; background: rgba(0,0,0,0.7); border-radius: 3px; padding: 2px 5px; backdrop-filter: blur(4px); }
+.pv-score-key { font-family: var(--display); font-size: 7px; color: rgba(255,255,255,0.7); width: 70px; }
+.pv-score-track { width: 36px; height: 3px; background: rgba(255,255,255,0.15); border-radius: 100px; overflow: hidden; }
+.pv-score-fill { height: 100%; border-radius: 100px; }
+.pv-score-val { font-family: var(--display); font-size: 7px; color: white; font-weight: 700; width: 22px; text-align: right; }
+/* Event sidebar */
+.pv-sidebar { background: #0A1020; border-left: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; }
+.pv-sidebar-head { padding: 8px 12px; background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.07); font-family: var(--display); font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: rgba(255,255,255,0.35); display: flex; align-items: center; gap: 6px; }
+.pv-event { padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); opacity: 0; animation: fadeUp 0.3s ease forwards; }
+.pv-event:nth-child(1){animation-delay:.2s;} .pv-event:nth-child(2){animation-delay:.5s;} .pv-event:nth-child(3){animation-delay:.8s;}
+.pv-event-time { font-family: var(--display); font-size: 8.5px; color: rgba(255,255,255,0.25); margin-bottom: 3px; }
+.pv-event-msg { font-family: var(--display); font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.75); line-height: 1.4; }
+.pv-event-msg.alert { color: #F87171; }
+.pv-event-msg.ok { color: #3ECFA0; }
+.pv-mat { border-color: #3B82F6; }
+.pv-mat .pv-bbox-label { background: #3B82F6; color: #fff; }
+.pv-scanline-sweep {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 0 8px #3B82F6;
+  animation: sweep 4s infinite ease-in-out;
+}
+@keyframes sweep {
+  0% { top: 0%; }
+  50% { top: 100%; }
+  100% { top: 0%; }
+}
+@keyframes track-roller {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(6px, 3px); }
+  100% { transform: translate(0, 0); }
+}
+.pv-bbox-roller {
+  animation: track-roller 8s infinite ease-in-out;
+}
+@keyframes track-mat {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-3px, 1px); }
+  100% { transform: translate(0, 0); }
+}
+.pv-bbox-mat {
+  animation: track-mat 12s infinite ease-in-out;
+}
+
+/* ═ ═ ═  PHOTON VISION AI CSS ═ ═ ═  */
 .phot-shell { width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 0; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.12); }
 .phot-feed { position: relative; background: #0d0d0d; height: 230px; overflow: hidden; }
 .phot-feed-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 40% 50%, #1a1a2e 0%, #0a0a0a 100%); }
@@ -923,16 +1110,220 @@ blockquote.cc-quote { font-family: var(--display); font-size: clamp(1rem,1.4vw,1
 .moat p{font-family:var(--display);font-size:13.5px;font-weight:400;color:var(--ink-2);line-height:1.65;}
 
 /* CTA */
-.cta-section{background:var(--navy);padding:clamp(5rem,10vw,8rem) 0;text-align:center;position:relative;overflow:hidden;}
+.cta-section{background:var(--navy);padding:clamp(4rem,8vw,7rem) 0;position:relative;overflow:hidden;}
 .cta-section::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 70% at 50% 50%,rgba(46,77,234,0.2) 0%,transparent 70%);}
-.cta-inner{position:relative;z-index:2;max-width:780px;margin:0 auto;}
-.cta-kicker{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1.25rem;display:block;}
-.cta-h{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,5vw,4rem);line-height:1.05;letter-spacing:-0.04em;color:white;margin-bottom:1.25rem;}
+.cta-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.cta-info {
+  display: flex;
+  flex-direction: column;
+}
+.cta-kicker{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem;display:block;}
+.cta-h{font-family:var(--display);font-weight:700;font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;letter-spacing:-0.03em;color:white;margin-bottom:1.25rem;}
 .cta-h .blue{color:#7EB3FF;}
-.cta-sub{font-family:var(--display);font-size:1.05rem;font-weight:400;color:rgba(255,255,255,0.45);margin-bottom:2.75rem;max-width:44ch;margin-left:auto;margin-right:auto;}
-.cta-btns{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap;}
-.btn-cta-ghost{font-family:var(--display);font-size:15px;font-weight:500;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.15);padding:.85rem 1.75rem;border-radius:7px;transition:all .15s;}
-.btn-cta-ghost:hover{background:rgba(255,255,255,0.14);color:white;}
+.cta-sub{font-family:var(--display);font-size:1.02rem;font-weight:400;color:rgba(255,255,255,0.55);margin-bottom:1.5rem;line-height:1.6;max-width:48ch;}
+.cta-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cta-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.cta-bullet-check {
+  width: 18px;
+  height: 18px;
+  background: rgba(46,77,234,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7EB3FF;
+  font-size: 10px;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.cta-bullet-text {
+  font-family: var(--display);
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.4;
+}
+.cta-bullet-text strong {
+  color: white;
+}
+
+/* Demo Form Card */
+.cta-form-card {
+  background: rgba(10, 16, 32, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2.25rem;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3), 0 0 40px rgba(46,77,234,0.1);
+  backdrop-filter: blur(12px);
+  position: relative;
+}
+.cta-form-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(46,77,234,0.4), transparent 40%, transparent 60%, rgba(34,211,238,0.3));
+  border-radius: 16px;
+  pointer-events: none;
+}
+.cta-form-title {
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.35rem;
+}
+.cta-form-sub {
+  font-family: var(--display);
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 1.5rem;
+}
+.cta-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.1rem;
+}
+.cta-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.cta-label {
+  font-family: var(--display);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.cta-input, .cta-select, .cta-textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 0.75rem 0.85rem;
+  color: white;
+  font-family: var(--display);
+  font-size: 13.5px;
+  transition: all 0.2s ease;
+  outline: none;
+  width: 100%;
+}
+.cta-input:focus, .cta-select:focus, .cta-textarea:focus {
+  border-color: #2E4DEA;
+  background: rgba(255,255,255,0.07);
+  box-shadow: 0 0 12px rgba(46,77,234,0.35);
+}
+.cta-select option {
+  background: #0A1020;
+  color: white;
+}
+.cta-submit-btn {
+  background: linear-gradient(135deg, #2E4DEA 0%, #1D3BB5 100%);
+  color: white;
+  font-family: var(--display);
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  padding: 0.85rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(46,77,234,0.25);
+  margin-top: 0.5rem;
+}
+.cta-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(46,77,234,0.4);
+  background: linear-gradient(135deg, #3C5CFF 0%, #2E4DEA 100%);
+}
+.cta-submit-btn:active {
+  transform: translateY(0);
+}
+.cta-submit-success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+.success-icon-wrap {
+  width: 48px;
+  height: 48px;
+  background: rgba(16,185,129,0.12);
+  border: 1px solid rgba(16,185,129,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #10B981;
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+.cta-success-h {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+.cta-success-p {
+  font-family: var(--display);
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+  max-width: 32ch;
+  margin: 0 auto;
+}
+
+@media (max-width: 860px) {
+  .cta-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .cta-info {
+    text-align: center;
+    align-items: center;
+  }
+  .cta-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-bullets {
+    align-items: flex-start;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  .cta-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
 
 /* FOOTER */
 footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);padding:4rem 0 2rem;}
@@ -1576,12 +1967,76 @@ body.scroll-locked {
   .css-stats {
     flex-direction: column !important;
   }
-  .css-stat, .cc-result, .css-result {
-    border-right: none !important;
-    border-bottom: 0.5px solid var(--rule) !important;
+}
+
+/* Cortex Simple Dashboard & Graph styling */
+.cortex-container-simple {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 860px;
+  background: #0A1020;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 32px 80px rgba(15,23,42,0.35), 0 8px 24px rgba(11,168,104,0.1);
+  padding: 1.5rem;
+  align-items: center;
+  margin: 0 auto;
+}
+.cortex-graph-svg {
+  background: #070B16;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.cx-node circle {
+  transition: transform 0.3s;
+}
+.cx-node:hover circle {
+  transform: scale(1.1);
+}
+@keyframes pulse-dot {
+  0% { r: 3; opacity: 1; }
+  50% { r: 6; opacity: 0.4; }
+  100% { r: 3; opacity: 1; }
+}
+.cx-alert-node-pulse {
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+.cortex-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+.cortex-source-card {
+  background: #283046;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 12px 14px 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  min-height: 57px;
+}
+
+@media (max-width: 768px) {
+  .cortex-container-simple {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
   }
-  .css-stat:last-child, .cc-result:last-child, .css-result:last-child {
-    border-bottom: none !important;
+  .cortex-sources {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .cortex-source-card {
+    padding: 10px 12px 10px 16px;
+    min-height: 50px;
   }
 }
 </style>
@@ -2412,7 +2867,7 @@ window.LOGOS = {
     <h1>Infrastructure Intelligence<br>for the <span class="blue">Physical World</span>.</h1>
     <p class="hero-sub">Every kilometre of road, every shift at the mine face, every pipe in the ground — Cognecto converts raw field data into audit-ready intelligence that governments trust, operators act on, and investors can see. Active in 7 days. No custom training. No ambiguity.</p>
     <div class="hero-btns">
-      <a href="#" class="btn-hero-primary">Request a demo</a>
+      <a href="#demo-section" class="btn-hero-primary">Request a demo</a>
       <a href="#" class="btn-hero-secondary">See how it works</a>
     </div>
   </div>
@@ -2677,12 +3132,12 @@ window.LOGOS = {
           <div class="css-nav-item" id="css-nav-2">
             <span class="css-nav-sector">Industrial · HSE</span>
             <span class="css-nav-name">EPC Site Operations</span>
-            <span class="css-nav-loc">Open-Cast Mining</span>
+            <span class="css-nav-loc">Road & Bridge Project</span>
           </div>
           <div class="css-nav-item" id="css-nav-3">
             <span class="css-nav-sector">Water · Public Utility</span>
-            <span class="css-nav-name">Water Infrastructure</span>
-            <span class="css-nav-loc">South Asia</span>
+            <span class="css-nav-name">Water Meter Network</span>
+            <span class="css-nav-loc">Utility Supply · South Asia</span>
           </div>
         </div>
 
@@ -2734,7 +3189,7 @@ window.LOGOS = {
           <blockquote class="css-blockquote">"We caught a near-miss in the first week of deployment — something invisible under our previous regime. Photon does not wait for incidents. It prevents them."</blockquote>
           <div class="css-author-wrap">
             <div class="css-author">Site Safety Director</div>
-            <div class="css-role">Open-Cast Mining & EPC Construction Operations</div>
+            <div class="css-role">EPC Site Operations · Road & Bridge Infrastructure</div>
           </div>
           <div class="css-results">
             <div class="css-result"><div class="css-result-n">Real-time</div><div class="css-result-l">PPE compliance AI</div></div>
@@ -2753,7 +3208,7 @@ window.LOGOS = {
           <blockquote class="css-blockquote">"When anomalies appeared after commissioning, we diagnosed root cause in hours — not weeks — because Cognecto had captured a continuous digital baseline from day one."</blockquote>
           <div class="css-author-wrap">
             <div class="css-author">Programme Director</div>
-            <div class="css-role">Urban Water Infrastructure, South Asia</div>
+            <div class="css-role">Commercial & Industrial Water Supply, South Asia</div>
           </div>
           <div class="css-results">
             <div class="css-result"><div class="css-result-n">AI survey</div><div class="css-result-l">Pre-construction baseline</div></div>
@@ -2779,7 +3234,7 @@ window.LOGOS = {
 
         <div class="css-step" data-customer="1">
           <div class="css-img-panel">
-            <img src="assets/images/mining_dump_truck.jpg" alt="Open pit mining Australia" loading="lazy"/>
+            <img src="assets/images/mining_truck_metrics.png" alt="Open pit mining Australia with telemetry metrics" loading="lazy"/>
             <div class="css-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,rgba(11,80,40,0.5) 100%)"></div>
             <div class="css-img-label">North Eastern Mining Co. · FuraGems · Australia</div>
           </div>
@@ -2787,17 +3242,17 @@ window.LOGOS = {
 
         <div class="css-step" data-customer="2">
           <div class="css-img-panel">
-            <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1400&h=900&fit=crop" alt="HSE construction workers" loading="lazy"/>
-            <div class="css-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,rgba(46,27,80,0.5) 100%)"></div>
-            <div class="css-img-label">EPC Project · Open-Cast Mining Operations</div>
+            <img src="assets/images/epc_bridge_metrics.png" alt="EPC Road and Bridge Site Operations with telemetry metrics" loading="lazy"/>
+            <div class="css-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,rgba(18,48,88,0.5) 100%)"></div>
+            <div class="css-img-label">EPC Project · Bridge Construction & Site Operations</div>
           </div>
         </div>
 
         <div class="css-step" data-customer="3">
           <div class="css-img-panel">
-            <img src="https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=1400&h=900&fit=crop" alt="Water pipeline infrastructure" loading="lazy"/>
+            <img src="assets/images/water_meter_metrics.png" alt="Industrial water meter network with telemetry metrics" loading="lazy"/>
             <div class="css-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,rgba(8,100,140,0.5) 100%)"></div>
-            <div class="css-img-label">Water Infrastructure · Pre-construction to In-service</div>
+            <div class="css-img-label">Water Meter Network · Commercial & Industrial Water Supply</div>
           </div>
         </div>
 
@@ -3018,40 +3473,40 @@ window.LOGOS = {
 
         <!-- Product display card — swaps on scroll -->
         <div class="pss-card" id="pss-card-0">
-          <div class="pss-card-badge" style="background:rgba(46,77,234,0.1);color:var(--blue);">IoT Sensing · Physics AI</div>
+          <div class="pss-card-badge" style="background:rgba(46,77,234,0.1);color:var(--blue);">IoT Sensing · OEM Telemetry</div>
           <h3 class="pss-card-h">Hear <em>— Boson</em></h3>
-          <p class="pss-card-desc">Physics-based AI trained on the actual mechanics of compaction, material fatigue, and structural degradation. Boson counts every roller pass, verifies every equipment sequence, and flags deviation before the concrete sets.</p>
+          <p class="pss-card-desc">Boson connects to all types of OEM controllers, heavy equipment CAN-bus networks, and external sensors, with the ability to push real-time telemetry streams using lightweight edge protocols like MQTT.</p>
           <div class="pss-caps">
-            <div class="pss-cap" style="--c:#2E4DEA">Compaction pass counting</div>
-            <div class="pss-cap" style="--c:#2E4DEA">Asset health monitoring</div>
-            <div class="pss-cap" style="--c:#2E4DEA">Predictive maintenance</div>
-            <div class="pss-cap" style="--c:#2E4DEA">Cross-industry transfer learning</div>
+            <div class="pss-cap" style="--c:#2E4DEA">Universal OEM connectivity</div>
+            <div class="pss-cap" style="--c:#2E4DEA">MQTT &amp; edge protocols</div>
+            <div class="pss-cap" style="--c:#2E4DEA">CAN-bus &amp; sensor telemetry</div>
+            <div class="pss-cap" style="--c:#2E4DEA">Compaction &amp; fatigue tracking</div>
           </div>
           <a href="pages/platform/boson.html" class="pr-cta">Explore Boson →</a>
         </div>
 
         <div class="pss-card" id="pss-card-1" style="display:none;">
-          <div class="pss-card-badge" style="background:rgba(8,145,178,0.1);color:#0891B2;">Vision AI · 24/7 Monitoring</div>
+          <div class="pss-card-badge" style="background:rgba(8,145,178,0.1);color:#0891B2;">Vision AI · Live Inputs</div>
           <h3 class="pss-card-h">See <em>— Photon</em></h3>
-          <p class="pss-card-desc">Computer vision running 24/7 across every camera on every site — detecting PPE violations, no-go zone intrusions, smoke and fire events in real time. Photon doesn't review footage after an incident. It prevents the incident.</p>
+          <p class="pss-card-desc">Photon is all about vision input. It processes live camera feeds and CCTV streams in real time at the edge, utilizing computer vision to detect safety hazards, PPE compliance, and no-go zone intrusions.</p>
           <div class="pss-caps">
-            <div class="pss-cap" style="--c:#0891B2">PPE compliance monitoring</div>
-            <div class="pss-cap" style="--c:#0891B2">No-go zone intrusion detection</div>
-            <div class="pss-cap" style="--c:#0891B2">Fire &amp; smoke detection</div>
-            <div class="pss-cap" style="--c:#0891B2">Poor visibility alerts</div>
+            <div class="pss-cap" style="--c:#0891B2">Live Vision Inputs</div>
+            <div class="pss-cap" style="--c:#0891B2">Edge Camera Processing</div>
+            <div class="pss-cap" style="--c:#0891B2">PPE &amp; Intrusion Detection</div>
+            <div class="pss-cap" style="--c:#0891B2">Hazard &amp; Smoke Alerting</div>
           </div>
           <a href="pages/platform/photon.html" class="pr-cta">Explore Photon →</a>
         </div>
 
         <div class="pss-card" id="pss-card-2" style="display:none;">
-          <div class="pss-card-badge" style="background:rgba(11,168,104,0.1);color:#0BA868;">Dashboard · BOQ · Audit</div>
+          <div class="pss-card-badge" style="background:rgba(11,168,104,0.1);color:#0BA868;">Asset Context · Process Fusion</div>
           <h3 class="pss-card-h">Act <em>— Cortex</em></h3>
-          <p class="pss-card-desc">The operating layer that turns Boson and Photon signals into decisions. BOQ verification triggers billing. Every output is structured, timestamped, and audit-ready — accessible from Ministry level down to a field supervisor's phone.</p>
+          <p class="pss-card-desc">Cortex is where the process, telemetry, and asset details get contextualized. It fuses raw signals from Boson and vision inputs from Photon to verify BOQ progress, automate billing, and generate audit-ready trails.</p>
           <div class="pss-caps">
-            <div class="pss-cap" style="--c:#0BA868">BOQ verification &amp; billing triggers</div>
-            <div class="pss-cap" style="--c:#0BA868">Shift planning &amp; fleet management</div>
-            <div class="pss-cap" style="--c:#0BA868">Geo-tagged audit trails</div>
-            <div class="pss-cap" style="--c:#0BA868">Role-based access — field to Ministry</div>
+            <div class="pss-cap" style="--c:#0BA868">Asset Contextualization</div>
+            <div class="pss-cap" style="--c:#0BA868">Unified Signal Fusion</div>
+            <div class="pss-cap" style="--c:#0BA868">BOQ Verification &amp; Audits</div>
+            <div class="pss-cap" style="--c:#0BA868">Automated Billing Triggers</div>
           </div>
           <a href="pages/platform/cortex.html" class="pr-cta">Explore Cortex →</a>
         </div>
@@ -3063,39 +3518,237 @@ window.LOGOS = {
 
         <!-- STEP 0 — Boson -->
         <div class="pss-step" data-product="0">
-          <div class="pss-vis" style="background:#0A1020;">
-            <div class="pr-vis-img"><img src="https://images.pexels.com/photos/1005473/pexels-photo-1005473.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="" aria-hidden="true" onload="this.classList.add('loaded')"/></div>
-            <div class="pr-vis-overlay"></div>
-            <div class="pr-vis-widget" style="padding:2rem;">
-              <div class="bmob"><div class="bmob-shell">
-                <div class="bmob-status"><span>â‰¡</span><span style="display:flex;align-items:center;gap:4px;margin-left:auto;"><svg width="12" height="8" viewBox="0 0 12 8" fill="none"><rect x="0" y="4" width="2" height="4" rx="0.4" fill="currentColor" opacity="0.4"/><rect x="3" y="2.5" width="2" height="5.5" rx="0.4" fill="currentColor" opacity="0.6"/><rect x="6" y="1" width="2" height="7" rx="0.4" fill="currentColor"/><rect x="9" y="0" width="2" height="8" rx="0.4" fill="currentColor"/></svg></span></div>
-                <div class="bmob-toggle"><div class="bmob-tog-btn bmob-tog-active">Bar</div><div class="bmob-tog-btn">Percentage</div></div>
-                <div class="bmob-search-row"><div class="bmob-search"><span style="opacity:0.4">Search geofence</span></div><div class="bmob-date">14 Mar – 2025</div></div>
-                <div class="bmob-map"><div class="bmob-map-bg"></div><svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 300 120" preserveAspectRatio="none"><path d="M20 60 Q80 45 140 55 Q200 65 260 48 Q280 44 295 42" stroke="#F5BE5E" stroke-width="3.5" fill="none" opacity="0.85"/><path d="M20 60 Q80 45 120 53" stroke="#3ECFA0" stroke-width="3.5" fill="none"/><circle cx="140" cy="55" r="4" fill="#2E4DEA" stroke="white" stroke-width="1.5"/><circle cx="260" cy="48" r="3" fill="#F87171" stroke="white" stroke-width="1.5"/></svg></div>
-                <div class="bmob-passes">Total Passes : <strong style="color:#2E4DEA;font-size:15px;font-weight:800;">47</strong></div>
-                <div class="bmob-chart-head">Roller Mapping Over Road</div>
-                <div class="bmob-chart"><div class="bmob-y-labels"><span>24</span><span>18</span><span>12</span><span>6</span><span>0</span></div><div class="bmob-bars-area"><div class="bmob-bars"><div class="bmob-bar" style="height:45%;background:#9CA3AF"></div><div class="bmob-bar" style="height:72%;background:#9CA3AF"></div><div class="bmob-bar" style="height:38%;background:#EF4444"></div><div class="bmob-bar" style="height:55%;background:#F5BE5E"></div><div class="bmob-bar" style="height:82%;background:#F5BE5E"></div><div class="bmob-bar" style="height:65%;background:#166534"></div><div class="bmob-bar" style="height:90%;background:#166534"></div><div class="bmob-bar" style="height:78%;background:#166534"></div><div class="bmob-bar" style="height:85%;background:#166534"></div><div class="bmob-bar" style="height:60%;background:#166534"></div><div class="bmob-bar" style="height:42%;background:#F5BE5E"></div><div class="bmob-bar" style="height:70%;background:#EF4444"></div><div class="bmob-bar" style="height:55%;background:#F5BE5E"></div></div><div class="bmob-x-axis"><span>0</span><span>400</span><span>800</span><span>1200</span><span>1500</span></div><div class="bmob-x-unit">distance in m</div></div></div>
-                <div class="bmob-legend"><div class="bmob-leg-item"><span style="background:#9CA3AF"></span>0</div><div class="bmob-leg-item"><span style="background:#EF4444"></span>2</div><div class="bmob-leg-item"><span style="background:#F5BE5E"></span>3</div><div class="bmob-leg-item"><span style="background:#22C55E"></span>4</div><div class="bmob-leg-item"><span style="background:#166534"></span>&gt;5</div></div>
-                <div class="bmob-legend-label">Number of Times Roller Passed</div>
-              </div></div>
+          <div class="pss-vis" style="background:#0A1020; padding:1.5rem; display:flex; align-items:center; justify-content:center;">
+            <div class="boson-hub-container">
+              <!-- Left Column: Source OEMs & Sensors -->
+              <div class="boson-sources">
+                <div class="boson-source-card">
+                  <div class="boson-source-badge" style="background:#F5BE5E"></div>
+                  <div class="boson-source-text">
+                    <span class="boson-source-name">CAT Fleet</span>
+                    <span class="boson-source-type">GPS & Telematics</span>
+                  </div>
+                </div>
+                <div class="boson-source-card">
+                  <div class="boson-source-badge" style="background:#2E4DEA"></div>
+                  <div class="boson-source-text">
+                    <span class="boson-source-name">Komatsu Shovel</span>
+                    <span class="boson-source-type">Payload & Load Data</span>
+                  </div>
+                </div>
+                <div class="boson-source-card">
+                  <div class="boson-source-badge" style="background:#1F2937"></div>
+                  <div class="boson-source-text">
+                    <span class="boson-source-name">Volvo Hauler</span>
+                    <span class="boson-source-type">Engine CAN Bus</span>
+                  </div>
+                </div>
+                <div class="boson-source-card">
+                  <div class="boson-source-badge" style="background:#3ECFA0"></div>
+                  <div class="boson-source-text">
+                    <span class="boson-source-name">IoT Sensors</span>
+                    <span class="boson-source-type">Vibration (Physics AI)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Middle Column: Flow lines and Boson Hub -->
+              <!-- Desktop View -->
+              <svg class="boson-connector-desktop" viewBox="0 0 120 300" fill="none">
+                <!-- Connection Lines -->
+                <path d="M0 45 L60 150" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <path d="M0 115 L60 150" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <path d="M0 185 L60 150" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <path d="M0 255 L60 150" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <path d="M60 150 L120 150" stroke="#2E4DEA" stroke-width="2.5" stroke-dasharray="4,4"/>
+
+                <!-- Flowing Packets -->
+                <circle r="3.5" fill="#F5BE5E">
+                  <animateMotion path="M0 45 L60 150" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
+                <circle r="3.5" fill="#2E4DEA">
+                  <animateMotion path="M0 115 L60 150" dur="1.8s" repeatCount="indefinite" begin="0.4s"/>
+                </circle>
+                <circle r="3.5" fill="#1F2937">
+                  <animateMotion path="M0 185 L60 150" dur="2.8s" repeatCount="indefinite" begin="0.2s"/>
+                </circle>
+                <circle r="3.5" fill="#3ECFA0">
+                  <animateMotion path="M0 255 L60 150" dur="2.1s" repeatCount="indefinite" begin="0.6s"/>
+                </circle>
+
+                <!-- Aggregated output flow to Mobile App -->
+                <circle r="5" fill="#2E4DEA" opacity="0.85">
+                  <animateMotion path="M60 150 L120 150" dur="1.2s" repeatCount="indefinite"/>
+                </circle>
+                <circle r="5" fill="#3ECFA0" opacity="0.85">
+                  <animateMotion path="M60 150 L120 150" dur="1.2s" repeatCount="indefinite" begin="0.6s"/>
+                </circle>
+
+                <!-- Central Hub Circle -->
+                <circle cx="60" cy="150" r="18" fill="rgba(46,77,234,0.08)" stroke="#2E4DEA" stroke-width="1.5"/>
+                <circle cx="60" cy="150" r="9" fill="#2E4DEA">
+                  <animate attributeName="r" values="7;11;7" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <text x="60" y="182" text-anchor="middle" font-family="var(--display)" font-size="7.5px" font-weight="800" fill="#93C5FD">BOSON HUB</text>
+              </svg>
+
+              <!-- Mobile View -->
+              <svg class="boson-connector-mobile" viewBox="0 0 300 70" fill="none">
+                <!-- Connection Lines -->
+                <path d="M50 5 Q150 5 150 35" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <path d="M250 5 Q150 5 150 35" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <path d="M150 35 L150 70" stroke="#2E4DEA" stroke-width="2.5" stroke-dasharray="4,4"/>
+
+                <!-- Flowing Packets -->
+                <circle r="3.5" fill="#F5BE5E">
+                  <animateMotion path="M50 5 Q150 5 150 35" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle r="3.5" fill="#2E4DEA">
+                  <animateMotion path="M250 5 Q150 5 150 35" dur="1.8s" repeatCount="indefinite" begin="0.4s"/>
+                </circle>
+
+                <!-- Aggregated output flow down to Mobile App -->
+                <circle r="5" fill="#2E4DEA" opacity="0.85">
+                  <animateMotion path="M150 35 L150 70" dur="1.2s" repeatCount="indefinite"/>
+                </circle>
+
+                <!-- Central Hub Circle -->
+                <circle cx="150" cy="35" r="15" fill="rgba(46,77,234,0.08)" stroke="#2E4DEA" stroke-width="1.5"/>
+                <circle cx="150" cy="35" r="8" fill="#2E4DEA">
+                  <animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite"/>
+                </circle>
+              </svg>
+
+              <!-- Right Column: Curated Live View Dashboard Mockup -->
+              <div class="bmob">
+                <div class="bmob-shell">
+                  <div class="bmob-status">
+                    <span style="display:inline-flex;align-items:center;opacity:0.6;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 2h10M1 5h10M1 8h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                    <span style="display:flex;align-items:center;gap:4px;margin-left:auto;">
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><rect x="0" y="4" width="2" height="4" rx="0.4" fill="currentColor" opacity="0.4"/><rect x="3" y="2.5" width="2" height="5.5" rx="0.4" fill="currentColor" opacity="0.6"/><rect x="6" y="1" width="2" height="7" rx="0.4" fill="currentColor"/><rect x="9" y="0" width="2" height="8" rx="0.4" fill="currentColor"/></svg>
+                    </span>
+                  </div>
+                  <div class="bmob-toggle"><div class="bmob-tog-btn bmob-tog-active">Bar</div><div class="bmob-tog-btn">Percentage</div></div>
+                  <div class="bmob-search-row"><div class="bmob-search"><span style="opacity:0.4">Search geofence</span></div><div class="bmob-date">14 Mar - 2025</div></div>
+                  <div class="bmob-map">
+                    <div class="bmob-map-bg"></div>
+                    <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 300 120" preserveAspectRatio="none">
+                      <path d="M20 60 Q80 45 140 55 Q200 65 260 48 Q280 44 295 42" stroke="rgba(255,255,255,0.4)" stroke-width="4.5" stroke-dasharray="4,4" fill="none"/>
+                      <path class="bmob-drawn-path" d="M20 60 Q80 45 140 55 Q200 65 260 48 Q280 44 295 42" stroke="#3ECFA0" stroke-width="4.5" fill="none"/>
+                      <circle cx="140" cy="55" r="4" fill="#2E4DEA" stroke="white" stroke-width="1.5"/>
+                      <circle cx="260" cy="48" r="3" fill="#F87171" stroke="white" stroke-width="1.5"/>
+                      <circle r="4.5" fill="#2E4DEA" stroke="white" stroke-width="1.5">
+                        <animateMotion 
+                          path="M20 60 Q80 45 140 55 Q200 65 260 48 Q280 44 295 42" 
+                          dur="6s" 
+                          repeatCount="indefinite" 
+                          rotate="auto"
+                        />
+                      </circle>
+                    </svg>
+                  </div>
+                  <div class="bmob-passes">Total Passes : <strong class="bmob-passes-counter" style="color:#2E4DEA;font-size:15px;font-weight:800;display:inline-block;min-width:20px;"></strong></div>
+                  <div class="bmob-chart-head">Roller Mapping Over Road</div>
+                  <div class="bmob-chart">
+                    <div class="bmob-y-labels"><span>24</span><span>18</span><span>12</span><span>6</span><span>0</span></div>
+                    <div class="bmob-bars-area">
+                      <div class="bmob-bars">
+                        <div class="bmob-bar bmob-bar-anim" style="height:45%;background:#9CA3AF"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:72%;background:#9CA3AF"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:38%;background:#EF4444"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:55%;background:#F5BE5E"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:82%;background:#F5BE5E"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:65%;background:#166534"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:90%;background:#166534"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:78%;background:#166534"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:85%;background:#166534"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:60%;background:#166534"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:42%;background:#F5BE5E"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:70%;background:#EF4444"></div>
+                        <div class="bmob-bar bmob-bar-anim" style="height:55%;background:#F5BE5E"></div>
+                      </div>
+                      <div class="bmob-x-axis"><span>0</span><span>400</span><span>800</span><span>1200</span><span>1500</span></div>
+                      <div class="bmob-x-unit">distance in m</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- STEP 1 — Photon -->
         <div class="pss-step" data-product="1">
-          <div class="pss-vis" style="background:#0A1020;">
-            <div class="pr-vis-img"><img src="https://images.pexels.com/photos/159306/pexels-photo-159306.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="" aria-hidden="true" onload="this.classList.add('loaded')"/></div>
-            <div class="pr-vis-overlay"></div>
-            <div class="pr-vis-widget" style="padding:2rem;">
-              <div class="phot-shell">
-                <div class="phot-feed">
-                  <div class="phot-feed-bg"></div><div class="phot-scanlines"></div>
-                  <div class="phot-cam-bar"><div class="phot-rec"><span class="phot-rec-dot"></span>REC</div><span class="phot-cam-id">C-V33GN 3 · Zone B</span><span class="phot-ts">13:15:49</span></div>
-                  <div class="phot-scene"><div class="phot-worker"><div class="phot-head"></div><div class="phot-body"></div><div class="phot-legs"></div></div><div class="phot-bbox"><div class="phot-corner phot-tl"></div><div class="phot-corner phot-tr"></div><div class="phot-corner phot-bl"></div><div class="phot-corner phot-br"></div><div class="phot-bbox-label">Person #2</div></div><div class="phot-nogo-line"><div class="phot-nogo-label">âš  No-Go Zone</div></div><div class="phot-bg-machinery"></div></div>
-                  <div class="phot-scores"><div class="phot-score-row phot-score-ok"><span class="phot-score-key">Safety Vest</span><div class="phot-score-bar-wrap"><div class="phot-score-bar" style="width:46%"></div></div><span class="phot-score-val">0.46</span></div><div class="phot-score-row phot-score-hi"><span class="phot-score-key">Safety Vest</span><div class="phot-score-bar-wrap"><div class="phot-score-bar phot-bar-hi" style="width:80%"></div></div><span class="phot-score-val">0.80</span></div><div class="phot-score-row phot-score-warn"><span class="phot-score-key">Protective Boots</span><div class="phot-score-bar-wrap"><div class="phot-score-bar phot-bar-warn" style="width:13%"></div></div><span class="phot-score-val">0.13</span></div></div>
+          <div class="pss-vis" style="background:#0A1020; padding:1.5rem; display:flex; align-items:center; justify-content:center;">
+            <div class="photon-screen-wrap">
+              <div class="photon-screen">
+                <div class="photon-screen-bar">
+                  <div class="ps-dot" style="background:#F87171;"></div>
+                  <div class="ps-dot" style="background:#F5BE5E;"></div>
+                  <div class="ps-dot" style="background:#3ECFA0;"></div>
+                  <span style="font-family:var(--display);font-size:11px;color:rgba(255,255,255,0.4);margin-left:8px;">Photon · Quality &amp; Work Verification · Live</span>
                 </div>
-                <div class="phot-vis-panel"><div class="phot-vis-header"><span class="phot-vis-alert">â— Poor Visibility</span></div><div class="phot-vis-scene"><div class="phot-vis-bg"></div><div class="phot-vis-metrics"><div class="phot-vis-metric"><span>Brightness:</span><span>172.7</span></div><div class="phot-vis-metric"><span>Contrast:</span><span>11.5</span></div><div class="phot-vis-metric phot-vis-warn"><span>Blurriness:</span><span>35.2</span></div></div></div></div>
+                <div class="photon-live-strip">
+                  <div class="photon-live-dot"></div>
+                  LIVE &nbsp;·&nbsp; CAM-07 (Roller Ch. 44+300) &nbsp;·&nbsp; Stream: DECODED &nbsp;·&nbsp; Compaction pass 11/14 verified &nbsp;·&nbsp; last sync: 2 secs ago
+                </div>
+                <div class="photon-viewport">
+                  <!-- Camera feed -->
+                  <div class="pv-feed" style="position:relative; background:#121620; overflow:hidden;">
+                    <!-- Local high-quality compaction image -->
+                    <img class="pv-feed-img" src="assets/images/highway_during_construction_compaction.png" alt="Road Compaction Work Verification" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.8; filter: brightness(0.65) saturate(0.85); z-index: 1; display:block;"/>
+                    
+                    <!-- HTML5 Video playing roller over it, fallback to local image if error -->
+                    <video class="pv-feed-video" autoplay muted loop playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.8; filter: brightness(0.6) saturate(0.85); z-index: 2;" poster="assets/images/highway_during_construction_compaction.png" onerror="this.remove()">
+                      <source src="https://assets.mixkit.co/videos/preview/mixkit-heavy-roller-packing-fresh-asphalt-42222-large.mp4" type="video/mp4">
+                      <source src="https://assets.mixkit.co/videos/preview/mixkit-road-construction-machinery-paving-asphalt-42221-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="pv-scanlines" style="z-index: 3;"></div>
+
+                    <!-- Roller Compaction tracking (Green) -->
+                    <div class="pv-bbox pv-ok pv-bbox-roller" style="left:15%;top:20%;width:35%;height:50%;">
+                      <span class="pv-bbox-label" style="background:#3ECFA0;color:#000;font-weight:700;">✓ Roller CAM-07 · 11/14 Passes</span>
+                    </div>
+
+                    <!-- Asphalt mat thermal/uniformity scan (Blue) -->
+                    <div class="pv-bbox pv-mat pv-bbox-mat" style="left:55%;top:35%;width:38%;height:45%;border-color:#3B82F6;">
+                      <div class="pv-scanline-sweep"></div>
+                      <span class="pv-bbox-label" style="background:#3B82F6;color:#fff;font-weight:700;">✓ Mat Temp: 145°C · Uniform</span>
+                    </div>
+
+                    <!-- Edge Alignment warning (Amber) -->
+                    <div class="pv-bbox pv-alert pv-bbox-edge" style="left:5%;top:70%;width:30%;height:22%;border-color:#F5BE5E;">
+                      <span class="pv-bbox-label" style="background:#F5BE5E;color:#000;font-weight:700;">⚠ Edge Gap (+3.2cm)</span>
+                    </div>
+
+                    <!-- Confidence scores / Quality Metrics -->
+                    <div class="pv-scores">
+                      <div class="pv-score"><span class="pv-score-key">Pass compliance</span><div class="pv-score-track"><div class="pv-score-fill" style="width:96%;background:#3ECFA0;"></div></div><span class="pv-score-val">0.96</span></div>
+                      <div class="pv-score"><span class="pv-score-key">Mat uniformity</span><div class="pv-score-track"><div class="pv-score-fill" style="width:92%;background:#3ECFA0;"></div></div><span class="pv-score-val">0.92</span></div>
+                      <div class="pv-score"><span class="pv-score-key">Thermal profile</span><div class="pv-score-track"><div class="pv-score-fill" style="width:97%;background:#3B82F6;"></div></div><span class="pv-score-val">0.97</span></div>
+                      <div class="pv-score"><span class="pv-score-key">Alignment accuracy</span><div class="pv-score-track"><div class="pv-score-fill" style="width:89%;background:#F5BE5E;"></div></div><span class="pv-score-val">0.89</span></div>
+                    </div>
+                  </div>
+                  <!-- Event sidebar -->
+                  <div class="pv-sidebar">
+                    <div class="pv-sidebar-head">
+                      <div class="photon-live-dot" style="width:5px;height:5px;background:#22D3EE;"></div>
+                      Live Vision Events
+                    </div>
+                    <div class="pv-event">
+                      <div class="pv-event-time">10:14:22</div>
+                      <div class="pv-event-msg ok">Pass 11/14 verified · Ch. 44+300</div>
+                    </div>
+                    <div class="pv-event">
+                      <div class="pv-event-time">10:13:55</div>
+                      <div class="pv-event-msg ok">Cement spread: uniform</div>
+                    </div>
+                    <div class="pv-event">
+                      <div class="pv-event-time">10:13:41</div>
+                      <div class="pv-event-msg alert">⚠ Lane gap Ch. 43+800</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -3103,22 +3756,109 @@ window.LOGOS = {
 
         <!-- STEP 2 — Cortex -->
         <div class="pss-step" data-product="2">
-          <div class="pss-vis" style="background:#0A1020;">
-            <div class="pr-vis-img"><img src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="" aria-hidden="true" onload="this.classList.add('loaded')"/></div>
-            <div class="pr-vis-overlay"></div>
-            <div class="pr-vis-widget" style="padding:2rem;">
-              <div class="conf-shell">
-                <div class="conf-topbar"><div class="conf-title">Configurator<small>Shift Planning · FuraGems · Dec 2023</small></div><div class="conf-topbar-actions"><span class="conf-btn-sm">Report</span><span class="conf-btn-sm">Task</span></div></div>
-                <div class="conf-counts"><div class="conf-count-chip"><div class="conf-count-n">14</div><div class="conf-count-l">Total Assets</div></div><div class="conf-count-chip"><div class="conf-count-n">4</div><div class="conf-count-l">Excavators</div></div><div class="conf-count-chip conf-chip-active"><div class="conf-count-n">6</div><div class="conf-count-l">Tippers</div></div><div class="conf-count-chip"><div class="conf-count-n">8</div><div class="conf-count-l">Auxiliary</div></div></div>
-                <div class="conf-trip-row"><span class="conf-trip-label">Trip Details :</span><div class="conf-tabs"><span class="conf-tab conf-tab-active">Mining</span><span class="conf-tab">Plant Load</span><span class="conf-tab">Re-claim</span></div></div>
-                <div class="conf-alloc">
-                  <div class="conf-alloc-row"><div class="conf-alloc-label"><span class="conf-alloc-ico">ðŸ¦¾</span><span>Excavator Allocated</span></div><div class="conf-alloc-num">5</div><div class="conf-alloc-icons"><span class="conf-ico-unit conf-ico-exc">E</span><span class="conf-ico-unit conf-ico-exc">E</span><span class="conf-ico-unit conf-ico-exc">E</span><span class="conf-ico-unit conf-ico-exc">E</span><span class="conf-ico-unit conf-ico-exc">E</span></div></div>
-                  <div class="conf-alloc-row"><div class="conf-alloc-label"><span class="conf-alloc-ico">ðŸš›</span><span>Tipper Allocated</span></div><div class="conf-alloc-num">7</div><div class="conf-alloc-icons"><span class="conf-ico-unit conf-ico-tip">T</span><span class="conf-ico-unit conf-ico-tip">T</span><span class="conf-ico-unit conf-ico-tip">T</span><span class="conf-ico-unit conf-ico-tip">T</span><span class="conf-ico-unit conf-ico-tip">T</span><span class="conf-ico-unit conf-ico-tip">T</span><span class="conf-ico-unit conf-ico-tip">T</span></div></div>
+          <div class="pss-vis" style="background:#0A1020; padding:1rem; display:flex; align-items:center; justify-content:center;">
+            <div class="cortex-container-simple">
+              <!-- Left side: Animated SVG Knowledge Graph -->
+              <div style="display:flex; flex-direction:column; gap:0.5rem; width:100%; overflow:hidden;">
+                <div style="font-family:var(--display); font-size:10px; font-weight:700; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.08em; padding-left:4px;">Cortex Knowledge Graph Linkage</div>
+                <svg viewBox="0 0 400 300" class="cortex-graph-svg" style="width:100%; height:275px; display:block;">
+                  <defs>
+                    <filter id="cx-glow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="5" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  
+                  <!-- Connections -->
+                  <path id="path-boson" d="M 60 90 L 190 145" stroke="rgba(46,77,234,0.25)" stroke-width="1.5" fill="none" />
+                  <path id="path-photon" d="M 60 210 L 190 155" stroke="rgba(34,211,238,0.25)" stroke-width="1.5" fill="none" />
+                  <path id="path-boq" d="M 210 145 L 330 90" stroke="rgba(16,185,129,0.25)" stroke-width="1.5" fill="none" />
+                  <path id="path-kpi" d="M 210 150 L 330 150" stroke="rgba(46,77,234,0.25)" stroke-width="1.5" fill="none" />
+                  <path id="path-alert" d="M 210 155 L 330 210" stroke="rgba(245,158,11,0.25)" stroke-width="1.5" fill="none" />
+                  
+                  <!-- Glowing Flow Packets -->
+                  <circle r="3" fill="#2E4DEA">
+                    <animateMotion dur="2.5s" repeatCount="indefinite" path="M 60 90 L 190 145" keyTimes="0; 1" keySplines="0.4 0 0.2 1" calcMode="spline" />
+                  </circle>
+                  <circle r="3" fill="#22D3EE">
+                    <animateMotion dur="2.2s" repeatCount="indefinite" path="M 60 210 L 190 155" keyTimes="0; 1" keySplines="0.4 0 0.2 1" calcMode="spline" />
+                  </circle>
+                  <circle r="3" fill="#10B981">
+                    <animateMotion dur="3s" begin="0.6s" repeatCount="indefinite" path="M 210 145 L 330 90" keyTimes="0; 1" keySplines="0.4 0 0.2 1" calcMode="spline" />
+                  </circle>
+                  <circle r="3" fill="#2E4DEA">
+                    <animateMotion dur="2.8s" begin="0.3s" repeatCount="indefinite" path="M 210 150 L 330 150" keyTimes="0; 1" keySplines="0.4 0 0.2 1" calcMode="spline" />
+                  </circle>
+                  <circle r="3" fill="#F59E0B">
+                    <animateMotion dur="3.5s" begin="0.9s" repeatCount="indefinite" path="M 210 155 L 330 210" keyTimes="0; 1" keySplines="0.4 0 0.2 1" calcMode="spline" />
+                  </circle>
+                  
+                  <!-- Nodes -->
+                  <g class="cx-node">
+                    <circle cx="60" cy="90" r="8" fill="rgba(46,77,234,0.12)" stroke="#2E4DEA" stroke-width="1.5" />
+                    <circle cx="60" cy="90" r="3" fill="#2E4DEA" />
+                    <text x="60" y="74" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="7.5" font-family="var(--display)" font-weight="700">BOSON IoT DATA</text>
+                  </g>
+                  <g class="cx-node">
+                    <circle cx="60" cy="210" r="8" fill="rgba(34,211,238,0.12)" stroke="#22D3EE" stroke-width="1.5" />
+                    <circle cx="60" cy="210" r="3" fill="#22D3EE" />
+                    <text x="60" y="226" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="7.5" font-family="var(--display)" font-weight="700">PHOTON VISION</text>
+                  </g>
+                  <g class="cx-node">
+                    <circle cx="200" cy="150" r="14" fill="rgba(16,185,129,0.1)" stroke="#10B981" stroke-width="1.5" filter="url(#cx-glow)" />
+                    <circle cx="200" cy="150" r="5" fill="#10B981" />
+                    <text x="200" y="129" text-anchor="middle" fill="#10B981" font-size="8.5" font-family="var(--display)" font-weight="800">CORTEX AI MODEL</text>
+                  </g>
+                  <g class="cx-node">
+                    <circle cx="330" cy="90" r="8" fill="rgba(16,185,129,0.12)" stroke="#10B981" stroke-width="1.5" />
+                    <circle cx="330" cy="90" r="3" fill="#10B981" />
+                    <text x="330" y="74" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="7.5" font-family="var(--display)" font-weight="700">BOQ LEDGER</text>
+                  </g>
+                  <g class="cx-node">
+                    <circle cx="330" cy="150" r="8" fill="rgba(46,77,234,0.12)" stroke="#2E4DEA" stroke-width="1.5" />
+                    <circle cx="330" cy="150" r="3" fill="#2E4DEA" />
+                    <text x="330" y="139" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="7.5" font-family="var(--display)" font-weight="700">REPORTS &amp; KPI</text>
+                  </g>
+                  <g class="cx-node">
+                    <circle cx="330" cy="210" r="8" fill="rgba(245,158,11,0.12)" stroke="#F59E0B" stroke-width="1.5" />
+                    <circle cx="330" cy="210" r="3" fill="#F59E0B" class="cx-alert-node-pulse" />
+                    <text x="330" y="226" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="7.5" font-family="var(--display)" font-weight="700">ANOMALY ALERTS</text>
+                  </g>
+                </svg>
+              </div>
+
+              <!-- Right side: Boson-type Cards -->
+              <div class="cortex-sources">
+                <div class="cortex-source-card">
+                  <div class="boson-source-badge" style="background:#10B981"></div>
+                  <div class="boson-source-text">
+                    <span class="boson-source-name">94.2% Compliance</span>
+                    <span class="boson-source-type">Quality Target Verified</span>
+                  </div>
                 </div>
-                <div class="conf-asset-list">
-                  <div class="conf-asset-head"><span>Assets on Shift</span></div>
-                  <div class="conf-asset-item"><div class="conf-asset-icon">ðŸš›</div><div class="conf-asset-info"><div class="conf-asset-name">Tipper Truck 231</div><div class="conf-asset-sub">FuraGems/Admin · <span style="color:#3ECFA0">â—</span> Active</div></div><div class="conf-asset-right"><span class="conf-asset-type">Type 2</span></div></div>
-                  <div class="conf-asset-item"><div class="conf-asset-icon">ðŸš›</div><div class="conf-asset-info"><div class="conf-asset-name">Tipper Truck 034</div><div class="conf-asset-sub">FuraGems/Admin · <span style="color:#F5BE5E">â—</span> On Route</div></div><div class="conf-asset-right"><span class="conf-asset-type">Type 1</span></div></div>
+                <div class="cortex-source-card">
+                  <div class="boson-source-badge" style="background:#2E4DEA"></div>
+                  <div class="boson-source-text">
+                    <span class="boson-source-name">₹82 Cr Verified</span>
+                    <span class="boson-source-type">BOQ Billing Ledger</span>
+                  </div>
+                </div>
+                <div class="cortex-source-card">
+                  <div class="boson-source-badge" style="background:#22D3EE"></div>
+                  <div class="boson-source-text">
+                    <span class="boson-source-name">92% Confidence</span>
+                    <span class="boson-source-type">Risk &amp; Delay Forecast</span>
+                  </div>
+                </div>
+                <div class="cortex-source-card">
+                  <div class="boson-source-badge" style="background:#F59E0B"></div>
+                  <div class="boson-source-text">
+                    <span class="boson-source-name">1 Active Alert</span>
+                    <span class="boson-source-type">Compaction Non-conformance</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -3305,15 +4045,103 @@ window.LOGOS = {
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="cta-inner wrap">
-    <span class="cta-kicker">The next move is yours</span>
-    <h2 class="cta-h">Every project that runs without<br>Cognecto is <span class="blue">generating risk</span><br>instead of <span class="blue">intelligence</span>.</h2>
-    <p class="cta-sub">Governments use Cognecto to make infrastructure accountable. Operators use it to eliminate ambiguity. Investors use it to see what is actually happening on the ground. See it live on your asset class — in a 30-minute session.</p>
-    <div class="cta-btns">
-      <a href="#" class="btn-hero-primary">Request a demo</a>
-      <a href="#" class="btn-cta-ghost">Talk to our team</a>
+<!-- CTA / DEMO REQUEST -->
+<section class="cta-section" id="demo-section">
+  <div class="cta-layout">
+    <!-- Left side: Value props -->
+    <div class="cta-info">
+      <span class="cta-kicker">Get Started Today</span>
+      <h2 class="cta-h">Deploy Cognecto on your<br>project in <span class="blue">7 Days</span>.</h2>
+      <p class="cta-sub">Join leading operators and government agencies using Cognecto's automated intelligence platform to de-risk delivery, automate contract compliance, and track assets in real time.</p>
+      
+      <div class="cta-bullets" style="margin-top:0.5rem;">
+        <div class="cta-bullet">
+          <div class="cta-bullet-check">✓</div>
+          <div class="cta-bullet-text"><strong>Zero Hardware Lock-in:</strong> Compatible with existing sensors, CCTV feeds, and operator smartphones.</div>
+        </div>
+        <div class="cta-bullet" style="margin-top:0.25rem;">
+          <div class="cta-bullet-check">✓</div>
+          <div class="cta-bullet-text"><strong>Ready to Scale:</strong> Off-the-shelf support for Highways, Open-Cast Mining, and Water Networks.</div>
+        </div>
+        <div class="cta-bullet" style="margin-top:0.25rem;">
+          <div class="cta-bullet-check">✓</div>
+          <div class="cta-bullet-text"><strong>Enterprise Security:</strong> ISO 27001 certified architecture with end-to-end data encryption.</div>
+        </div>
+      </div>
+      
+      <!-- Direct Contact info -->
+      <div class="cta-direct-contact" style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); font-family: var(--display); font-size: 13px; color: rgba(255,255,255,0.7); display: flex; flex-wrap: wrap; gap: 1.25rem;">
+        <div>
+          <span style="display:block; font-size:10px; text-transform:uppercase; letter-spacing:0.05em; color:var(--blue); font-weight:700;">Direct Phone</span>
+          <a href="tel:+919997310261" style="font-weight:700; color:white; text-decoration:none; display:flex; align-items:center; gap:6px; margin-top:2px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91 999 731 0261
+          </a>
+        </div>
+        <div>
+          <span style="display:block; font-size:10px; text-transform:uppercase; letter-spacing:0.05em; color:var(--blue); font-weight:700;">Direct Email</span>
+          <a href="mailto:info@cognecto.com" style="font-weight:700; color:white; text-decoration:none; display:flex; align-items:center; gap:6px; margin-top:2px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue);"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@cognecto.com
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right side: B2B Request Form -->
+    <div class="cta-form-card">
+      <form id="b2b-demo-form" onsubmit="handleDemoSubmit(event)">
+        <div class="cta-form-title">Request a Live Demo</div>
+        <div class="cta-form-sub">Fill out the form below and our engineering team will set up a sandbox model tailored to your assets.</div>
+        
+        <div class="cta-form-row">
+          <div class="cta-form-group">
+            <label class="cta-label" for="demo-name">Full Name</label>
+            <input type="text" id="demo-name" class="cta-input" placeholder="e.g. Sarah Jenkins" required />
+          </div>
+          <div class="cta-form-group">
+            <label class="cta-label" for="demo-email">Work Email</label>
+            <input type="email" id="demo-email" class="cta-input" placeholder="s.jenkins@company.com" required />
+          </div>
+        </div>
+        
+        <div class="cta-form-row" style="margin-top:0.2rem;">
+          <div class="cta-form-group">
+            <label class="cta-label" for="demo-company">Company</label>
+            <input type="text" id="demo-company" class="cta-input" placeholder="e.g. InfraCorp Ltd" required />
+          </div>
+          <div class="cta-form-group">
+            <label class="cta-label" for="demo-phone">Phone Number</label>
+            <input type="tel" id="demo-phone" class="cta-input" placeholder="e.g. +91 999 999 9999" required />
+          </div>
+        </div>
+        
+        <div class="cta-form-group" style="margin-top:0.2rem;">
+          <label class="cta-label" for="demo-usecase">Primary Asset Class</label>
+          <select id="demo-usecase" class="cta-select" required style="width:100%;">
+            <option value="" disabled selected style="color:rgba(255,255,255,0.4);">Select industry...</option>
+            <option value="highways">Highways & Road Projects</option>
+            <option value="mining">Open-Cast Mining</option>
+            <option value="water">Industrial Water Networks</option>
+            <option value="ehs">Industrial Safety & EHS</option>
+            <option value="other">Other Infrastructure</option>
+          </select>
+        </div>
+        
+        <div class="cta-form-group" style="margin-top:0.2rem;">
+          <label class="cta-label" for="demo-notes">Project Scale or Requirements (Optional)</label>
+          <textarea id="demo-notes" class="cta-textarea" rows="2" placeholder="Tell us about the project size, location, or challenges..."></textarea>
+        </div>
+        
+        <button type="submit" class="cta-submit-btn" id="demo-submit-btn" style="margin-top:0.6rem;">Request Custom Demo →</button>
+      </form>
+      
+      <!-- Success Screen State -->
+      <div class="cta-submit-success" id="demo-success-screen">
+        <div class="success-icon-wrap">✓</div>
+        <div class="cta-success-h">Request Received!</div>
+        <div class="cta-success-p">Thank you. An integration engineer will contact you at the email provided within 24 hours to schedule your custom workspace preview.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -3343,7 +4171,7 @@ window.LOGOS = {
     </div>
     <div class="foot-bottom">
       <span>© 2026 Cognecto · Bengaluru, India</span>
-      <span><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">info@cognecto.com</a></span>
+      <span><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="mailto:info@cognecto.com">info@cognecto.com</a> &nbsp;·&nbsp; <a href="tel:+919997310261">+91 999 731 0261</a></span>
     </div>
   </div>
 </footer>
@@ -3646,6 +4474,88 @@ window.addEventListener('resize', function() {
     });
   });
 })();
+
+// B2B Contact Form submission handler
+function handleDemoSubmit(event) {
+  event.preventDefault();
+  var form = document.getElementById('b2b-demo-form');
+  var btn = document.getElementById('demo-submit-btn');
+  var successScreen = document.getElementById('demo-success-screen');
+  
+  if (!form || !btn || !successScreen) return;
+  
+  btn.disabled = true;
+  btn.textContent = "Submitting Lead...";
+  
+  // Disable form inputs
+  var inputs = form.querySelectorAll('input, select, textarea');
+  inputs.forEach(function(el) {
+    el.disabled = true;
+  });
+  
+  // Extract values
+  var name = document.getElementById('demo-name').value;
+  var email = document.getElementById('demo-email').value;
+  var company = document.getElementById('demo-company').value;
+  var phone = document.getElementById('demo-phone').value;
+  var usecase = document.getElementById('demo-usecase').value;
+  var notes = document.getElementById('demo-notes').value;
+  
+  // Prepare payload
+  var payload = {
+    name: name,
+    email: email,
+    company: company,
+    phone: phone,
+    usecase: usecase,
+    notes: notes
+  };
+  
+  // Submit via fetch to the API
+  fetch('http://localhost:5000/api/demo-request', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  })
+  .then(function(response) {
+    if (response.ok) {
+      return response.json();
+    } else {
+      return response.json().then(function(err) {
+        throw new Error(err.message || 'Server error');
+      });
+    }
+  })
+  .then(function(data) {
+    form.style.display = 'none';
+    successScreen.style.display = 'flex';
+  })
+  .catch(function(error) {
+    console.error('Error submitting form:', error);
+    // Display error message to user
+    var errElement = document.getElementById('demo-error-msg');
+    if (!errElement) {
+      errElement = document.createElement('div');
+      errElement.id = 'demo-error-msg';
+      errElement.style.color = '#EF4444';
+      errElement.style.fontSize = '12.5px';
+      errElement.style.marginTop = '0.75rem';
+      errElement.style.textAlign = 'center';
+      errElement.style.fontFamily = 'var(--display)';
+      form.appendChild(errElement);
+    }
+    errElement.textContent = "Submission failed: " + error.message + ". Please verify SMTP setup or check backend logs.";
+    
+    // Re-enable form fields
+    btn.disabled = false;
+    btn.textContent = "Request Custom Demo →";
+    inputs.forEach(function(el) {
+      el.disabled = false;
+    });
+  });
+}
 </script>
 </body>
 </html>

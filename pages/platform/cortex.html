@@ -1,6 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" href="../../favicon.png">
+
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Cortex — Decision Intelligence Platform | Cognecto</title>
@@ -1668,6 +1670,95 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
     height: 320px !important;
   }
 }
+
+/* Cortex Simple Dashboard & Graph styling */
+.cortex-container-simple {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  background: #0A1020;
+  padding: 1.5rem;
+  align-items: center;
+  margin: 0 auto;
+}
+.cortex-graph-svg {
+  background: #070B16;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.cx-node circle {
+  transition: transform 0.3s;
+}
+.cx-node:hover circle {
+  transform: scale(1.1);
+}
+@keyframes pulse-dot {
+  0% { r: 3; opacity: 1; }
+  50% { r: 6; opacity: 0.4; }
+  100% { r: 3; opacity: 1; }
+}
+.cx-alert-node-pulse {
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+.cortex-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+.cortex-source-card {
+  background: #283046;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 12px 14px 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  min-height: 57px;
+}
+.boson-source-badge {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.boson-source-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.boson-source-name {
+  font-family: var(--display);
+  font-size: 11px;
+  font-weight: 800;
+  color: white;
+}
+.boson-source-type {
+  font-family: var(--display);
+  font-size: 9.5px;
+  color: rgba(255,255,255,0.4);
+}
+
+@media (max-width: 768px) {
+  .cortex-container-simple {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .cortex-sources {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .cortex-source-card {
+    min-height: 50px;
+    padding: 10px 12px;
+  }
+}
 </style>
 <style>
 /* --- MOBILE RESPONSIVENESS FIXES --- */
@@ -2334,7 +2425,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
     <h1>Every signal becomes a <span class="green">decision</span>.<br>Every decision becomes <span class="green">evidence</span>.</h1>
     <p class="hero-sub">Cortex is the operating layer where field data becomes intelligence. IoT signals from Boson and vision events from Photon flow into a structured knowledge graph — codifying the rules of road construction, mining operations, and water networks into verified, audit-ready outcomes that governments trust and operators act on.</p>
     <div class="hero-btns">
-      <a href="#cortex-cta" class="btn-hero-primary">Request a demo</a>
+      <a href="../../index.html#demo-section" class="btn-hero-primary">Request a demo</a>
       <a href="#cortex-how" class="btn-hero-secondary">See how it works</a>
     </div>
   </div>
@@ -2344,40 +2435,121 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
         <div class="hsd hsd1"></div><div class="hsd hsd2"></div><div class="hsd hsd3"></div>
         <div class="hs-url">app.cognecto.com · Cortex · Project Dashboard · UPIRDA Expressway Corridor</div>
       </div>
-      <!-- Cortex dashboard UI — reuse existing cortex-shell from index -->
-      <div class="cortex-shell">
-        <div class="cx-sidebar">
-          <div class="cx-brand">
-            <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15.5" fill="#2E4DEA"/><ellipse cx="16" cy="8" rx="5" ry="5.8" fill="white" opacity="0.95"/><polygon points="11,11 21,11 16,18" fill="white" opacity="0.95"/><ellipse cx="7.5" cy="21" rx="5" ry="5.8" transform="rotate(120,7.5,21)" fill="white" opacity="0.8"/><polygon points="4.5,14 10.5,24 16,18" fill="white" opacity="0.8"/><ellipse cx="24.5" cy="21" rx="5" ry="5.8" transform="rotate(-120,24.5,21)" fill="white" opacity="0.65"/><polygon points="21.5,24 27.5,14 16,18" fill="white" opacity="0.65"/></svg>
-            <span>cognecto</span>
-          </div>
-          <div class="cx-proj-label">Operations Manager</div>
-          <nav class="cx-nav">
-            <a href="#" class="cx-link active"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="4" height="4" rx="0.7" fill="currentColor"/><rect x="7" y="1" width="4" height="4" rx="0.7" fill="currentColor" opacity="0.5"/><rect x="1" y="7" width="4" height="4" rx="0.7" fill="currentColor" opacity="0.5"/><rect x="7" y="7" width="4" height="4" rx="0.7" fill="currentColor"/></svg>Dashboard</a>
-            <a href="#" class="cx-link"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="2" rx="0.6" fill="currentColor" opacity="0.7"/><rect x="1" y="5" width="7" height="2" rx="0.6" fill="currentColor" opacity="0.4"/><rect x="1" y="9" width="9" height="2" rx="0.6" fill="currentColor" opacity="0.4"/></svg>BOQ Verification</a>
-            <a href="#" class="cx-link"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.7"/><path d="M6 3v3.5l2 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/></svg>Milestones</a>
-            <a href="#" class="cx-link"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L5 6l2.5 2.5L9 5l1.5 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/></svg>Knowledge Graph</a>
-            <a href="#" class="cx-link"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.7"/><path d="M2 11c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/></svg>Co-pilot</a>
-            <a href="#" class="cx-link"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="7" width="2" height="4" rx="0.5" fill="currentColor" opacity="0.7"/><rect x="5" y="4" width="2" height="7" rx="0.5" fill="currentColor" opacity="0.7"/><rect x="9" y="2" width="2" height="9" rx="0.5" fill="currentColor" opacity="0.7"/></svg>Reports &amp; Audit</a>
-            <a href="#" class="cx-link"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1l1.3 3.7H11l-3 2.1 1 3.2L6 8l-3 2 1-3.2L1 4.7h3.7z" fill="currentColor" opacity="0.6"/></svg>Settings</a>
-          </nav>
-          <div class="cx-sidebar-foot"><div class="cx-avatar">U</div><div class="cx-uname">UPIRDA · Admin</div></div>
+      <!-- Cortex simple container - shows how Boson/Photon feed data to Cortex and the outputs -->
+      <div class="cortex-container-simple" style="border-radius: 0 0 14px 14px; border-top: none;">
+        <!-- Left side: Animated SVG Knowledge Graph -->
+        <div style="display:flex; flex-direction:column; gap:0.5rem; width:100%; overflow:hidden;">
+          <div style="font-family:var(--display); font-size:10px; font-weight:700; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.08em; padding-left:4px;">Cortex Ingestion & Processing Pipeline</div>
+          <svg viewBox="0 0 400 300" class="cortex-graph-svg" style="width:100%; height:275px; display:block;">
+            <defs>
+              <filter id="cx-glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="5" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            
+            <!-- Connections -->
+            <path id="path-boson" d="M 80 90 L 190 145" stroke="rgba(46,77,234,0.3)" stroke-width="1.5" fill="none" />
+            <path id="path-photon" d="M 80 210 L 190 155" stroke="rgba(34,211,238,0.3)" stroke-width="1.5" fill="none" />
+            
+            <path id="path-perf" d="M 210 142 L 320 65" stroke="rgba(16,185,129,0.3)" stroke-width="1.5" fill="none" />
+            <path id="path-progress" d="M 210 147 L 320 120" stroke="rgba(34,211,238,0.3)" stroke-width="1.5" fill="none" />
+            <path id="path-boq" d="M 210 152 L 320 178" stroke="rgba(46,77,234,0.3)" stroke-width="1.5" fill="none" />
+            <path id="path-quality" d="M 210 157 L 320 235" stroke="rgba(245,158,11,0.3)" stroke-width="1.5" fill="none" />
+            
+            <!-- Glowing Flow Packets -->
+            <circle r="3" fill="#2E4DEA">
+              <animateMotion dur="2.2s" repeatCount="indefinite" path="M 80 90 L 190 145" keyTimes="0; 1" keySplines="0.4 0 0.2 1" calcMode="spline" />
+            </circle>
+            <circle r="3" fill="#22D3EE">
+              <animateMotion dur="2.0s" repeatCount="indefinite" path="M 80 210 L 190 155" keyTimes="0; 1" keySplines="0.4 0 0.2 1" calcMode="spline" />
+            </circle>
+            
+            <circle r="3" fill="#10B981">
+              <animateMotion dur="2.5s" begin="0.2s" repeatCount="indefinite" path="M 210 142 L 320 65" keyTimes="0; 1" keySplines="0.4 0 0.2 1" calcMode="spline" />
+            </circle>
+            <circle r="3" fill="#22D3EE">
+              <animateMotion dur="2.7s" begin="0.5s" repeatCount="indefinite" path="M 210 147 L 320 120" keyTimes="0; 1" keySplines="0.4 0 0.2 1" calcMode="spline" />
+            </circle>
+            <circle r="3" fill="#2E4DEA">
+              <animateMotion dur="2.4s" begin="0.8s" repeatCount="indefinite" path="M 210 152 L 320 178" keyTimes="0; 1" keySplines="0.4 0 0.2 1" calcMode="spline" />
+            </circle>
+            <circle r="3" fill="#F59E0B">
+              <animateMotion dur="2.9s" begin="1.1s" repeatCount="indefinite" path="M 210 157 L 320 235" keyTimes="0; 1" keySplines="0.4 0 0.2 1" calcMode="spline" />
+            </circle>
+            
+            <!-- Nodes -->
+            <g class="cx-node">
+              <circle cx="80" cy="90" r="9" fill="rgba(46,77,234,0.15)" stroke="#2E4DEA" stroke-width="1.5" />
+              <circle cx="80" cy="90" r="3" fill="#2E4DEA" />
+              <text x="80" y="73" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="8.5" font-family="var(--display)" font-weight="700">BOSON (IoT Telemetry)</text>
+            </g>
+            <g class="cx-node">
+              <circle cx="80" cy="210" r="9" fill="rgba(34,211,238,0.15)" stroke="#22D3EE" stroke-width="1.5" />
+              <circle cx="80" cy="210" r="3" fill="#22D3EE" />
+              <text x="80" y="227" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="8.5" font-family="var(--display)" font-weight="700">PHOTON (Vision AI)</text>
+            </g>
+            <g class="cx-node">
+              <circle cx="200" cy="150" r="16" fill="rgba(16,185,129,0.15)" stroke="#10B981" stroke-width="2" filter="url(#cx-glow)" />
+              <circle cx="200" cy="150" r="6" fill="#10B981" />
+              <text x="200" y="127" text-anchor="middle" fill="#10B981" font-size="9" font-family="var(--display)" font-weight="800">CORTEX ENGINE</text>
+            </g>
+            
+            <g class="cx-node">
+              <circle cx="320" cy="65" r="9" fill="rgba(16,185,129,0.15)" stroke="#10B981" stroke-width="1.5" />
+              <circle cx="320" cy="65" r="3" fill="#10B981" />
+              <text x="320" y="50" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="8.5" font-family="var(--display)" font-weight="700">EQUIPMENT PERF.</text>
+            </g>
+            <g class="cx-node">
+              <circle cx="320" cy="120" r="9" fill="rgba(34,211,238,0.15)" stroke="#22D3EE" stroke-width="1.5" />
+              <circle cx="320" cy="120" r="3" fill="#22D3EE" />
+              <text x="320" y="105" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="8.5" font-family="var(--display)" font-weight="700">PROJECT PROGRESS</text>
+            </g>
+            <g class="cx-node">
+              <circle cx="320" cy="178" r="9" fill="rgba(46,77,234,0.15)" stroke="#2E4DEA" stroke-width="1.5" />
+              <circle cx="320" cy="178" r="3" fill="#2E4DEA" />
+              <text x="320" y="196" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="8.5" font-family="var(--display)" font-weight="700">BOQ BILLING LEDGER</text>
+            </g>
+            <g class="cx-node">
+              <circle cx="320" cy="235" r="9" fill="rgba(245,158,11,0.15)" stroke="#F59E0B" stroke-width="1.5" />
+              <circle cx="320" cy="235" r="3" fill="#F59E0B" class="cx-alert-node-pulse" />
+              <text x="320" y="253" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="8.5" font-family="var(--display)" font-weight="700">QUALITY COMPLIANCE</text>
+            </g>
+          </svg>
         </div>
-        <div class="cx-main">
-          <div class="cx-header">
-            <div><div class="cx-page-title">Project Dashboard — Expressway Corridor</div><div class="cx-breadcrumb">Cortex Knowledge Graph · Live intelligence across 14 active packages</div></div>
-            <div class="cx-date-chip">Last updated: 07 May 2026</div>
+
+        <!-- Right side: Custom Cards summarizing the outputs -->
+        <div class="cortex-sources">
+          <div class="cortex-source-card">
+            <div class="boson-source-badge" style="background:#10B981"></div>
+            <div class="boson-source-text">
+              <span class="boson-source-name">Equipment Performance</span>
+              <span class="boson-source-type">Duty cycles & idle telemetry processed</span>
+            </div>
           </div>
-          <div class="cx-kpi-row">
-            <div class="cx-kpi"><div class="cx-kpi-icon cx-kpi-blue"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" fill="white" opacity="0.9"/><rect x="8" y="1" width="5" height="5" rx="1" fill="white" opacity="0.5"/><rect x="1" y="8" width="5" height="5" rx="1" fill="white" opacity="0.5"/><rect x="8" y="8" width="5" height="5" rx="1" fill="white" opacity="0.9"/></svg></div><div class="cx-kpi-body"><div class="cx-kpi-num">14</div><div class="cx-kpi-lbl">Active Packages</div><div class="cx-kpi-sub">3 packages on alert</div></div></div>
-            <div class="cx-kpi"><div class="cx-kpi-icon cx-kpi-grn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="8" width="2" height="4" rx="0.5" fill="white"/><rect x="6" y="5" width="2" height="7" rx="0.5" fill="white"/><rect x="10" y="2" width="2" height="10" rx="0.5" fill="white" opacity="0.6"/></svg></div><div class="cx-kpi-body"><div class="cx-kpi-num">₹8,420 Cr</div><div class="cx-kpi-lbl">Total Contract Value</div><div class="cx-kpi-sub">₹1,240 Cr verified</div></div></div>
-            <div class="cx-kpi"><div class="cx-kpi-icon cx-kpi-amb"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="white" stroke-width="1.5" fill="none"/><path d="M7 4v3.2l2 2" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg></div><div class="cx-kpi-body"><div class="cx-kpi-num">91%</div><div class="cx-kpi-lbl">BOQ Accuracy</div><div class="cx-kpi-sub cx-kpi-up">â†‘ 6% vs baseline</div></div></div>
-            <div class="cx-kpi"><div class="cx-kpi-icon cx-kpi-teal"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2l1.3 3.7H12l-3 2.1 1 3.2L7 9l-3 2 1-3.2L2 5.7h3.7z" fill="white" opacity="0.9"/></svg></div><div class="cx-kpi-body"><div class="cx-kpi-num">82%</div><div class="cx-kpi-lbl">Quality Score</div><div class="cx-kpi-sub cx-kpi-up">â†‘ 8% this month</div></div></div>
+          <div class="cortex-source-card">
+            <div class="boson-source-badge" style="background:#22D3EE"></div>
+            <div class="boson-source-text">
+              <span class="boson-source-name">Project Progress</span>
+              <span class="boson-source-type">Chainage mapping & milestone triggers</span>
+            </div>
           </div>
-          <div class="cx-grid">
-            <div class="cx-widget"><div class="cx-whead"><span class="cx-wicon">ðŸ“‹</span><span class="cx-wtitle">BOQ Verification</span><a class="cx-wlink">→</a></div><div class="cx-boq-row"><span>Contract Value</span><strong>₹8,420 Cr</strong></div><div class="cx-boq-row cx-boq-grn"><span>AI-Verified</span><strong>₹1,240 Cr</strong></div><div class="cx-boq-row cx-boq-red"><span>Disputed Items</span><strong>3 flagged</strong></div><div class="cx-boq-warn">âš  Package 7 — compaction variance -6.8%</div><div class="cx-boq-bar-wrap"><div class="cx-boq-bar" style="width:14.7%"></div></div><div class="cx-boq-caption">₹1,240 Cr of ₹8,420 Cr verified</div></div>
-            <div class="cx-widget"><div class="cx-whead"><span class="cx-wicon">ðŸ§ </span><span class="cx-wtitle">Knowledge Graph Events</span><a class="cx-wlink">→</a></div><div class="cx-ms-summary"><div class="cx-ms-chip cx-ms-comp">847<br/><span>Verified</span></div><div class="cx-ms-chip cx-ms-prog">124<br/><span>Pending</span></div><div class="cx-ms-chip cx-ms-del">12<br/><span>Disputed</span></div></div><div class="cx-ms-item"><div class="cx-ms-dot cx-ms-dot-g"></div><div class="cx-ms-text"><strong>Compaction pass 14/14</strong><div class="cx-ms-meta">Ch. 44+300 · Layer 3B · Boson verified</div></div><span class="cx-ms-tag cx-tag-done">DONE</span></div><div class="cx-ms-item"><div class="cx-ms-dot cx-ms-dot-b"></div><div class="cx-ms-text"><strong>Cement spread — Ch. 46+100</strong><div class="cx-ms-meta">Photon flagged 8.2% gap — review pending</div></div><span class="cx-ms-tag cx-tag-prog">REVIEW</span></div><div class="cx-ms-item"><div class="cx-ms-dot cx-ms-dot-a"></div><div class="cx-ms-text"><strong>Package 9 — BOQ line 14</strong><div class="cx-ms-meta">Earthwork variance raised for arbitration</div></div><span class="cx-ms-tag cx-tag-del">DISPUTE</span></div></div>
-            <div class="cx-widget"><div class="cx-whead"><span class="cx-wicon">ðŸ“¡</span><span class="cx-wtitle">Live Events</span><div class="live-tag" style="margin-left:auto;font-size:8px;">Live</div></div><div class="cx-events"><div class="cx-event"><div class="cx-ev-dot g"></div><div class="cx-ev-body"><strong>BOQ Item Cleared — ₹6.8 Cr</strong><div class="cx-ev-detail">Earthwork Ch. 40–42km · Package 3 · Auto-triggered</div></div><span class="cx-ev-time">15:04</span></div><div class="cx-event"><div class="cx-ev-dot a"></div><div class="cx-ev-body"><strong>Co-pilot Alert — Delay Risk</strong><div class="cx-ev-detail">Package 7 · Monsoon window closes in 9 days</div></div><span class="cx-ev-time">14:48</span></div><div class="cx-event"><div class="cx-ev-dot r"></div><div class="cx-ev-body"><strong>Compaction Variance — Non-conformance</strong><div class="cx-ev-detail">Ch. 47+100 · Layer 2A · 6.8% below spec</div></div><span class="cx-ev-time">14:31</span></div><div class="cx-event"><div class="cx-ev-dot g"></div><div class="cx-ev-body"><strong>Milestone Cleared — Foundation</strong><div class="cx-ev-detail">Package 11 · Ch. 0–3.5km · 100% verified</div></div><span class="cx-ev-time">14:15</span></div></div></div>
+          <div class="cortex-source-card">
+            <div class="boson-source-badge" style="background:#2E4DEA"></div>
+            <div class="boson-source-text">
+              <span class="boson-source-name">BOQ Billing Ledger</span>
+              <span class="boson-source-type">Auto-verified layers against specifications</span>
+            </div>
+          </div>
+          <div class="cortex-source-card">
+            <div class="boson-source-badge" style="background:#F59E0B"></div>
+            <div class="boson-source-text">
+              <span class="boson-source-name">Quality Compliance</span>
+              <span class="boson-source-type">Non-conformance detection and alerts</span>
+            </div>
           </div>
         </div>
       </div>
@@ -2457,7 +2629,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
   <div class="wrap">
     <div style="display:grid;grid-template-columns:1fr auto;align-items:end;gap:2rem;margin-bottom:1rem;padding-bottom:1.5rem;border-bottom:0.5px solid var(--rule);">
       <div><span class="s-eyebrow-green">What Cortex does</span><h2 class="s-h2">Six capabilities.<br><span style="color:var(--cortex);">One operating layer</span> for physical infrastructure.</h2></div>
-      <a href="#cortex-cta" class="btn-cortex-sm">Request a demo →</a>
+      <a href="../../index.html#demo-section" class="btn-cortex-sm">Request a demo →</a>
     </div>
     <div class="cap-grid">
       <div class="cap-card">
@@ -2682,7 +2854,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
         <span class="s-eyebrow-green">Common questions</span>
         <h2 class="s-h2">Everything you need<br>to <span style="color:var(--cortex);">evaluate Cortex.</span></h2>
         <p class="s-body" style="margin-top:1rem;">Don't see your question? Our team typically responds within 2 hours.</p>
-        <a href="#cortex-cta" class="btn-cortex" style="margin-top:1.5rem;display:inline-flex;font-size:14px;padding:0.75rem 1.5rem;">Request a demo →</a>
+        <a href="../../index.html#demo-section" class="btn-cortex" style="margin-top:1.5rem;display:inline-flex;font-size:14px;padding:0.75rem 1.5rem;">Request a demo →</a>
       </div>
       <div class="faq-list">
         <div class="faq-item open">
@@ -2721,7 +2893,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
     <h2 class="cta-h">The data exists.<br><span style="color:#4ade80;">Cortex</span> makes it<br>work for you.</h2>
     <p class="cta-sub" style="color:rgba(255,255,255,0.55);max-width:520px;margin:0 auto 2rem;">Connect Boson and Photon — or bring your existing field data. Cortex configures the knowledge graph, loads the domain models, and has you live within a week. Every decision traceable. Every outcome verified.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="#" class="btn-cortex">Request a demo →</a>
+      <a href="../../index.html#demo-section" class="btn-cortex">Request a demo →</a>
       <a href="#" style="font-family:var(--display);font-size:15px;font-weight:600;color:rgba(255,255,255,0.75);padding:0.85rem 2rem;border:1px solid rgba(255,255,255,0.2);border-radius:6px;transition:all 0.15s;">Download the platform brief</a>
     </div>
     <div class="trust-chips">

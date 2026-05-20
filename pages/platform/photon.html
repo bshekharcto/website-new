@@ -1,6 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" href="../../favicon.png">
+
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Photon — Vision AI & Safety Monitoring | Cognecto</title>
@@ -2356,7 +2358,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
       <h1>Your cameras already see the site.<br>Photon understands <span class="photon-blue">what it means.</span></h1>
       <p class="hero-sub">Photon is Cognecto's visual intelligence layer — connecting to your existing cameras to verify compaction coverage, detect cement spread anomalies, classify road defects, measure mine loading efficiency, and monitor site safety. All processed locally at the edge. Trained on 25,000 km of roads and 20+ mines across India, Australia, and Africa. Active in 7 days.</p>
       <div class="hero-btns">
-        <a href="#photon-cta" class="btn-photon">Request a demo →</a>
+        <a href="../../index.html#demo-section" class="btn-photon">Request a demo →</a>
         <a href="#photon-how" class="btn-nav" style="padding:0.75rem 1.75rem;font-size:15px;border:1px solid var(--rule-2);">See how it works</a>
       </div>
 
@@ -2376,12 +2378,15 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
           <div class="photon-viewport">
             <!-- Camera feed -->
             <div class="pv-feed" style="position:relative; background:#121620; overflow:hidden;">
-              <video class="pv-feed-video" autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover; display:block; opacity:0.8; filter: brightness(0.6) saturate(0.85);">
+              <!-- Local high-quality compaction image -->
+              <img class="pv-feed-img" src="../../assets/images/highway_during_construction_compaction.png" alt="Road Compaction Work Verification" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.8; filter: brightness(0.65) saturate(0.85); z-index: 1; display:block;"/>
+              
+              <!-- HTML5 Video playing roller over it, fallback to local image if error -->
+              <video class="pv-feed-video" autoplay muted loop playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.8; filter: brightness(0.6) saturate(0.85); z-index: 2;" poster="../../assets/images/highway_during_construction_compaction.png" onerror="this.remove()">
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-heavy-roller-packing-fresh-asphalt-42222-large.mp4" type="video/mp4">
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-road-construction-machinery-paving-asphalt-42221-large.mp4" type="video/mp4">
-                <img class="pv-feed-img" src="../../assets/images/highway_during_construction_compaction.png" alt="Road Compaction Work Verification"/>
               </video>
-              <div class="pv-scanlines"></div>
+              <div class="pv-scanlines" style="z-index: 3;"></div>
 
               <!-- Roller Compaction tracking (Green) -->
               <div class="pv-bbox pv-ok pv-bbox-roller" style="left:15%;top:20%;width:35%;height:50%;">
@@ -2514,7 +2519,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
         <span class="s-eyebrow-teal">What Photon sees — beyond safety</span>
         <h2 class="s-h2">Six use cases.<br><span class="photon-blue">Trained on 25,000 km of roads</span><br>and 20+ mines across 3 continents.</h2>
       </div>
-      <a href="#photon-cta" class="btn-photon">Request a demo →</a>
+      <a href="../../index.html#demo-section" class="btn-photon">Request a demo →</a>
     </div>
     <p style="font-family:var(--display);font-size:14px;color:var(--ink-2);line-height:1.7;max-width:72ch;margin-bottom:2.5rem;">Most Vision AI platforms stop at detecting people. Photon is trained on the specific visual signatures of infrastructure work — what a completed compaction pass looks like, what uneven cement spread looks like, what a loaded haul truck at 98% vs 60% capacity looks like. That specificity is the product of 25,000 km of road construction footage and real operational data from 20+ mines across India, Australia, and Africa.</p>
     <div class="cap-grid">
@@ -2816,7 +2821,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
         <span class="s-eyebrow-teal">Common questions</span>
         <h2 class="s-h2">Everything you need<br>to <span class="photon-blue">evaluate Photon.</span></h2>
         <p class="s-body" style="margin-top:1rem;">Don't see your question? Our team typically responds within 2 hours.</p>
-        <a href="#photon-cta" class="btn-photon" style="margin-top:1.5rem;display:inline-flex;">Request a demo →</a>
+        <a href="../../index.html#demo-section" class="btn-photon" style="margin-top:1.5rem;display:inline-flex;">Request a demo →</a>
       </div>
       <div class="faq-list">
         <div class="faq-item open">
@@ -2855,7 +2860,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
     <h2 class="cta-h">Your cameras are already<br><span style="color:#22D3EE;">collecting evidence.</span><br>Photon makes it count.</h2>
     <p class="cta-sub" style="color:rgba(255,255,255,0.55);max-width:520px;margin:0 auto 2rem;">Connect to your existing cameras. Plug in the edge gateway. Configure your site models — compaction, spread, defect, payload, or safety. Live within 7 days. No hardware purchase. No custom training. Intelligence that starts on day one.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="#" class="btn-photon">Request a demo →</a>
+      <a href="../../index.html#demo-section" class="btn-photon">Request a demo →</a>
       <a href="#" style="font-family:var(--display);font-size:15px;font-weight:600;color:rgba(255,255,255,0.75);padding:0.85rem 2rem;border:1px solid rgba(255,255,255,0.2);border-radius:6px;transition:all 0.15s;">Download the safety brief</a>
     </div>
     <div class="trust-chips">
