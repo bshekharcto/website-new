@@ -1693,12 +1693,48 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
     }
     
     /* 2. Multi-column layouts on mobile */
-    .css-wrap, .value-cards, .industry-grid, .pss-wrap, .cx-grid, .cx-kpi-row,
-    .metrics-card, .ls-grid, .mega-cap-grid, .mega-industry-grid, .customer-card, 
+        .css-wrap, .value-cards, .industry-grid, .pss-wrap,
+    .metrics-card, .ls-grid, .mega-cap-grid, .mega-industry-grid, .customer-card,
     .cc-results-grid, .css-results, .css-stats, .platform-head, .what-head, .cortex-shell {
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
+    }
+
+    /* Cortex Shell compact layout on mobile */
+    .cx-kpi-row {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.35rem !important;
+        width: 100% !important;
+    }
+    .cx-kpi {
+        padding: 0.45rem 0.55rem !important;
+    }
+    .cx-kpi-icon {
+        width: 24px !important;
+        height: 24px !important;
+    }
+    .cx-kpi-num {
+        font-size: 0.9rem !important;
+    }
+    .cx-kpi-lbl {
+        font-size: 7.5px !important;
+    }
+    .cx-kpi-sub {
+        display: none !important;
+    }
+    .cx-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.4rem !important;
+        width: 100% !important;
+    }
+    /* Hide less critical widgets on mobile to reduce hero height significantly */
+    .cx-grid > :nth-child(3),
+    .cx-grid > :nth-child(4),
+    .cx-grid > :nth-child(5) {
+        display: none !important;
     }
 
     [style*="grid-template-columns"] {
