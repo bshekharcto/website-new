@@ -1796,6 +1796,10 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
     height: 320px !important;
   }
 }
+.oem-logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 0.75rem; }
+.oem-logo-tile { background: white; border: 0.5px solid var(--rule); border-radius: 6px; height: 50px; display: flex; align-items: center; justify-content: center; padding: 0 1rem; transition: all 0.2s; text-align: center; }
+.oem-logo-tile:hover { border-color: var(--blue); box-shadow: 0 4px 12px rgba(14,27,53,0.08); transform: translateY(-2px); }
+.oem-logo-text { font-family: var(--display); font-weight: 800; font-size: 13.5px; color: var(--ink); letter-spacing: -0.02em; }
 </style>
 <style>
 /* --- MOBILE RESPONSIVENESS FIXES --- */
@@ -2129,7 +2133,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
                   </a>
 
                   <a href="../solutions/water.html" class="sind-card">
-                    <div class="sind-img" style="background-image:url('https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=360&h=240&fit=crop');"></div>
+                    <div class="sind-img" style="background-image:url('../../assets/images/water_meter_monitoring.png'); background-position: center; background-size: cover;"></div>
                     <div class="sind-body">
                       <div class="sind-title">Water Networks</div>
                       <div class="sind-sub">Pipeline monitoring, anomaly detection, predictive maintenance</div>
@@ -2480,6 +2484,15 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
           <a href="../solutions/mining.html">Open-Cast Mining</a>
           <a href="../solutions/water.html">Industrial Water Networks</a>
           <a href="../solutions/ehs.html">Industrial & HSE</a>
+        </div>
+      </div>
+      <div class="mobile-menu-section">
+        <div class="mobile-menu-title">Resources</div>
+        <div class="mobile-menu-links">
+          <a href="../customers/index.html">Customer Stories</a>
+          <a href="../resources/index.html">Blog & Insights</a>
+          <a href="../resources/index.html">Documentation</a>
+          <a href="../resources/index.html">Partners</a>
         </div>
       </div>
       <div class="mobile-menu-cta">
@@ -2925,16 +2938,19 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
       </div>
       <div>
         <div style="font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:0.75rem;">OEM Devices</div>
-        <div class="badge-group">
-          <span class="oem-badge">TATA Advance</span>
-          <span class="oem-badge">808GPS</span>
-          <span class="oem-badge">Mahindra</span>
-          <span class="oem-badge">Fleetedge</span>
-          <span class="oem-badge">TrackStar</span>
-          <span class="oem-badge">Generic GPS</span>
-          <span class="oem-badge">Pressure Sensors</span>
-          <span class="oem-badge">Flow Meters</span>
-          <span class="oem-badge">Custom IoT Gateways</span>
+        <div class="oem-logo-grid">
+          <div class="oem-logo-tile"><span class="oem-logo-text">CAT</span></div>
+          <div class="oem-logo-tile"><span class="oem-logo-text">JCB</span></div>
+          <div class="oem-logo-tile"><span class="oem-logo-text">Mahindra</span></div>
+          <div class="oem-logo-tile"><span class="oem-logo-text">TATA</span></div>
+          <div class="oem-logo-tile"><span class="oem-logo-text" style="font-size:12px;">Ashok Leyland</span></div>
+          <div class="oem-logo-tile"><span class="oem-logo-text">CNH</span></div>
+          <div class="oem-logo-tile"><span class="oem-logo-text">Ajax</span></div>
+          <div class="oem-logo-tile"><span class="oem-logo-text">BEML</span></div>
+          <div class="oem-logo-tile"><span class="oem-logo-text">Eicher</span></div>
+          <div class="oem-logo-tile"><span class="oem-logo-text">Hamm</span></div>
+          <div class="oem-logo-tile"><span class="oem-logo-text">Wirtgen</span></div>
+          <div class="oem-logo-tile"><span class="oem-logo-text">Daimler</span></div>
         </div>
       </div>
       <div style="padding-top:1rem;border-top:0.5px solid var(--rule);">
