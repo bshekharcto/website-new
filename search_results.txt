@@ -1,0 +1,195 @@
+58: --navy:    #0E1B35;
+88: /* ===== NAV — Cognite floating pill ===== */
+89: .nav-wrap { position: sticky; top: 12px; z-index: 300; padding: 0 var(--g); }
+90: .nav { max-width: var(--max); margin: 0 auto; background: rgba(255,255,255,0.98); border: 0.5px solid #E2E8F0; border-radius: 10px; box-shadow: 0 2px 
+91: .nav-inner { padding: 0 clamp(1rem,2vw,1.5rem); height: 53px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+98: .nav-links { display: flex; gap: 0.1rem; align-items: center; list-style: none; }
+99: .nav-links a { font-family: var(--display); font-size: 13.5px; font-weight: 400; color: var(--ink-2); padding: 0.4rem 0.75rem; border-radius: 5px; tra
+100: .nav-links a:hover { color: var(--ink); background: var(--bg-hi); }
+101: .nav-links .arr::after { content: ''; display: inline-block; width: 4px; height: 4px; margin-left: 5px; border-right: 1.2px solid currentColor; border
+102: .nav-right { display: flex; align-items: center; gap: 0.5rem; }
+103: .btn-nav { font-family: var(--display); font-size: 13px; font-weight: 500; padding: 0.42rem 0.9rem; border-radius: 5px; color: var(--ink-2); transitio
+104: .btn-nav:hover { color: var(--ink); background: var(--bg-hi); }
+107: @media (max-width: 860px) { .nav-links { display: none; } }
+109: /* ===== MEGA MENU ===== */
+439: .cx-nav { display: flex; flex-direction: column; gap: 1px; flex: 1; }
+577: .css-nav { display: flex; flex-direction: column; gap: 0; border-left: 2px solid var(--rule); }
+578: .css-nav-item { display: flex; flex-direction: column; gap: 2px; padding: 0.85rem 0 0.85rem 1.25rem; border-left: 2px solid transparent; margin-left: 
+579: .css-nav-item.active { border-left-color: var(--blue); }
+580: .css-nav-sector { font-family: var(--display); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-
+581: .css-nav-name { font-family: var(--display); font-size: 1.05rem; font-weight: 800; color: var(--ink-3); letter-spacing: -0.02em; transition: color 0.2
+582: .css-nav-loc { font-family: var(--display); font-size: 11px; color: var(--ink-4); transition: color 0.2s; }
+583: .css-nav-item.active .css-nav-sector { color: var(--blue); }
+584: .css-nav-item.active .css-nav-name { color: var(--ink); }
+585: .css-nav-item.active .css-nav-loc { color: var(--ink-2); }
+710: /* Product nav */
+711: .pss-nav { display:flex; flex-direction:column; gap:0; border-left:2px solid var(--rule); }
+712: .pss-nav-item {
+719: .pss-nav-item.active { border-left-color: var(--blue); }
+720: .pss-nav-num { font-family:var(--display); font-size:10px; font-weight:700; letter-spacing:0.1em; color:var(--ink-4); text-transform:uppercase; }
+721: .pss-nav-verb { font-family:var(--display); font-size:1.15rem; font-weight:800; color:var(--ink-3); letter-spacing:-0.03em; transition:color 0.2s; }
+722: .pss-nav-name { font-family:var(--display); font-size:12px; font-weight:400; color:var(--ink-4); transition:color 0.2s; }
+723: .pss-nav-item.active .pss-nav-verb { color:var(--ink); }
+724: .pss-nav-item.active .pss-nav-name { color:var(--blue); }
+725: .pss-nav-item.active .pss-nav-num { color:var(--blue); }
+726: /* Progress bar inside each nav item */
+727: .pss-nav-bar {
+780: /* ═══ BOSON MOBILE APP CSS ═══ */
+865: .boson-connector-mobile {
+883: .boson-connector-mobile {
+1087: .cost-section { background: var(--navy); color: white; padding: clamp(5rem,9vw,7.5rem) 0; }
+1154: .cta-section{background:var(--navy);padding:clamp(4rem,8vw,7rem) 0;position:relative;overflow:hidden;}
+1370: footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);padding:4rem 0 2rem;}
+1384: /* ===== PLATFORM MEGA MENU — horizontal mini product cards ===== */
+1448: /* ===== RESOURCES MEGA MENU — featured article cards ===== */
+1514: /* ===== CUSTOMER MEGA MENU — 2-row grid with image + hook text ===== */
+1652: #menu-platform .mega-inner {
+1837: /* Mobile Navigation styles */
+1838: .mobile-menu-toggle {
+1851: .hamburger-line {
+1858: .mobile-menu {
+1874: .mobile-menu.open {
+1879: .mobile-menu-inner {
+1886: .mobile-menu-section {
+1890: .mobile-menu-title {
+1899: .mobile-menu-links {
+1904: .mobile-menu-links a {
+1911: .mobile-menu-links a:hover {
+1914: .mobile-menu-cta {
+1921: /* Animations for Hamburger menu */
+1922: .mobile-menu-toggle.open .line-1 {
+1926: .mobile-menu-toggle.open .line-2 {
+1929: .mobile-menu-toggle.open .line-3 {
+1935: .mobile-menu-toggle {
+1938: .nav-right .btn-nav {
+1939: display: none; /* Hide Sign in inside header to save space on mobile */
+1957: .css-nav, .pss-nav {
+1968: .css-nav-item, .pss-nav-item {
+1979: .css-nav-item.active, .pss-nav-item.active {
+2085: /* --- MOBILE RESPONSIVENESS FIXES --- */
+2101: /* 2. Multi-column layouts on mobile */
+2110: /* Cortex Shell compact layout on mobile */
+2139: /* Hide less critical widgets on mobile to reduce hero height significantly */
+2163: div, section, header, footer, main, article, aside, .wrap, .nav-inner, .mega-inner, .cx-shell {
+2186: src: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTERUSEhMVFhUXFRUVFxUXFxUVFRcVFRUXFxgWFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMsNygtLisBC
+2216: src: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSERUTEhIWFRUXGRgVGBUYFxgYFxkaGBcYFhcYFxcYHSggGBolHRUYITEiJSkrLi4uGB8zODMtNygtLisBC
+2226: src: "data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAA
+2231: src: "data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAA
+2256: src: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wDEAAkICBALEBAPDxAXERIRFxgYFBQYGBoWGBcYFhobHBsdHRscGxwaHyAfGhwdHyIiHx0gJiYmICYjIyYqJiolJR4RA
+2261: src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGH
+2271: src: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gKgSUNDX1BST0ZJTEUAAQEAAAKQbGNtcwQwAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwQVBQTAAAAAAAAAAAA
+2281: src: "data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAA
+2301: src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAYAAAB5fY51AAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGH
+2316: src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYCAYAAAC+ZpjcAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGH
+2334: src: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAA
+2347: <!-- NAV — COGNECTO LOGO + FLOATING PILL -->
+2348: <div class="nav-wrap" style="padding-top:12px;">
+2349: <div class="nav">
+2350: <div class="nav-inner">
+2352: <a href="index.html" class="logo" id="nav-logo">
+2353: <img id="cognecto-nav-logo" src="favicon.svg" alt="Cognecto" style="height:30px; width:30px; object-fit:contain; border-radius:50%;"/>
+2357: <!-- Nav items with mega-menu dropdowns -->
+2358: <ul class="nav-links">
+2361: <li class="mega-item" data-menu="platform">
+2363: <div class="mega-panel" id="menu-platform">
+2557: <li class="mega-item" data-menu="solutions">
+2559: <div class="mega-panel" id="menu-solutions">
+2575: <div class="sind-img" style="background-image:url('assets/images/highway_menu_sol.jpg');"></div>
+2674: <li class="mega-item" data-menu="customers">
+2676: <div class="mega-panel" id="menu-customers">
+2764: <li class="mega-item" data-menu="resources">
+2766: <div class="mega-panel" id="menu-resources">
+2912: <div class="nav-right">
+2914: <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+2915: <span class="hamburger-line line-1"></span>
+2916: <span class="hamburger-line line-2"></span>
+2917: <span class="hamburger-line line-3"></span>
+2922: <!-- Mega menu backdrop -->
+2924: <!-- Mobile Drawer -->
+2925: <div class="mobile-menu" id="mobile-menu">
+2926: <div class="mobile-menu-inner">
+2927: <div class="mobile-menu-section">
+2928: <div class="mobile-menu-title">Platform</div>
+2929: <div class="mobile-menu-links">
+2935: <div class="mobile-menu-section">
+2936: <div class="mobile-menu-title">Solutions</div>
+2937: <div class="mobile-menu-links">
+2944: <div class="mobile-menu-section">
+2945: <div class="mobile-menu-title">Resources</div>
+2946: <div class="mobile-menu-links">
+2953: <div class="mobile-menu-cta">
+2997: <nav class="cx-nav">
+3005: </nav>
+3219: <!-- LEFT sticky — customer nav + quote -->
+3222: <!-- Customer nav -->
+3223: <div class="css-nav">
+3224: <div class="css-nav-item active" id="css-nav-0">
+3225: <span class="css-nav-sector">Government · Roads</span>
+3226: <span class="css-nav-name">UPRRDA</span>
+3227: <span class="css-nav-loc">NH-19 · India</span>
+3229: <div class="css-nav-item" id="css-nav-1">
+3230: <span class="css-nav-sector">Mining · Enterprise</span>
+3231: <span class="css-nav-name">North Eastern Mining</span>
+3232: <span class="css-nav-loc">FuraGems · Australia</span>
+3234: <div class="css-nav-item" id="css-nav-2">
+3235: <span class="css-nav-sector">Industrial · HSE</span>
+3236: <span class="css-nav-name">EPC Site Operations</span>
+3237: <span class="css-nav-loc">Road & Bridge Project</span>
+3239: <div class="css-nav-item" id="css-nav-3">
+3240: <span class="css-nav-sector">Water · Public Utility</span>
+3241: <span class="css-nav-name">Water Meter Network</span>
+3242: <span class="css-nav-loc">Utility Supply · South Asia</span>
+3330: <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAA
+3554: <!-- Product nav pills -->
+3555: <div class="pss-nav">
+3556: <div class="pss-nav-item active" id="pss-nav-0">
+3557: <span class="pss-nav-num">01</span>
+3558: <span class="pss-nav-verb">Hear —</span>
+3559: <span class="pss-nav-name">Boson</span>
+3560: <div class="pss-nav-bar"></div>
+3562: <div class="pss-nav-item" id="pss-nav-1">
+3563: <span class="pss-nav-num">02</span>
+3564: <span class="pss-nav-verb">See —</span>
+3565: <span class="pss-nav-name">Photon</span>
+3566: <div class="pss-nav-bar"></div>
+3568: <div class="pss-nav-item" id="pss-nav-2">
+3569: <span class="pss-nav-num">03</span>
+3570: <span class="pss-nav-verb">Act —</span>
+3571: <span class="pss-nav-name">Cortex</span>
+3572: <div class="pss-nav-bar"></div>
+3681: <!-- Aggregated output flow to Mobile App -->
+3697: <!-- Mobile View -->
+3698: <svg class="boson-connector-mobile" viewBox="0 0 300 70" fill="none">
+3712: <!-- Aggregated output flow down to Mobile App -->
+4291: // Set Cognecto nav logo from asset store
+4293: var navLogo = document.getElementById('cognecto-nav-logo');
+4294: if (navLogo && window.LOGOS && window.LOGOS['cognecto-logo']) {
+4295: navLogo.src = window.LOGOS['cognecto-logo'].src;
+4330: document.querySelectorAll('.css-nav-item').forEach(function(n, i) {
+4336: // Add mobile support: toggle active image
+4352: document.querySelectorAll('.css-nav-item').forEach(function(item, idx) {
+4365: if (window.innerWidth <= 900) return; // Disable observer scroll logic on mobile
+4390: // Update nav pills
+4391: document.querySelectorAll('.pss-nav-item').forEach(function(n, i) {
+4400: // Add mobile support: toggle active image
+4418: document.querySelectorAll('.pss-nav-item').forEach(function(item, idx) {
+4431: if (window.innerWidth <= 900) return; // Disable observer scroll logic on mobile
+4480: function openMenu(item) {
+4503: openMenu(item);
+4527: var activeNav = document.querySelector('.css-nav-item.active');
+4528: if (activeNav) {
+4529: var navs = Array.from(document.querySelectorAll('.css-nav-item'));
+4530: activeCustomerIdx = navs.indexOf(activeNav);
+4538: var activeProdNav = document.querySelector('.pss-nav-item.active');
+4539: if (activeProdNav) {
+4540: var prodNavs = Array.from(document.querySelectorAll('.pss-nav-item'));
+4541: activeProductIdx = prodNavs.indexOf(activeProdNav);
+4549: // Mobile menu toggle logic
+4551: var toggle = document.getElementById('mobile-menu-toggle');
+4552: var menu = document.getElementById('mobile-menu');
+4553: if (!toggle || !menu) return;
+4558: var isOpen = menu.classList.contains('open');
+4560: menu.classList.remove('open');
+4564: menu.classList.add('open');
+4571: menu.querySelectorAll('a').forEach(function(link) {
+4573: menu.classList.remove('open');
