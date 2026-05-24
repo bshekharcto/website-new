@@ -3014,17 +3014,33 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-      const btn = item.querySelector('.faq-question');
-      btn.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-        faqItems.forEach(i => i.classList.remove('active'));
-        if (!isActive) item.classList.add('active');
+  (function(){
+    function initFAQ() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const btn = item.querySelector('.faq-question');
+        if (btn) {
+          // Remove old listeners by cloning
+          const newBtn = btn.cloneNode(true);
+          btn.parentNode.replaceChild(newBtn, btn);
+          newBtn.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            // Only toggle items that have .faq-question to avoid old FAQ collisions
+            faqItems.forEach(i => {
+                if(i.querySelector('.faq-question')) i.classList.remove('active');
+            });
+            if (!isActive) item.classList.add('active');
+          });
+        }
       });
-    });
-  });
+    }
+    
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFAQ);
+    } else {
+      initFAQ();
+    }
+  })();
 </script>
 
 
