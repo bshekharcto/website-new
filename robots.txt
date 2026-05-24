@@ -1,5 +1,30 @@
-# robots.txt for Cognecto
+# robots.txt for Cognecto — AI Search Optimized
 User-agent: *
+Allow: /
+
+# Explicitly allow AI search crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Amazonbot
 Allow: /
 
 Sitemap: https://cognecto.com/sitemap.xml
