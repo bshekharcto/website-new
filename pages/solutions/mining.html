@@ -1689,6 +1689,24 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
     height: 320px !important;
   }
 }
+
+/* ===== FAQ ACCORDION ===== */
+.faq-section { background: var(--bg); padding: clamp(4rem, 8vw, 6rem) 0; }
+.faq-wrap { max-width: 800px; margin: 0 auto; padding: 0 var(--g); }
+.faq-header { text-align: center; margin-bottom: 3rem; }
+.faq-title { font-family: var(--display); font-size: clamp(2rem, 3.5vw, 2.5rem); font-weight: 800; color: var(--ink); margin-bottom: 1rem; letter-spacing: -0.03em; }
+.faq-subtitle { font-family: var(--body); font-size: 1.1rem; color: var(--ink-3); }
+.faq-list { display: flex; flex-direction: column; gap: 1rem; }
+.faq-item { border: 1px solid var(--rule); border-radius: 10px; background: white; overflow: hidden; transition: box-shadow 0.2s; }
+.faq-item:hover { box-shadow: 0 4px 12px rgba(14,27,53,0.05); }
+.faq-question { width: 100%; text-align: left; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--display); font-size: 1.1rem; font-weight: 700; color: var(--ink); cursor: pointer; transition: color 0.2s; }
+.faq-question:hover { color: var(--blue); }
+.faq-icon { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; background: var(--bg-hi); color: var(--blue); transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.active .faq-icon { transform: rotate(180deg); background: var(--blue); color: white; }
+.faq-answer { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s ease-in-out; opacity: 0; }
+.faq-item.active .faq-answer { padding: 0 1.5rem 1.25rem; max-height: 500px; opacity: 1; }
+.faq-answer p { font-family: var(--body); font-size: 1rem; color: var(--ink-2); line-height: 1.6; margin: 0; }
+
 </style>
 <style>
 /* --- MOBILE RESPONSIVENESS FIXES --- */
@@ -2493,6 +2511,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
 
 
 <!-- HERO -->
+<main role="main">
 <section class="sol-hero">
   <div class="sol-hero-inner">
     <div class="wrap">
@@ -2551,7 +2570,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
         </div>
       </div>
       <div>
-        <img src="../../assets/images/mining_factory_interior.jpg" alt="Mining operations control centre" style="border-radius:14px;width:100%;object-fit:cover;height:420px;filter:brightness(0.72) saturate(1.1) contrast(1.08);box-shadow:0 16px 48px rgba(14,27,53,0.18);"/>
+        <img src="../../assets/images/mining_factory_interior.jpg" alt="Cognecto Cortex real-time AI dashboard for mining operations control centre" style="border-radius:14px;width:100%;object-fit:cover;height:420px;filter:brightness(0.72) saturate(1.1) contrast(1.08);box-shadow:0 16px 48px rgba(14,27,53,0.18);"/>
       </div>
     </div>
     <div class="stat-chips">
@@ -2569,7 +2588,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
     <div class="module-header"><span class="module-badge">Module 02</span><span class="s-eyebrow-mine" style="margin:0;">Production Reporting & Haul Cycle Analytics</span></div>
     <div class="two-col" style="margin-bottom:3rem;">
       <div>
-        <img src="../../assets/images/mining_dump_truck.jpg" alt="Open-cast mine haul trucks production" style="border-radius:14px;width:100%;object-fit:cover;height:420px;filter:brightness(0.72) saturate(1.1) contrast(1.08);box-shadow:0 16px 48px rgba(14,27,53,0.18);"/>
+        <img src="../../assets/images/mining_dump_truck.jpg" alt="Cognecto AI monitoring haul cycle efficiency for open-cast mine dump trucks" style="border-radius:14px;width:100%;object-fit:cover;height:420px;filter:brightness(0.72) saturate(1.1) contrast(1.08);box-shadow:0 16px 48px rgba(14,27,53,0.18);"/>
       </div>
       <div>
         <h2 class="s-h2">Every tonne tracked.<br>Every cycle <span style="color:var(--mine);">analysed.</span></h2>
@@ -2682,7 +2701,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
         </div>
       </div>
       <div>
-        <img src="../../assets/images/mining_aerial_quarry.jpg" alt="Mining control centre operations" style="border-radius:14px;width:100%;object-fit:cover;height:480px;filter:brightness(0.72) saturate(1.1) contrast(1.08);box-shadow:0 16px 48px rgba(14,27,53,0.18);"/>
+        <img src="../../assets/images/mining_aerial_quarry.jpg" alt="Aerial view of open-cast mine monitored by Cognecto AI platform" style="border-radius:14px;width:100%;object-fit:cover;height:480px;filter:brightness(0.72) saturate(1.1) contrast(1.08);box-shadow:0 16px 48px rgba(14,27,53,0.18);"/>
       </div>
     </div>
   </div>
@@ -2796,28 +2815,28 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
       <div class="css-scroll-steps">
         <div class="css-step" data-mcustomer="0">
           <div class="css-img-panel">
-            <img src="../../assets/images/mining_worker_bulldozer.jpg" alt="WCL open-cast coal mine" loading="lazy" style="filter:brightness(0.72) saturate(1.1) contrast(1.08);"/>
+            <img src="../../assets/images/mining_worker_bulldozer.jpg" alt="Cognecto Boson sensors deployed on bulldozers at WCL open-cast coal mine" loading="lazy" style="filter:brightness(0.72) saturate(1.1) contrast(1.08);"/>
             <div class="css-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.15) 0%,rgba(124,58,237,0.3) 100%)"></div>
             <div class="css-img-label">Western Coalfields Limited · Open-Cast Operations · Nagpur, India</div>
           </div>
         </div>
         <div class="css-step" data-mcustomer="1">
           <div class="css-img-panel">
-            <img src="../../assets/images/mining_aerial_quarry.jpg" alt="NLC lignite mine operations" loading="lazy" style="filter:brightness(0.72) saturate(1.1) contrast(1.08);"/>
+            <img src="../../assets/images/mining_aerial_quarry.jpg" alt="NLC India lignite mine utilizing Cognecto shift planning and telemetry" loading="lazy" style="filter:brightness(0.72) saturate(1.1) contrast(1.08);"/>
             <div class="css-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.15) 0%,rgba(124,58,237,0.3) 100%)"></div>
             <div class="css-img-label">NLC India · Naveli Lignite Corporation · Tamil Nadu</div>
           </div>
         </div>
         <div class="css-step" data-mcustomer="2">
           <div class="css-img-panel">
-            <img src="../../assets/images/mining_excavator_closeup.jpg" alt="Hindalco aluminium mining plant" loading="lazy" style="filter:brightness(0.72) saturate(1.1) contrast(1.08);"/>
+            <img src="../../assets/images/mining_excavator_closeup.jpg" alt="Hindalco aluminium mine excavator tracked by Cognecto AI telemetry" loading="lazy" style="filter:brightness(0.72) saturate(1.1) contrast(1.08);"/>
             <div class="css-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.15) 0%,rgba(124,58,237,0.3) 100%)"></div>
             <div class="css-img-label">Hindalco · Aluminium & Copper Mining Operations · India</div>
           </div>
         </div>
         <div class="css-step" data-mcustomer="3">
           <div class="css-img-panel">
-            <img src="../../assets/images/mining_dump_truck.jpg" alt="FG Gold open-cast mining West Africa" loading="lazy" style="filter:brightness(0.72) saturate(1.1) contrast(1.08);"/>
+            <img src="../../assets/images/mining_dump_truck.jpg" alt="FG Gold mine dump trucks monitored by Cognecto in West Africa" loading="lazy" style="filter:brightness(0.72) saturate(1.1) contrast(1.08);"/>
             <div class="css-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.15) 0%,rgba(124,58,237,0.3) 100%)"></div>
             <div class="css-img-label">FG Gold · Gold Mining Operations · West Africa</div>
           </div>
@@ -2918,6 +2937,53 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
   </div>
 </section>
 
+<section class="faq-section" id="faq">
+  <div class="faq-wrap">
+    <div class="faq-header">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+      <p class="faq-subtitle">Find answers to common questions about our platform and deployments.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item active">
+        <button class="faq-question"><span>What is Cognecto's AI platform for open-cast mining?</span><div class="faq-icon">↓</div></button>
+        <div class="faq-answer"><p>Cognecto provides an end-to-end AI and IoT platform for open-cast mines, covering shift planning, haul cycle analytics, fuel management, predictive maintenance, operator attendance, blasting workflows, and a real-time control centre. It is active across WCL, NLC, Hindalco, and FG Gold mining operations.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>How does AI improve mining fleet management?</span><div class="faq-icon">↓</div></button>
+        <div class="faq-answer"><p>Cognecto uses GPS telemetry and vision AI to track every dump truck, excavator, and loader in real time. The platform optimizes haul routes, reduces idle time, monitors fuel consumption per trip, and provides shift-wise productivity reports for mine managers.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>What IoT sensors does Cognecto use in mines?</span><div class="faq-icon">↓</div></button>
+        <div class="faq-answer"><p>Cognecto deploys Boson Listener sensors on heavy mining equipment to capture vibration data, GPS coordinates, engine telemetry, and fuel consumption. Photon Vision cameras monitor safety zones, material loading quality, and operator compliance.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>How does Cognecto ensure mining safety and EHS compliance?</span><div class="faq-icon">↓</div></button>
+        <div class="faq-answer"><p>Cognecto's Photon Vision AI cameras detect PPE violations, unauthorized zone entry, proximity hazards near heavy equipment, and unsafe operator behavior in real time. Alerts are sent to the safety control room within seconds.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>Which mining companies use Cognecto?</span><div class="faq-icon">↓</div></button>
+        <div class="faq-answer"><p>Cognecto is deployed at Western Coalfields Limited (WCL), NLC India Limited, Hindalco Industries, FG Gold Mining, Fura Gems, Canyon Resources, and CAMALCO across India, Australia, Cameroon, and Colombia.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-question');
+      btn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        faqItems.forEach(i => i.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+  });
+</script>
+
+
+</main>
 <footer style="background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);padding:3rem 0 2rem;">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
     <div style="font-family:var(--display);font-size:14px;color:rgba(255,255,255,0.4);">© 2026 Cognecto. All rights reserved.</div>

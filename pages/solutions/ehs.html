@@ -1706,6 +1706,24 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
     height: 320px !important;
   }
 }
+
+/* ===== FAQ ACCORDION ===== */
+.faq-section { background: var(--bg); padding: clamp(4rem, 8vw, 6rem) 0; }
+.faq-wrap { max-width: 800px; margin: 0 auto; padding: 0 var(--g); }
+.faq-header { text-align: center; margin-bottom: 3rem; }
+.faq-title { font-family: var(--display); font-size: clamp(2rem, 3.5vw, 2.5rem); font-weight: 800; color: var(--ink); margin-bottom: 1rem; letter-spacing: -0.03em; }
+.faq-subtitle { font-family: var(--body); font-size: 1.1rem; color: var(--ink-3); }
+.faq-list { display: flex; flex-direction: column; gap: 1rem; }
+.faq-item { border: 1px solid var(--rule); border-radius: 10px; background: white; overflow: hidden; transition: box-shadow 0.2s; }
+.faq-item:hover { box-shadow: 0 4px 12px rgba(14,27,53,0.05); }
+.faq-question { width: 100%; text-align: left; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--display); font-size: 1.1rem; font-weight: 700; color: var(--ink); cursor: pointer; transition: color 0.2s; }
+.faq-question:hover { color: var(--blue); }
+.faq-icon { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; background: var(--bg-hi); color: var(--blue); transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.active .faq-icon { transform: rotate(180deg); background: var(--blue); color: white; }
+.faq-answer { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s ease-in-out; opacity: 0; }
+.faq-item.active .faq-answer { padding: 0 1.5rem 1.25rem; max-height: 500px; opacity: 1; }
+.faq-answer p { font-family: var(--body); font-size: 1rem; color: var(--ink-2); line-height: 1.6; margin: 0; }
+
 </style>
 <style>
 /* --- MOBILE RESPONSIVENESS FIXES --- */
@@ -2510,6 +2528,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
 
 
 <!-- HERO -->
+<main role="main">
 <section class="sol-hero">
   <div class="sol-hero-inner">
     <div class="wrap">
@@ -3000,6 +3019,49 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
   </div>
 </section>
 
+<section class="faq-section" id="faq">
+  <div class="faq-wrap">
+    <div class="faq-header">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+      <p class="faq-subtitle">Find answers to common questions about our platform and deployments.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item active">
+        <button class="faq-question"><span>What is Cognecto's EHS and industrial safety platform?</span><div class="faq-icon">↓</div></button>
+        <div class="faq-answer"><p>Cognecto's EHS platform uses Photon Vision AI cameras to monitor worksite safety in real time. It detects PPE violations, restricted zone breaches, unsafe equipment operation, and near-miss incidents, generating automated alerts and compliance reports.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>How does Vision AI improve workplace safety?</span><div class="faq-icon">↓</div></button>
+        <div class="faq-answer"><p>Cognecto's AI models analyze live camera feeds to detect safety hazards like missing helmets, harnesses, or reflective vests, personnel in danger zones near heavy equipment, and improper material handling. Violations trigger instant alerts to safety officers.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>What industries use Cognecto for EHS monitoring?</span><div class="faq-icon">↓</div></button>
+        <div class="faq-answer"><p>Cognecto's EHS platform is used in open-cast mining, highway construction sites, industrial plants, and water infrastructure projects. Any site with heavy machinery and manual labor benefits from automated safety monitoring.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>How does Cognecto generate safety compliance reports?</span><div class="faq-icon">↓</div></button>
+        <div class="faq-answer"><p>Cognecto automatically logs every safety event with timestamp, location, camera footage, and violation type. Daily, weekly, and monthly safety reports are generated on the Cortex dashboard, ready for regulatory submission and audit purposes.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-question');
+      btn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        faqItems.forEach(i => i.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+  });
+</script>
+
+
+</main>
 <footer style="background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);padding:3rem 0 2rem;">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
     <div style="font-family:var(--display);font-size:14px;color:rgba(255,255,255,0.4);">© 2026 Cognecto. All rights reserved.</div>

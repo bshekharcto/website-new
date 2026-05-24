@@ -1800,6 +1800,24 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
 .oem-logo-tile { background: white; border: 0.5px solid var(--rule); border-radius: 6px; height: 50px; display: flex; align-items: center; justify-content: center; padding: 0 1rem; transition: all 0.2s; text-align: center; }
 .oem-logo-tile:hover { border-color: var(--blue); box-shadow: 0 4px 12px rgba(14,27,53,0.08); transform: translateY(-2px); }
 .oem-logo-text { font-family: var(--display); font-weight: 800; font-size: 13.5px; color: var(--ink); letter-spacing: -0.02em; }
+
+/* ===== FAQ ACCORDION ===== */
+.faq-section { background: var(--bg); padding: clamp(4rem, 8vw, 6rem) 0; }
+.faq-wrap { max-width: 800px; margin: 0 auto; padding: 0 var(--g); }
+.faq-header { text-align: center; margin-bottom: 3rem; }
+.faq-title { font-family: var(--display); font-size: clamp(2rem, 3.5vw, 2.5rem); font-weight: 800; color: var(--ink); margin-bottom: 1rem; letter-spacing: -0.03em; }
+.faq-subtitle { font-family: var(--body); font-size: 1.1rem; color: var(--ink-3); }
+.faq-list { display: flex; flex-direction: column; gap: 1rem; }
+.faq-item { border: 1px solid var(--rule); border-radius: 10px; background: white; overflow: hidden; transition: box-shadow 0.2s; }
+.faq-item:hover { box-shadow: 0 4px 12px rgba(14,27,53,0.05); }
+.faq-question { width: 100%; text-align: left; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--display); font-size: 1.1rem; font-weight: 700; color: var(--ink); cursor: pointer; transition: color 0.2s; }
+.faq-question:hover { color: var(--blue); }
+.faq-icon { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; background: var(--bg-hi); color: var(--blue); transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.active .faq-icon { transform: rotate(180deg); background: var(--blue); color: white; }
+.faq-answer { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s ease-in-out; opacity: 0; }
+.faq-item.active .faq-answer { padding: 0 1.5rem 1.25rem; max-height: 500px; opacity: 1; }
+.faq-answer p { font-family: var(--body); font-size: 1rem; color: var(--ink-2); line-height: 1.6; margin: 0; }
+
 </style>
 <style>
 /* --- MOBILE RESPONSIVENESS FIXES --- */
@@ -2605,6 +2623,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
 
 
 <!-- BOSON HERO -->
+<main role="main">
 <section class="boson-hero">
   <div class="wrap">
     <div class="boson-hero-inner">
@@ -3299,6 +3318,49 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
 </section>
 
 <!-- FOOTER (minimal matching main site style) -->
+<section class="faq-section" id="faq">
+  <div class="faq-wrap">
+    <div class="faq-header">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+      <p class="faq-subtitle">Find answers to common questions about our platform and deployments.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item active">
+        <button class="faq-question"><span>What is Boson Listener?</span><div class="faq-icon">↓</div></button>
+        <div class="faq-answer"><p>Boson Listener is Cognecto's edge IoT hardware platform that captures real-time telemetry from heavy infrastructure equipment. It measures vibration, GPS position, engine parameters, and environmental conditions, streaming data to the cloud for AI analysis.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>What sensors does Boson Listener use?</span><div class="faq-icon">↓</div></button>
+        <div class="faq-answer"><p>Boson Listener integrates accelerometers for vibration and compaction monitoring, GPS modules for location tracking, fuel flow sensors, temperature and humidity sensors, and CAN bus interfaces for engine telemetry on heavy equipment.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>How is Boson Listener installed on equipment?</span><div class="faq-icon">↓</div></button>
+        <div class="faq-answer"><p>Boson Listener is a ruggedized, IP67-rated device designed for harsh industrial environments. It is magnetically mounted or bolted onto compaction rollers, dump trucks, excavators, and other heavy equipment. Installation takes under 30 minutes per unit.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>What data does Boson Listener transmit?</span><div class="faq-icon">↓</div></button>
+        <div class="faq-answer"><p>Boson Listener transmits vibration amplitude, frequency, GPS coordinates, speed, fuel consumption rate, engine RPM, and operating hours. Data is streamed in real time via 4G/LTE or stored locally and synced via WiFi at the site office.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-question');
+      btn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        faqItems.forEach(i => i.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+  });
+</script>
+
+
+</main>
 <footer style="background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);padding:3rem 0 2rem;">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
     <div style="font-family:var(--display);font-size:14px;color:rgba(255,255,255,0.4);">© 2025 Cognecto. All rights reserved.</div>
