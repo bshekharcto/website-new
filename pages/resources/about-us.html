@@ -5,22 +5,22 @@
 
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Resources | Case Studies, White Papers, Webinars | Cognecto</title>
-<meta name="description" content="Case studies, white papers, product briefs, webinars, and insights from Cognecto's deployments across roads, mining, water, and industrial infrastructure."/>
-  <link rel="canonical" href="https://cognecto.com/pages/resources/index.html" />
+<title>About Cognecto | Cognecto Resources</title>
+<meta name="description" content="The intelligence layer the physical world has been missing."/>
+  <link rel="canonical" href="https://cognecto.com/pages/resources/about-us.html" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Resources | Case Studies, White Papers, Webinars | Cognecto" />
-  <meta property="og:description" content="Case studies, white papers, product briefs, webinars, and insights from Cognecto's deployments across roads, mining, water, and industrial infrastructure." />
-  <meta property="og:url" content="https://cognecto.com/pages/resources/index.html" />
+  <meta property="og:title" content="About Cognecto | Cognecto Resources" />
+  <meta property="og:description" content="The intelligence layer the physical world has been missing." />
+  <meta property="og:url" content="https://cognecto.com/pages/resources/about-us.html" />
   <meta property="og:image" content="https://cognecto.com/assets/images/highway_during_construction_compaction.webp" />
   <meta property="og:site_name" content="Cognecto" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Resources | Case Studies, White Papers, Webinars | Cognecto" />
-  <meta name="twitter:description" content="Case studies, white papers, product briefs, webinars, and insights from Cognecto's deployments across roads, mining, water, and industrial infrastructure." />
+  <meta name="twitter:title" content="About Cognecto | Cognecto Resources" />
+  <meta name="twitter:description" content="The intelligence layer the physical world has been missing." />
   <meta name="twitter:image" content="https://cognecto.com/assets/images/highway_during_construction_compaction.webp" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1422,73 +1422,85 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
 }
 
 
-/* ===== RESOURCES INDEX PAGE ===== */
-.res-hero { position:relative; background:var(--navy); padding:clamp(5rem,9vw,7rem) 0 clamp(3rem,5vw,4rem); overflow:hidden; }
-.res-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 75% 50%, rgba(46,77,234,0.14) 0%, transparent 65%); }
-.res-hero::after  { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 50% 50% at 10% 80%, rgba(8,145,178,0.1) 0%, transparent 60%); }
-.res-hero-inner { position:relative; z-index:2; }
-.res-breadcrumb { display:flex; align-items:center; gap:6px; font-family:var(--display); font-size:12px; font-weight:600; color:rgba(255,255,255,0.4); margin-bottom:1.5rem; text-transform:uppercase; letter-spacing:0.07em; }
-.res-breadcrumb a { color:rgba(255,255,255,0.4); transition:color 0.15s; }
-.res-breadcrumb a:hover { color:rgba(255,255,255,0.7); }
-.res-breadcrumb span { color:rgba(255,255,255,0.2); }
-.res-hero h1 { font-family:var(--display); font-weight:800; font-size:clamp(2rem,4vw,3.6rem); line-height:1.1; letter-spacing:-0.04em; color:white; max-width:22ch; margin-bottom:1.5rem; }
-.res-hero h1 em { color:#7EB3FF; font-style:normal; }
-.res-hero-sub { font-family:var(--display); font-size:clamp(1rem,1.3vw,1.1rem); color:rgba(255,255,255,0.65); line-height:1.7; max-width:62ch; }
+:root {
+  --res: #2E4DEA;
+  --res-bg: #EEF1FD;
+  --res-mid: #A8BAF8;
+}
 
-.res-stat-row { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:3rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1); }
-@media(max-width:760px){ .res-stat-row { grid-template-columns:repeat(2,1fr); } }
-.res-hstat { padding:0.5rem 0; }
-.res-hstat-n { font-family:var(--display); font-size:1.75rem; font-weight:800; color:white; letter-spacing:-0.04em; line-height:1; margin-bottom:6px; }
-.res-hstat-l { font-family:var(--display); font-size:11.5px; color:rgba(255,255,255,0.5); line-height:1.4; }
+.rdp-hero { background:var(--navy); padding:clamp(3rem,5vw,4rem) 0 clamp(3.5rem,5vw,4.5rem); position:relative; overflow:hidden; }
+.rdp-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 50% at 80% 50%, #2E4DEA1A 0%, transparent 65%); }
+.rdp-hero-inner { position:relative; z-index:2; }
+.rdp-breadcrumb { display:flex; align-items:center; gap:6px; font-family:var(--display); font-size:12px; font-weight:600; color:rgba(255,255,255,0.4); margin-bottom:1.5rem; text-transform:uppercase; letter-spacing:0.07em; }
+.rdp-breadcrumb a { color:rgba(255,255,255,0.4); transition:color 0.15s; }
+.rdp-breadcrumb a:hover { color:rgba(255,255,255,0.7); }
+.rdp-breadcrumb span { color:rgba(255,255,255,0.2); }
+.rdp-hero-grid { display:grid; grid-template-columns:1fr 1.1fr; gap:3.5rem; align-items:center; }
+@media(max-width:980px){ .rdp-hero-grid { grid-template-columns:1fr; gap:2.5rem; } }
+.rdp-type-pill { display:inline-flex; align-items:center; gap:0.55rem; padding:0.35rem 0.85rem; background:#2E4DEA26; border:1px solid #2E4DEA59; border-radius:100px; font-family:var(--display); font-size:11px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#7EB3FF; margin-bottom:1.5rem; }
+.rdp-meta-row { display:flex; align-items:center; gap:0.7rem; margin-bottom:1.25rem; font-family:var(--display); font-size:12px; font-weight:600; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.06em; }
+.rdp-meta-row span { color:rgba(255,255,255,0.3); }
+.rdp-hero h1 { font-family:var(--display); font-weight:800; font-size:clamp(1.8rem,3.5vw,3rem); line-height:1.13; letter-spacing:-0.035em; color:white; margin-bottom:1.25rem; }
+.rdp-hero-sub { font-family:var(--display); font-size:15px; color:rgba(255,255,255,0.7); line-height:1.7; max-width:54ch; }
+.rdp-hero-img { position:relative; border-radius:14px; overflow:hidden; aspect-ratio:5/4; }
+.rdp-hero-img img { width:100%; height:100%; object-fit:cover; filter:brightness(0.72) saturate(1.05) contrast(1.05); }
+.rdp-hero-stats { position:absolute; left:1.25rem; right:1.25rem; bottom:1.25rem; display:grid; grid-template-columns:repeat(3,1fr); gap:0.5rem; }
+.rdp-hero-stat { background:rgba(0,0,0,0.65); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.18); border-radius:8px; padding:0.65rem 0.85rem; }
+.rdp-hero-stat-n { font-family:var(--display); font-size:1.35rem; font-weight:800; color:#7EB3FF; letter-spacing:-0.03em; line-height:1; margin-bottom:3px; }
+.rdp-hero-stat-l { font-family:var(--display); font-size:10px; color:rgba(255,255,255,0.7); line-height:1.3; }
 
-/* Filter bar — 2 filter groups (type + sector) */
-.res-filters { background:white; border-bottom:1px solid var(--rule); padding:1.25rem 0; position:sticky; top:84px; z-index:50; box-shadow:0 2px 8px rgba(14,27,53,0.04); }
-.res-filter-stack { display:flex; flex-direction:column; gap:0.85rem; }
-.res-filter-row { display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
-.res-filter-label { font-family:var(--display); font-size:10.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-3); min-width:60px; }
-.res-filter-group { display:flex; gap:0.4rem; flex-wrap:wrap; flex:1; }
-.res-filter-pill { font-family:var(--display); font-size:12.5px; font-weight:600; padding:5px 13px; border-radius:100px; border:1px solid var(--rule-2); color:var(--ink-2); background:white; cursor:pointer; transition:all 0.15s; user-select:none; }
-.res-filter-pill:hover { border-color:var(--ink-3); color:var(--ink); }
-.res-filter-pill.active { background:var(--navy); color:white; border-color:var(--navy); }
-.res-filter-count { font-family:var(--display); font-size:12px; color:var(--ink-3); font-weight:500; margin-left:auto; align-self:flex-end; }
+.rdp-body { background:var(--bg); padding:clamp(3rem,5vw,4.5rem) 0 clamp(5rem,7vw,7rem); }
+.rdp-layout { display:grid; grid-template-columns:1fr 320px; gap:3.5rem; align-items:start; }
+@media(max-width:1100px){ .rdp-layout { grid-template-columns:1fr 280px; gap:2.5rem; } }
+@media(max-width:880px){ .rdp-layout { grid-template-columns:1fr; gap:3rem; } }
 
-/* RESOURCE GRID — 3 columns (vs 4-col customers grid) */
-.res-grid-section { background:var(--bg); padding:clamp(3rem,6vw,4.5rem) 0 clamp(5rem,8vw,7rem); }
-.res-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; }
-@media(max-width:1000px){ .res-grid { grid-template-columns:repeat(2,1fr); } }
-@media(max-width:600px){ .res-grid { grid-template-columns:1fr; } }
+.rdp-section { padding-bottom:2.5rem; margin-bottom:2.5rem; border-bottom:0.5px solid var(--rule); }
+.rdp-section:last-child { border-bottom:none; margin-bottom:0; }
+.rdp-section-label { display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--display); font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--res); margin-bottom:1rem; }
+.rdp-section-label-dot { width:8px; height:8px; border-radius:50%; background:var(--res); }
+.rdp-section h2 { font-family:var(--display); font-size:clamp(1.4rem,2.5vw,1.9rem); font-weight:800; color:var(--ink); letter-spacing:-0.035em; line-height:1.2; margin-bottom:1.25rem; }
+.rdp-section p { font-family:var(--display); font-size:15px; color:var(--ink-2); line-height:1.75; margin-bottom:1rem; }
+.rdp-section p:last-child { margin-bottom:0; }
+.rdp-section ul { padding-left:0; margin:1rem 0; list-style:none; }
+.rdp-section ul li { font-family:var(--display); font-size:14px; color:var(--ink-2); line-height:1.65; padding-left:1.25rem; position:relative; margin-bottom:0.55rem; }
+.rdp-section ul li::before { content:'→'; position:absolute; left:0; color:var(--res); font-weight:700; }
 
-.res-card { display:flex; flex-direction:column; background:white; border:0.5px solid var(--rule); border-radius:14px; overflow:hidden; transition:box-shadow 0.2s, transform 0.2s, border-color 0.2s; text-decoration:none; }
-.res-card:hover { box-shadow:0 16px 40px rgba(14,27,53,0.12); transform:translateY(-3px); border-color:var(--rule-2); }
-.res-card.hidden { display:none; }
-.res-card-img { position:relative; aspect-ratio:16/10; overflow:hidden; }
-.res-card-img img { width:100%; height:100%; object-fit:cover; filter:brightness(0.74) saturate(1.08) contrast(1.06); transition:transform 0.4s; }
-.res-card:hover .res-card-img img { transform:scale(1.05); }
-.res-card-img-overlay { position:absolute; inset:0; pointer-events:none; }
-.res-card-type-pill { position:absolute; top:1rem; left:1rem; font-family:var(--display); font-size:10.5px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; padding:5px 11px; border-radius:100px; color:white; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
+.rdp-profile { background:var(--bg-hi); border:0.5px solid var(--rule); border-radius:12px; padding:1.5rem; margin-bottom:2rem; display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; }
+@media(max-width:560px){ .rdp-profile { grid-template-columns:1fr; } }
+.rdp-profile-item-label { font-family:var(--display); font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-3); margin-bottom:5px; }
+.rdp-profile-item-val { font-family:var(--display); font-size:14px; color:var(--ink); font-weight:600; line-height:1.4; }
 
-.res-card-body { padding:1.25rem 1.4rem 1.5rem; display:flex; flex-direction:column; flex:1; }
-.res-card-meta { display:flex; align-items:center; gap:0.5rem; margin-bottom:0.65rem; font-family:var(--display); font-size:11.5px; font-weight:600; }
-.res-card-sector { letter-spacing:0.02em; }
-.res-card-dot { color:var(--ink-3); }
-.res-card-time { color:var(--ink-3); font-weight:500; }
-.res-card-title { font-family:var(--display); font-size:1.15rem; font-weight:800; color:var(--ink); letter-spacing:-0.025em; line-height:1.3; margin-bottom:0.65rem; }
-.res-card-blurb { font-family:var(--display); font-size:13px; color:var(--ink-2); line-height:1.6; flex:1; margin-bottom:1.25rem; }
-.res-card-footer { display:flex; align-items:center; justify-content:space-between; padding-top:0.85rem; border-top:0.5px solid var(--rule); }
-.res-card-date { font-family:var(--display); font-size:11.5px; color:var(--ink-3); font-weight:500; }
-.res-card-cta { font-family:var(--display); font-size:13px; font-weight:700; color:var(--ink); }
-.res-card:hover .res-card-cta { color:var(--blue); }
+.rdp-impact-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:1.25rem; }
+.rdp-impact-card { background:var(--res-bg); border:0.5px solid var(--res-mid); border-radius:12px; padding:1.25rem; }
+.rdp-impact-card-n { font-family:var(--display); font-size:1.85rem; font-weight:800; color:var(--res); letter-spacing:-0.04em; line-height:1; margin-bottom:0.4rem; }
+.rdp-impact-card-l { font-family:var(--display); font-size:12.5px; color:var(--ink-2); line-height:1.45; font-weight:500; }
 
-.res-empty { text-align:center; padding:4rem 2rem; font-family:var(--display); color:var(--ink-3); display:none; }
-.res-empty.show { display:block; }
+.rdp-quote { border-left:3px solid var(--res); padding:0.75rem 0 0.75rem 1.5rem; margin:2rem 0; }
+.rdp-quote-body { font-family:var(--display); font-size:17px; line-height:1.55; color:var(--ink); font-style:italic; font-weight:500; letter-spacing:-0.015em; margin-bottom:0.85rem; }
+.rdp-quote-author { font-family:var(--display); font-size:14px; font-weight:700; color:var(--ink); }
+.rdp-quote-role { font-family:var(--display); font-size:12.5px; color:var(--ink-2); }
 
-/* CTA section */
-.res-cta { background:var(--bg-hi); border-top:1px solid var(--rule); padding:clamp(4rem,7vw,5.5rem) 0; text-align:center; }
-.res-cta h2 { font-family:var(--display); font-size:clamp(1.5rem,3vw,2.4rem); font-weight:800; color:var(--ink); letter-spacing:-0.04em; line-height:1.15; margin-bottom:0.75rem; }
-.res-cta p { font-family:var(--display); font-size:15px; color:var(--ink-2); margin-bottom:1.5rem; }
-.btn-navy { font-family:var(--display); font-size:15px; font-weight:700; background:var(--navy); color:white; padding:0.85rem 1.75rem; border-radius:7px; display:inline-flex; align-items:center; gap:0.5rem; transition:background 0.15s; }
-.btn-navy:hover { background:#1A2540; }
-.btn-navy::after { content:'→'; }
+.rdp-rail { display:flex; flex-direction:column; gap:1.25rem; }
+.rdp-rail-label { font-family:var(--display); font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-3); padding-bottom:0.75rem; border-bottom:0.5px solid var(--rule); }
+.rdp-rel-card { display:block; background:white; border:0.5px solid var(--rule); border-radius:12px; overflow:hidden; text-decoration:none; transition:box-shadow 0.2s, transform 0.2s, border-color 0.2s; }
+.rdp-rel-card:hover { box-shadow:0 8px 24px rgba(14,27,53,0.1); transform:translateY(-2px); border-color:var(--rule-2); }
+.rdp-rel-img { position:relative; aspect-ratio:16/9; overflow:hidden; }
+.rdp-rel-img img { width:100%; height:100%; object-fit:cover; filter:brightness(0.72) saturate(1.1) contrast(1.08); }
+.rdp-rel-img-overlay { position:absolute; inset:0; pointer-events:none; }
+.rdp-rel-type-pill { position:absolute; top:0.65rem; left:0.65rem; font-family:var(--display); font-size:9.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:3px 9px; border-radius:100px; color:white; }
+.rdp-rel-body { padding:0.9rem 1rem 1.1rem; }
+.rdp-rel-meta { font-family:var(--display); font-size:10.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:5px; }
+.rdp-rel-title { font-family:var(--display); font-size:14px; font-weight:800; color:var(--ink); letter-spacing:-0.02em; line-height:1.35; margin-bottom:0.65rem; }
+.rdp-rel-blurb { font-family:var(--display); font-size:12px; color:var(--ink-2); line-height:1.5; margin-bottom:0.65rem; }
+.rdp-rel-footer { display:flex; justify-content:space-between; align-items:center; padding-top:0.65rem; border-top:0.5px solid var(--rule); }
+.rdp-rel-time { font-family:var(--display); font-size:11px; color:var(--ink-3); font-weight:500; }
+.rdp-rel-link { font-family:var(--display); font-size:11.5px; font-weight:700; color:var(--ink-3); }
+.rdp-rel-card:hover .rdp-rel-link { color:var(--ink); }
+
+.rdp-rail-cta { background:var(--navy); border-radius:12px; padding:1.25rem; text-align:center; }
+.rdp-rail-cta-t { font-family:var(--display); font-size:14px; font-weight:700; color:white; margin-bottom:0.4rem; letter-spacing:-0.01em; }
+.rdp-rail-cta-d { font-family:var(--display); font-size:12px; color:rgba(255,255,255,0.6); margin-bottom:0.9rem; line-height:1.5; }
+.rdp-rail-cta a { display:inline-flex; align-items:center; gap:5px; font-family:var(--display); font-size:13px; font-weight:700; color:#7EB3FF; }
 
 /* --- MOBILE MENU OVERLAY --- */
 .mobile-menu-toggle {
@@ -1595,6 +1607,56 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
   }
 }
 </style>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cognecto.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resources",
+      "item": "https://cognecto.com/pages/resources/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "About Cognecto",
+      "item": "https://cognecto.com/pages/resources/about-us.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "About Cognecto | Cognecto Resources",
+  "description": "The intelligence layer the physical world has been missing.",
+  "url": "https://cognecto.com/pages/resources/about-us.html",
+  "image": "https://cognecto.com/assets/images/highway_during_construction_compaction.webp",
+  "datePublished": "2026-05-24",
+  "dateModified": "2026-05-24",
+  "author": {
+    "@type": "Organization",
+    "name": "Cognecto",
+    "url": "https://cognecto.com/",
+    "logo": "https://cognecto.com/favicon.svg"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cognecto",
+    "url": "https://cognecto.com/",
+    "logo": "https://cognecto.com/favicon.svg"
+  }
+}
+  </script>
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 </head>
 <body>
@@ -2133,7 +2195,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
                     </a>
 
                     <!-- Post 3 — Blog post -->
-                    <a href="blog-future-of-infra.html" class="res-post-card">
+                    <a href="about-us.html" class="res-post-card">
                       <div class="res-post-img" style="background-image:url('https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=400&h=220&fit=crop');"></div>
                       <div class="res-post-overlay"></div>
                       <div class="res-post-badge" style="background:rgba(11,168,104,0.8);">Blog</div>
@@ -2221,668 +2283,233 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
 
 
 
-<!-- HERO -->
-<section class="res-hero">
-  <div class="res-hero-inner">
+<section class="rdp-hero">
+  <div class="rdp-hero-inner">
     <div class="wrap">
-      <div class="res-breadcrumb">
-        <a href="../../index.html">Cognecto</a>
-        <span>›</span> Resources
+      <div class="rdp-breadcrumb">
+        <a href="../../index.html">Cognecto</a><span>›</span>
+        <a href="index.html">Resources</a><span>›</span>
+        Blog Post
       </div>
-      <h1>Field-tested insights.<br><em>Engineered for industry.</em></h1>
-      <p class="res-hero-sub">Case studies from active deployments. Engineering white papers on Physics AI and Vision AI architectures. Product briefs, webinar recordings, and field perspectives from infrastructure leaders across roads, mining, and water.</p>
-      <div class="res-stat-row">
-        <div class="res-hstat"><div class="res-hstat-n">15</div><div class="res-hstat-l">Resources across 5 content types</div></div>
-        <div class="res-hstat"><div class="res-hstat-n">14+</div><div class="res-hstat-l">Customer case studies</div></div>
-        <div class="res-hstat"><div class="res-hstat-n">25,000 km</div><div class="res-hstat-l">Of operational data referenced</div></div>
-        <div class="res-hstat"><div class="res-hstat-n">No gates</div><div class="res-hstat-l">Free downloads · no email required</div></div>
-      </div>
-    </div>
-
-      <div class="res-filter-stack" id="news-filters" style="display:none;">
-        <div class="res-filter-row" style="flex-wrap:wrap; gap:0.5rem;">
-          <span class="res-filter-label" style="margin-right:1rem; padding-top:0.3rem;">Category</span>
-          <button class="res-filter-pill active" data-news-filter="all">All</button>
-          <button class="res-filter-pill" data-news-filter="news">News</button>
-          <button class="res-filter-pill" data-news-filter="government-recognition">Government Recognition</button>
-          <button class="res-filter-pill" data-news-filter="funding">Funding</button>
-          <button class="res-filter-pill" data-news-filter="accelerator">Accelerator</button>
-          <button class="res-filter-pill" data-news-filter="customer-deployment">Customer Deployment</button>
-          <button class="res-filter-pill" data-news-filter="product-app-store">Product / App Store</button>
-          <button class="res-filter-pill" data-news-filter="company-verification">Company Verification</button>
+      <div class="rdp-hero-grid">
+        <div>
+          <div class="rdp-type-pill"><span style="width:6px;height:6px;border-radius:50%;background:#7EB3FF;"></span>About Us</div>
+          <div class="rdp-meta-row">Company Overview</div>
+          <h1>About Cognecto</h1>
+          <p class="rdp-hero-sub">The intelligence layer the physical world has been missing.</p>
+        </div>
+        <div class="rdp-hero-img">
+          <img src="../../assets/images/highway_infra_future.webp" alt="About Cognecto" loading="lazy"/>
+          <div class="rdp-hero-stats">
+            <div class="rdp-hero-stat"><div class="rdp-hero-stat-n">10+</div><div class="rdp-hero-stat-l">Countries</div></div><div class="rdp-hero-stat"><div class="rdp-hero-stat-n">20k+</div><div class="rdp-hero-stat-l">km Monitored</div></div><div class="rdp-hero-stat"><div class="rdp-hero-stat-n">4x</div><div class="rdp-hero-stat-l">Efficiency</div></div>
+          </div>
         </div>
       </div>
+    </div>
   </div>
 </section>
 
-<!-- FILTERS -->
-<section class="res-filters">
+<section class="rdp-body">
   <div class="wrap">
-    
-    <div class="res-main-tabs" style="display:flex; gap:1.5rem; margin-bottom:2rem; border-bottom:1px solid var(--rule);">
-      <button class="res-main-tab active" data-target="documents" style="padding:0.75rem 0.5rem; font-family:var(--display); font-size:16px; font-weight:700; color:var(--blue); border-bottom:3px solid var(--blue); transition:all 0.2s;">Documents</button>
-      <button class="res-main-tab" data-target="news" style="padding:0.75rem 0.5rem; font-family:var(--display); font-size:16px; font-weight:500; color:var(--ink-3); border-bottom:3px solid transparent; transition:all 0.2s;">News & Recognition</button>
-    </div>
-      <div class="res-filter-stack" id="documents-filters">
-      <div class="res-filter-row">
-        <span class="res-filter-label">Type</span>
-        <div class="res-filter-group" id="filter-type">
-          <button class="res-filter-pill active" data-filter="all">All</button>
-          <button class="res-filter-pill" data-filter="case-study">Case Studies</button>
-          <button class="res-filter-pill" data-filter="white-paper">White Papers</button>
-          <button class="res-filter-pill" data-filter="product-brief">Product Briefs</button>
-          <button class="res-filter-pill" data-filter="webinar">Webinars &amp; Videos</button>
-          <button class="res-filter-pill" data-filter="blog">Blog &amp; Insights</button>
-          <button class="res-filter-pill" data-filter="company">Company</button>
+    <div class="rdp-layout">
+      <main>
+        <div class="rdp-section">
+          <div class="rdp-section-label"><span class="rdp-section-label-dot"></span>About Cognecto</div>
+          <h2>The AI Operating System for Physical Infrastructure</h2>
+          <p>Cognecto is the intelligence layer the physical world has been missing.</p>
+          <p>We are an AI-powered connected operations platform built for the sectors that keep civilisations running — roads and expressways, city water networks, and mines that extract the raw materials the world depends on. We have spent years doing one thing: making physical infrastructure measurable, verifiable, and trusted — at scale, in real time, in the hardest operating environments on earth.</p>
+          <p>We are not a dashboarding company. We are not a telematics bolt-on. We are a full-stack AI operating system that ingests signals from the physical world, builds operational context, and delivers structured intelligence to every level of an organisation — from a field supervisor's phone to a Ministry secretary's dashboard, in a single unified interface.</p>
+          <p>The infrastructure industry has digitised around the edges for decades. Cognecto digitises the core.</p>
         </div>
-      </div>
-      <div class="res-filter-row">
-        <span class="res-filter-label">Sector</span>
-        <div class="res-filter-group" id="filter-sector">
-          <button class="res-filter-pill active" data-filter="all">All</button>
-          <button class="res-filter-pill" data-filter="roads">Roads &amp; Highways</button>
-          <button class="res-filter-pill" data-filter="mining">Mining</button>
-          <button class="res-filter-pill" data-filter="water">Water</button>
-        </div>
-        <span class="res-filter-count" id="filter-count">Showing 15 of 15 resources</span>
-      </div>
-    </div>
 
-      <div class="res-filter-stack" id="news-filters" style="display:none;">
-        <div class="res-filter-row" style="flex-wrap:wrap; gap:0.5rem;">
-          <span class="res-filter-label" style="margin-right:1rem; padding-top:0.3rem;">Category</span>
-          <button class="res-filter-pill active" data-news-filter="all">All</button>
-          <button class="res-filter-pill" data-news-filter="news">News</button>
-          <button class="res-filter-pill" data-news-filter="government-recognition">Government Recognition</button>
-          <button class="res-filter-pill" data-news-filter="funding">Funding</button>
-          <button class="res-filter-pill" data-news-filter="accelerator">Accelerator</button>
-          <button class="res-filter-pill" data-news-filter="customer-deployment">Customer Deployment</button>
-          <button class="res-filter-pill" data-news-filter="product-app-store">Product / App Store</button>
-          <button class="res-filter-pill" data-news-filter="company-verification">Company Verification</button>
+        <div class="rdp-section">
+          <div class="rdp-section-label"><span class="rdp-section-label-dot"></span>Where We Win</div>
+          <h2>Roads & Expressways</h2>
+          <p>Cognecto monitors <strong>20,000+ kilometres of roads and highways</strong> — including expressway corridors trusted by some of India's largest road asset owners. Our AI replaces subjective inspections with geo-tagged, timestamped, court-admissible evidence for every compaction pass, every layer, every defect. Clients include government bodies under NHAI, UPRRDA, PMGSY, and state PWDs across India, as well as sovereign infrastructure developers in the Gulf.</p>
+          <p>The result: −40% rework cost, −60% inspection time, and for the first time, a legal evidence trail that stands up to scrutiny at every level of government accountability.</p>
+          <div class="rdp-quote">
+            <div class="rdp-quote-body">"Cognecto has set a benchmark for evidence-based quality monitoring in road construction. The AI-verified inspections replaced subjective assessments and gave us court-admissible evidence trails for the first time."</div>
+            <div class="rdp-quote-author">CEO, UPRRDA</div>
+          </div>
+          <br>
+          <h2>City Water Networks</h2>
+          <p>Water loss is one of the most expensive and invisible problems municipal operators face. Cognecto's continuous AI monitoring layer — deployed across city water distribution networks — detects anomalies, pressure drops, and early-stage pipe failures before they become emergencies. We turn reactive maintenance into planned intervention, and subjective field reporting into verifiable asset health records. Urban water authorities across South Asia trust Cognecto to protect infrastructure that serves millions of people.</p>
+          <br>
+          <h2>Mining — 10 Countries & Counting</h2>
+          <p>Cognecto operates across mines in <strong>10 countries across four continents</strong> — Asia, Australia, Africa, and Europe. The world's largest emerald mine (FURA Gems, Australia) runs entirely on Cognecto technology. Clients include Emirates Global Aluminium (UAE), Vedanta, Aditya Birla Hindalco, NLC India, Coal India subsidiaries, Metlen Energy & Metals (Greece), Canyon Resources and CAMALCO (Cameroon), FG Gold (West Africa), and WATCO (pan-African logistics).</p>
+          <p>We manage HEMM fleets, shift planning, fuel accountability, PPE compliance, and mine-site safety — with outcomes that include <strong>2× mining output</strong> and <strong>99.5% fuel accounting accuracy</strong> at active sites.</p>
+          <div class="rdp-quote">
+            <div class="rdp-quote-body">"Cognecto doubled our mining capacity and achieved 99.5% fuel accounting accuracy."</div>
+            <div class="rdp-quote-author">Jacques</div>
+            <div class="rdp-quote-role">North Eastern Mining Company, Australia</div>
+          </div>
         </div>
-      </div>
+
+        <div class="rdp-section">
+          <div class="rdp-section-label"><span class="rdp-section-label-dot"></span>The Platform</div>
+          <h2>Three Layers. One Intelligence.</h2>
+          <p>Cognecto is built on three purpose-engineered product layers that work together as a unified AI operating system. No data science team required. Operational in seven days.</p>
+          
+          <h3>Boson — Hear</h3>
+          <p>Physics-based AI trained on the actual mechanics of compaction, material fatigue, and structural degradation — not just visual patterns. Boson counts every roller pass, verifies every equipment sequence, and flags deviation before concrete sets. It is the IoT listening and sensing layer: GPS-IoT fusion, compaction verification, asset health tracking, and field data ingestion across heterogeneous equipment fleets.</p>
+          
+          <h3>Photon — See</h3>
+          <p>Real-time computer vision across thousands of simultaneous camera streams. Photon doesn't review footage after an incident — it prevents the incident. PPE compliance, no-go zone intrusion, fire and smoke detection, defect classification, visibility conditions, and contractor accountability — all in real time, across multi-site, multi-country deployments. Designed for industrial environments where the cost of a miss is a life or a legal liability.</p>
+
+          <h3>Cortex — Act</h3>
+          <p>The intelligence and orchestration layer that turns Boson and Photon signals into decisions. BOQ verification triggers billing. Milestone completion gates the next work order. Equipment downtime updates the shift plan automatically. Every Cortex output is structured, timestamped, and audit-ready. This is where data becomes operational intelligence — for governments, enterprises, and investors who need ground truth, not reports.</p>
+
+          <p>Together, these three layers form a data moat that self-widens: over <strong>500 million data assets</strong> ingested, <strong>15,000+ assets</strong> monitored across <strong>145+ asset types</strong> — and every new deployment sharpens every existing model.</p>
+        </div>
+
+        <div class="rdp-section">
+          <div class="rdp-section-label"><span class="rdp-section-label-dot"></span>Integrations</div>
+          <h2>Off-the-Shelf OEM Integration</h2>
+          <p>Cognecto works with the equipment your teams already operate. We have built native integrations for the world's leading HEMM and construction equipment manufacturers — no custom engineering, no lengthy onboarding:</p>
+          <p><strong>TATA · Caterpillar · Komatsu · Mahindra · JCB · CNH · Daimler · AJAX · HAMM · Hitachi · Bell · Renault Trucks · BEML · Thyssenkrupp</strong></p>
+          <p>This is not a compatibility list. These are live, field-tested integrations running on active project sites today. Our API-first architecture means enterprise ERP, SAP, and third-party systems connect in days, not months.</p>
+        </div>
+
+        <div class="rdp-section">
+          <div class="rdp-section-label"><span class="rdp-section-label-dot"></span>Differentiator</div>
+          <h2>Why Cognecto Is Structurally Different</h2>
+          <p>Most AI applied to infrastructure is a point solution — a dashboard, a sensor, a report. Cognecto is built differently, at an architectural level that cannot be replicated by a cloud provider adding an infrastructure module or a systems integrator assembling third-party tools.</p>
+          <p><strong>Physics-based transfer learning.</strong> Our AI was trained on the physical laws governing infrastructure degradation — fatigue mechanics, compaction dynamics, corrosion chemistry, flow physics. The same model intelligence that monitors a highway corridor transfers directly to a water pipeline or a mine haul road. This took four years to get right.</p>
+          <p><strong>A data moat that self-widens.</strong> 20,000+ km of roads monitored. Millions of compaction-pass readings. Defect libraries built from real construction failures across India, Australia, and East Africa. No publicly available dataset comes close — and the gap widens with every project.</p>
+          <p><strong>Patent-protected core IP.</strong> Compaction-pass counting via GPS-IoT fusion, AI defect classification from field video, and multi-sensor infrastructure health scoring — all patent-filed. The core intelligence cannot be commoditised.</p>
+          <p><strong>Schema lock-in, not vendor lock-in.</strong> Every project monitored by Cognecto produces a structured, queryable event history — chainage-referenced, timestamped, role-segmented. We become the source of truth for billing, audits, and performance tracking. The infrastructure beneath the infrastructure.</p>
+        </div>
+
+        <div class="rdp-section">
+          <div class="rdp-section-label"><span class="rdp-section-label-dot"></span>Trust</div>
+          <h2>Trusted By</h2>
+          <p><strong>Expressway & Road Authorities:</strong> NHAI · UPRRDA · Ministry of Rural Development (PMGSY/NRIDA) · RRDA Nagaland · RRDA Tripura · State PWDs · ADNOC (UAE)</p>
+          <p><strong>Mining Enterprises:</strong> Emirates Global Aluminium · FURA Gems · Vedanta · Aditya Birla Hindalco · NLC India · Coal India (WCL, CCL, BCCL, ECL) · BEML · Thyssenkrupp Industries India · Metlen Energy & Metals · Canyon Resources · CAMALCO · WATCO · FG Gold · Government of Sikkim</p>
+          <p><strong>Industrial & Infrastructure:</strong> BHEL · Ion Exchange India · JSW Group · Govt. of India (Ministry of Rural Development)</p>
+          <p><strong>Water Networks:</strong> Urban water authorities across South Asia (city water distribution & pipeline monitoring)</p>
+        </div>
+
+        <div class="rdp-section">
+          <div class="rdp-section-label"><span class="rdp-section-label-dot"></span>Recognition</div>
+          <h2>Industry Recognized Category Leader</h2>
+          <ul>
+            <li><strong>#1 Mining Tech Startup in India</strong> — Tracxn (2024)</li>
+            <li><strong>Top 5 Global Startup for Predictive Analytics</strong> — StartUs Insights</li>
+            <li><strong>Top 25 Key Player, Equipment Monitoring — Global</strong> — Industry ARC</li>
+            <li><strong>Business Excellence Award</strong> — Vedanta Group (2023–24)</li>
+            <li><strong>Most Innovative Startup</strong> — IIT Delhi (2023)</li>
+            <li><strong>CII Centre of Excellence</strong> — Confederation of Indian Industry</li>
+            <li><strong>Spacecubed Perth Landing Pad</strong> — Australia's gateway accelerator for international deep-tech</li>
+            <li><strong>21 Top Startups Bangalore 2024</strong> — BTFS</li>
+            <li><strong>Mines Safety Week 2025–26 Participating Organisation</strong> — NLC India / DGMS</li>
+            <li><strong>Top 10 Most Recommended Startup</strong> — CIO Insider</li>
+            <li><strong>Top Performing Startup</strong> — Vedanta Spark (2023)</li>
+          </ul>
+        </div>
+        
+        <div class="rdp-section">
+          <div class="rdp-section-label"><span class="rdp-section-label-dot"></span>Scale</div>
+          <h2>The Numbers</h2>
+          <div class="rdp-impact-grid">
+            <div class="rdp-impact-card"><div class="rdp-impact-card-n">20,000+</div><div class="rdp-impact-card-l">km Roads Monitored</div></div>
+            <div class="rdp-impact-card"><div class="rdp-impact-card-n">10</div><div class="rdp-impact-card-l">Countries</div></div>
+            <div class="rdp-impact-card"><div class="rdp-impact-card-n">500M+</div><div class="rdp-impact-card-l">Data Assets</div></div>
+            <div class="rdp-impact-card"><div class="rdp-impact-card-n">15,000+</div><div class="rdp-impact-card-l">Connected Assets</div></div>
+            <div class="rdp-impact-card"><div class="rdp-impact-card-n">145+</div><div class="rdp-impact-card-l">Asset Types</div></div>
+            <div class="rdp-impact-card"><div class="rdp-impact-card-n">25-30%</div><div class="rdp-impact-card-l">Efficiency Gain</div></div>
+            <div class="rdp-impact-card"><div class="rdp-impact-card-n">7 Days</div><div class="rdp-impact-card-l">Activation Time</div></div>
+            <div class="rdp-impact-card"><div class="rdp-impact-card-n">4×</div><div class="rdp-impact-card-l">Efficiency (UPRRDA)</div></div>
+            <div class="rdp-impact-card"><div class="rdp-impact-card-n">2×</div><div class="rdp-impact-card-l">Mining Output (FURA)</div></div>
+          </div>
+        </div>
+
+        <div class="rdp-section">
+          <div class="rdp-section-label"><span class="rdp-section-label-dot"></span>Contact</div>
+          <h2>Get in Touch</h2>
+          <p><strong>Cognecto Private Limited</strong></p>
+          <p>No. 14, Bhattarahalli, Old Madras Road, KR Puram, Bengaluru — 560049, India</p>
+          <p><a href="https://www.cognecto.com">www.cognecto.com</a> · <a href="mailto:contactus@cognecto.com">contactus@cognecto.com</a> · +91 99973 10261</p>
+          <p><em>Bengaluru, India · Operating across Asia, Australia, Africa, and Europe</em></p>
+        </div>
+</main>
+
+      <aside class="rdp-rail">
+        <div class="rdp-rail-label">Related resources</div>
+        
+        <a href="../customers/uprrda-case-study.html" class="rdp-rel-card">
+          <div class="rdp-rel-img">
+            <img src="../../assets/images/highway_uprrda_thumb.webp" alt="How UPRRDA achieved 95/100 quality on Package 6152" loading="lazy"/>
+            <div class="rdp-rel-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#D9770633 100%);"></div>
+            <div class="rdp-rel-type-pill" style="background:#D97706;">Case Study</div>
+          </div>
+          <div class="rdp-rel-body">
+            <div class="rdp-rel-meta" style="color:#D97706;">Roads & Highways</div>
+            <div class="rdp-rel-title">How UPRRDA achieved 95/100 quality on Package 6152</div>
+            <div class="rdp-rel-blurb">Vision AI verified compaction, BOQ-linked progress, and a model for evidence-based public infrastructure governance.</div>
+            <div class="rdp-rel-footer">
+              <span class="rdp-rel-time">8 min read</span>
+              <span class="rdp-rel-link">Read →</span>
+            </div>
+          </div>
+        </a>
+        <a href="physics-ai-vs-cv.html" class="rdp-rel-card">
+          <div class="rdp-rel-img">
+            <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&fit=crop" alt="Physics AI vs Computer Vision in heavy industry" loading="lazy"/>
+            <div class="rdp-rel-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#2E4DEA33 100%);"></div>
+            <div class="rdp-rel-type-pill" style="background:#2E4DEA;">White Paper</div>
+          </div>
+          <div class="rdp-rel-body">
+            <div class="rdp-rel-meta" style="color:#2E4DEA;">Platform · All Sectors</div>
+            <div class="rdp-rel-title">Physics AI vs Computer Vision in heavy industry</div>
+            <div class="rdp-rel-blurb">Why telematics signal verification is fundamentally different from visual detection — and why every platform needs both.</div>
+            <div class="rdp-rel-footer">
+              <span class="rdp-rel-time">22 pp · PDF</span>
+              <span class="rdp-rel-link">Read →</span>
+            </div>
+          </div>
+        </a>
+        <a href="boq-verification-architecture.html" class="rdp-rel-card">
+          <div class="rdp-rel-img">
+            <img src="https://images.pexels.com/photos/1004409/pexels-photo-1004409.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&fit=crop" alt="BOQ verification at scale — a knowledge graph architecture" loading="lazy"/>
+            <div class="rdp-rel-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#D9770633 100%);"></div>
+            <div class="rdp-rel-type-pill" style="background:#D97706;">White Paper</div>
+          </div>
+          <div class="rdp-rel-body">
+            <div class="rdp-rel-meta" style="color:#D97706;">Roads & Highways</div>
+            <div class="rdp-rel-title">BOQ verification at scale — a knowledge graph architecture</div>
+            <div class="rdp-rel-blurb">How Cortex automates BOQ line-item verification against verified field events for PMGSY, NHAI, and EPC.</div>
+            <div class="rdp-rel-footer">
+              <span class="rdp-rel-time">18 pp · PDF</span>
+              <span class="rdp-rel-link">Read →</span>
+            </div>
+          </div>
+        </a>
+        <a href="blog-vision-ai-mining.html" class="rdp-rel-card">
+          <div class="rdp-rel-img">
+            <img src="https://images.pexels.com/photos/1645028/pexels-photo-1645028.jpeg?auto=compress&cs=tinysrgb&w=600&h=340&fit=crop" alt="Vision AI is the third shift at every mine" loading="lazy"/>
+            <div class="rdp-rel-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#7C3AED33 100%);"></div>
+            <div class="rdp-rel-type-pill" style="background:#7C3AED;">Blog Post</div>
+          </div>
+          <div class="rdp-rel-body">
+            <div class="rdp-rel-meta" style="color:#7C3AED;">Mining</div>
+            <div class="rdp-rel-title">Vision AI is the third shift at every mine</div>
+            <div class="rdp-rel-blurb">Why the safety gap during night operations is no longer about workforce — it's about what's watching when no one is.</div>
+            <div class="rdp-rel-footer">
+              <span class="rdp-rel-time">5 min read</span>
+              <span class="rdp-rel-link">Read →</span>
+            </div>
+          </div>
+        </a>
+        <div class="rdp-rail-cta">
+          <div class="rdp-rail-cta-t">Browse all resources</div>
+          <div class="rdp-rail-cta-d">15 resources across case studies, white papers, briefs, webinars &amp; blog.</div>
+          <a href="index.html">See all resources →</a>
+        </div>
+      </aside>
+    </div>
   </div>
 </section>
 
-<!-- GRID -->
-<section class="res-grid-section">
-  <div class="wrap">
-    <div id="documents-wrap">
-    <div class="res-grid" id="res-grid">
-        <a href="about-us.html" class="res-card" data-type="company" data-sector="all" data-featured="true">
-          <div class="res-card-img">
-            <img src="../../assets/images/highway_bro_main.webp" alt="About Cognecto" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#2E4DEA33 100%);"></div>
-            <div class="res-card-type-pill" style="background:#2E4DEA;">About Us</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#2E4DEA;">Company</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">5 min read</span>
-            </div>
-            <div class="res-card-title">About Cognecto</div>
-            <div class="res-card-blurb">The AI Operating System for Physical Infrastructure. We are an AI-powered connected operations platform built for the sectors that keep civilisations running.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">2026</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="../customers/uprrda-case-study.html" class="res-card" data-type="case-study" data-sector="roads" data-featured="true">
-          <div class="res-card-img">
-            <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="How UPRRDA achieved 95/100 quality on Package 6152" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#D9770633 100%);"></div>
-            <div class="res-card-type-pill" style="background:#D97706;">Case Study</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#D97706;">Roads & Highways</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">8 min read</span>
-            </div>
-            <div class="res-card-title">How UPRRDA achieved 95/100 quality on Package 6152</div>
-            <div class="res-card-blurb">Vision AI verified compaction, BOQ-linked progress, and a model for evidence-based public infrastructure governance. The complete playbook from Shri Akhand Pratap Singh, IAS.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">Mar 2026</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-        <a href="fura-gems-multi-continent.html" class="res-card" data-type="case-study" data-sector="mining">
-          <div class="res-card-img">
-            <img src="../../assets/images/mining_dump_truck.webp" alt="One platform across Mozambique, Madagascar & Australia" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#7C3AED33 100%);"></div>
-            <div class="res-card-type-pill" style="background:#7C3AED;">Case Study</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#7C3AED;">Mining</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">10 min read</span>
-            </div>
-            <div class="res-card-title">One platform across Mozambique, Madagascar & Australia</div>
-            <div class="res-card-blurb">Fura Gems runs three mines on three continents on one Cortex instance. How group-wide ESG, HSE, and operations intelligence works at scale.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">Feb 2026</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-        <a href="watco-odisha-nrw.html" class="res-card" data-type="case-study" data-sector="water">
-          <div class="res-card-img">
-            <img src="https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="34% NRW reduction in 6 months — WATCO Odisha" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#0891B233 100%);"></div>
-            <div class="res-card-type-pill" style="background:#0891B2;">Case Study</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#0891B2;">Water</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">7 min read</span>
-            </div>
-            <div class="res-card-title">34% NRW reduction in 6 months — WATCO Odisha</div>
-            <div class="res-card-blurb">How DMA-level analytics, leak detection, and automated AMR billing cut non-revenue water by 34% across 120 km of distribution network.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">Feb 2026</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-        <a href="physics-ai-vs-cv.html" class="res-card" data-type="white-paper" data-sector="all">
-          <div class="res-card-img">
-            <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="Physics AI vs Computer Vision in heavy industry" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#2E4DEA33 100%);"></div>
-            <div class="res-card-type-pill" style="background:#2E4DEA;">White Paper</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#2E4DEA;">Platform</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">22 pp · PDF</span>
-            </div>
-            <div class="res-card-title">Physics AI vs Computer Vision in heavy industry</div>
-            <div class="res-card-blurb">Why telematics signal verification (Physics AI) is fundamentally different from visual detection (CV) — and why every infrastructure platform needs both.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">Jan 2026</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-        <a href="boq-verification-architecture.html" class="res-card" data-type="white-paper" data-sector="roads">
-          <div class="res-card-img">
-            <img src="https://images.pexels.com/photos/1004409/pexels-photo-1004409.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="BOQ verification at scale — a knowledge graph architecture" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#D9770633 100%);"></div>
-            <div class="res-card-type-pill" style="background:#D97706;">White Paper</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#D97706;">Roads & Highways</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">18 pp · PDF</span>
-            </div>
-            <div class="res-card-title">BOQ verification at scale — a knowledge graph architecture</div>
-            <div class="res-card-blurb">How Cortex automates BOQ line-item verification against verified field events. Reference architecture for PMGSY, NHAI, and EPC programmes.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">Dec 2025</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-        <a href="smart-water-loRaWAN.html" class="res-card" data-type="white-paper" data-sector="water">
-          <div class="res-card-img">
-            <img src="https://images.pexels.com/photos/247763/pexels-photo-247763.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="Smart water metering on LoRaWAN — engineering deep dive" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#0891B233 100%);"></div>
-            <div class="res-card-type-pill" style="background:#0891B2;">White Paper</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#0891B2;">Water</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">26 pp · PDF</span>
-            </div>
-            <div class="res-card-title">Smart water metering on LoRaWAN — engineering deep dive</div>
-            <div class="res-card-blurb">Network design, gateway placement, message scheduling, and battery optimisation for 15-year AMR meter deployments at urban utility scale.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">Nov 2025</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-        <a href="boson-product-brief.html" class="res-card" data-type="product-brief" data-sector="all">
-          <div class="res-card-img">
-            <img src="../../assets/images/mining_aerial_quarry.webp" alt="Boson — IoT sensing & Physics AI" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#2E4DEA33 100%);"></div>
-            <div class="res-card-type-pill" style="background:#2E4DEA;">Product Brief</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#2E4DEA;">Platform</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">6 pp · PDF</span>
-            </div>
-            <div class="res-card-title">Boson — IoT sensing & Physics AI</div>
-            <div class="res-card-blurb">Multi-OEM telematics, pass counting, and predictive maintenance across 20+ device manufacturers. The complete capability brief.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">2026</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-        <a href="photon-product-brief.html" class="res-card" data-type="product-brief" data-sector="all">
-          <div class="res-card-img">
-            <img src="../../assets/images/mining_worker_bulldozer.webp" alt="Photon — Vision AI for infrastructure" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#0891B233 100%);"></div>
-            <div class="res-card-type-pill" style="background:#0891B2;">Product Brief</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#0891B2;">Platform</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">8 pp · PDF</span>
-            </div>
-            <div class="res-card-title">Photon — Vision AI for infrastructure</div>
-            <div class="res-card-blurb">Roller lane coverage, cement spread uniformity, payload estimation, and 24/7 safety monitoring — all on existing CCTV.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">2026</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-        <a href="mining-platform-brief.html" class="res-card" data-type="product-brief" data-sector="mining">
-          <div class="res-card-img">
-            <img src="https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="Mining intelligence platform — 8 modules overview" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#7C3AED33 100%);"></div>
-            <div class="res-card-type-pill" style="background:#7C3AED;">Product Brief</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#7C3AED;">Mining</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">12 pp · PDF</span>
-            </div>
-            <div class="res-card-title">Mining intelligence platform — 8 modules overview</div>
-            <div class="res-card-blurb">Shift planning, haul cycles, fuel management, maintenance, operator attendance — the complete mining platform in one brief.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">2026</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-        <a href="webinar-pmgsy-evidence.html" class="res-card" data-type="webinar" data-sector="roads">
-          <div class="res-card-img">
-            <img src="../../assets/images/highway_bro_main.webp" alt="Webinar — Evidence-based monitoring for PMGSY programmes" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#D9770633 100%);"></div>
-            <div class="res-card-type-pill" style="background:#D97706;">Webinar</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#D97706;">Roads & Highways</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">42 min · Video</span>
-            </div>
-            <div class="res-card-title">Webinar — Evidence-based monitoring for PMGSY programmes</div>
-            <div class="res-card-blurb">Live demonstration with UPRRDA case study, OMMAS integration walkthrough, and Q&A with the Cognecto deployment team.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">Jan 2026</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-        <a href="webinar-nrw-strategies.html" class="res-card" data-type="webinar" data-sector="water">
-          <div class="res-card-img">
-            <img src="https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="Webinar — NRW reduction strategies for urban utilities" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#0891B233 100%);"></div>
-            <div class="res-card-type-pill" style="background:#0891B2;">Webinar</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#0891B2;">Water</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">38 min · Video</span>
-            </div>
-            <div class="res-card-title">Webinar — NRW reduction strategies for urban utilities</div>
-            <div class="res-card-blurb">WATCO Odisha shares the 6-month journey from 50% NRW to 16% — DMA design, sensor deployment, and operational governance.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">Dec 2025</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-        <a href="video-mining-tour.html" class="res-card" data-type="webinar" data-sector="mining">
-          <div class="res-card-img">
-            <img src="../../assets/images/mining_dump_truck.webp" alt="Video — Inside a Cognecto-enabled mining operation" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#7C3AED33 100%);"></div>
-            <div class="res-card-type-pill" style="background:#7C3AED;">Video</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#7C3AED;">Mining</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">12 min · Video</span>
-            </div>
-            <div class="res-card-title">Video — Inside a Cognecto-enabled mining operation</div>
-            <div class="res-card-blurb">Walk through a working open-cast mine running on Cognecto — from shift planning at 6 AM to production reports at the end of shift.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">Nov 2025</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-        <a href="blog-future-of-infra.html" class="res-card" data-type="blog" data-sector="all">
-          <div class="res-card-img">
-            <img src="../../assets/images/highway_rural_construction.webp" alt="The future of infrastructure is verifiable" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#2E4DEA33 100%);"></div>
-            <div class="res-card-type-pill" style="background:#2E4DEA;">Blog Post</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#2E4DEA;">Insights</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">6 min read</span>
-            </div>
-            <div class="res-card-title">The future of infrastructure is verifiable</div>
-            <div class="res-card-blurb">Why every dollar invested in public infrastructure now demands an audit trail — and how AI is changing what accountability means.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">Mar 2026</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-        <a href="blog-vision-ai-mining.html" class="res-card" data-type="blog" data-sector="mining">
-          <div class="res-card-img">
-            <img src="../../assets/images/mining_aerial_quarry.webp" alt="Vision AI is the third shift at every mine" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#7C3AED33 100%);"></div>
-            <div class="res-card-type-pill" style="background:#7C3AED;">Blog Post</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#7C3AED;">Mining</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">5 min read</span>
-            </div>
-            <div class="res-card-title">Vision AI is the third shift at every mine</div>
-            <div class="res-card-blurb">Why the safety gap during night operations is no longer about workforce — it's about what's watching when no one is.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">Feb 2026</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-        <a href="blog-jal-jeevan-baseline.html" class="res-card" data-type="blog" data-sector="water">
-          <div class="res-card-img">
-            <img src="https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="What Jal Jeevan needs that pipelines alone can't give" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.2) 0%,#0891B233 100%);"></div>
-            <div class="res-card-type-pill" style="background:#0891B2;">Blog Post</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:#0891B2;">Water</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">7 min read</span>
-            </div>
-            <div class="res-card-title">What Jal Jeevan needs that pipelines alone can't give</div>
-            <div class="res-card-blurb">Har Ghar Jal requires more than infrastructure — it requires real-time intelligence on every connection. A maintenance baseline for the next decade.</div>
-            <div class="res-card-footer">
-              <span class="res-card-date">Jan 2026</span>
-              <span class="res-card-cta">Read →</span>
-            </div>
-          </div>
-        </a>
-    </div>
-    <div class="res-empty" id="res-empty">No resources match this filter — try another combination.</div>
-    </div><!-- /documents-wrap -->
-    <div id="news-wrap" style="display:none;">
-      <div class="res-grid" id="news-grid" style="display:none;">
-        <a href="https://yourstory.com/2025/01/cognecto-makes-mining-logistics-work-easy-iot-sensor-solutions" target="_blank" rel="noopener noreferrer" class="res-card news-card" data-news-category="news">
-          <div class="res-card-img">
-            <img src="../../assets/images/highway_infra_future.webp" alt="Cognecto featured by YourStory for mining and logistics innovation" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.3) 0%,#1A2540 100%); opacity:0.6;"></div>
-            <div style="position:absolute; top:1rem; left:1rem; z-index:2; background:rgba(255,255,255,0.9); backdrop-filter:blur(10px); border-radius:6px; padding:6px 12px; font-family:var(--display); font-size:12px; font-weight:800; color:var(--ink); box-shadow:0 4px 12px rgba(0,0,0,0.15);">YourStory</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:var(--blue); font-weight:700;">News</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">External Link</span>
-            </div>
-            <div class="res-card-title" style="font-size:1.15rem; line-height:1.4;">Cognecto featured by YourStory for mining and logistics innovation</div>
-            <div class="res-card-blurb" style="font-size:13px;">YourStory profiles Cognecto’s IoT and sensor-driven platform for improving mining, logistics, transportation, and heavy equipment operations.</div>
-            <div class="res-card-footer" style="margin-top:auto; padding-top:1rem;">
-              <span class="res-card-cta" style="color:var(--blue);">Read More ↗</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://yourstory.com/2024/09/tech30-thirty-most-promising-indian-startups-of-2024" target="_blank" rel="noopener noreferrer" class="res-card news-card" data-news-category="news">
-          <div class="res-card-img">
-            <img src="../../assets/images/highway_nrida_thumb.webp" alt="Cognecto selected in YourStory Tech30 2024" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.3) 0%,#1A2540 100%); opacity:0.6;"></div>
-            <div style="position:absolute; top:1rem; left:1rem; z-index:2; background:rgba(255,255,255,0.9); backdrop-filter:blur(10px); border-radius:6px; padding:6px 12px; font-family:var(--display); font-size:12px; font-weight:800; color:var(--ink); box-shadow:0 4px 12px rgba(0,0,0,0.15);">YourStory</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:var(--blue); font-weight:700;">News</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">External Link</span>
-            </div>
-            <div class="res-card-title" style="font-size:1.15rem; line-height:1.4;">Cognecto selected in YourStory Tech30 2024</div>
-            <div class="res-card-blurb" style="font-size:13px;">Cognecto was listed among YourStory’s Tech30 promising Indian startups for 2024, recognised as a connected operations cloud.</div>
-            <div class="res-card-footer" style="margin-top:auto; padding-top:1rem;">
-              <span class="res-card-cta" style="color:var(--blue);">Read More ↗</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2252858" target="_blank" rel="noopener noreferrer" class="res-card news-card" data-news-category="government-recognition">
-          <div class="res-card-img">
-            <img src="https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="Cognecto selected for IndiaAI Global Acceleration Programme" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.3) 0%,#1A2540 100%); opacity:0.6;"></div>
-            <div style="position:absolute; top:1rem; left:1rem; z-index:2; background:rgba(255,255,255,0.9); backdrop-filter:blur(10px); border-radius:6px; padding:6px 12px; font-family:var(--display); font-size:12px; font-weight:800; color:var(--ink); box-shadow:0 4px 12px rgba(0,0,0,0.15);">PIB / MeitY</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:var(--blue); font-weight:700;">Government Recognition</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">External Link</span>
-            </div>
-            <div class="res-card-title" style="font-size:1.15rem; line-height:1.4;">Cognecto selected for IndiaAI Global Acceleration Programme</div>
-            <div class="res-card-blurb" style="font-size:13px;">PIB / MeitY listed Cognecto among 10 Indian AI startups selected for the IndiaAI Startups Global Acceleration Programme.</div>
-            <div class="res-card-footer" style="margin-top:auto; padding-top:1rem;">
-              <span class="res-card-cta" style="color:var(--blue);">Read More ↗</span>
-            </div>
-          </div>
-        </a>
-        
-        <a href="https://entrackr.com/2023/04/ipv-leads-rs-4-cr-round-in-cognecto/" target="_blank" rel="noopener noreferrer" class="res-card news-card" data-news-category="funding">
-          <div class="res-card-img">
-            <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="Cognecto raises ₹4 crore seed round led by Inflection Point Ventures" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.3) 0%,#1A2540 100%); opacity:0.6;"></div>
-            <div style="position:absolute; top:1rem; left:1rem; z-index:2; background:rgba(255,255,255,0.9); backdrop-filter:blur(10px); border-radius:6px; padding:6px 12px; font-family:var(--display); font-size:12px; font-weight:800; color:var(--ink); box-shadow:0 4px 12px rgba(0,0,0,0.15);">Entrackr</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:var(--blue); font-weight:700;">Funding</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">External Link</span>
-            </div>
-            <div class="res-card-title" style="font-size:1.15rem; line-height:1.4;">Cognecto raises ₹4 crore seed round led by Inflection Point Ventures</div>
-            <div class="res-card-blurb" style="font-size:13px;">Entrackr reported Cognecto’s seed funding round led by Inflection Point Ventures to strengthen AI-based solutions.</div>
-            <div class="res-card-footer" style="margin-top:auto; padding-top:1rem;">
-              <span class="res-card-cta" style="color:var(--blue);">Read More ↗</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.vccircle.com/inflectionpoint-ventures-writes-seed-cheque-to-iot-solutions-provider-cognecto" target="_blank" rel="noopener noreferrer" class="res-card news-card" data-news-category="funding">
-          <div class="res-card-img">
-            <img src="../../assets/images/highway_construction_asphalt.webp" alt="VCCircle reports IPV investment in Cognecto" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.3) 0%,#1A2540 100%); opacity:0.6;"></div>
-            <div style="position:absolute; top:1rem; left:1rem; z-index:2; background:rgba(255,255,255,0.9); backdrop-filter:blur(10px); border-radius:6px; padding:6px 12px; font-family:var(--display); font-size:12px; font-weight:800; color:var(--ink); box-shadow:0 4px 12px rgba(0,0,0,0.15);">VCCircle</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:var(--blue); font-weight:700;">Funding</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">External Link</span>
-            </div>
-            <div class="res-card-title" style="font-size:1.15rem; line-height:1.4;">VCCircle reports IPV investment in Cognecto</div>
-            <div class="res-card-blurb" style="font-size:13px;">VCCircle covered Cognecto’s seed funding and its AI, predictive analytics, and managed services focus for heavy industries.</div>
-            <div class="res-card-footer" style="margin-top:auto; padding-top:1rem;">
-              <span class="res-card-cta" style="color:var(--blue);">Read More ↗</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.prnewswire.com/news-releases/ram-kripal-singh-rks-construction-indias-leading-construction-company-chooses-cognecto-heavy-equipment-management-platform-for-enterprise-wide-implementation-301551151.html" target="_blank" rel="noopener noreferrer" class="res-card news-card" data-news-category="customer-deployment">
-          <div class="res-card-img">
-            <img src="../../assets/images/mining_dump_truck.webp" alt="RKS Construction chooses Cognecto for enterprise-wide heavy equipment management" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.3) 0%,#1A2540 100%); opacity:0.6;"></div>
-            <div style="position:absolute; top:1rem; left:1rem; z-index:2; background:rgba(255,255,255,0.9); backdrop-filter:blur(10px); border-radius:6px; padding:6px 12px; font-family:var(--display); font-size:12px; font-weight:800; color:var(--ink); box-shadow:0 4px 12px rgba(0,0,0,0.15);">PRNewswire</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:var(--blue); font-weight:700;">Customer Deployment</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">External Link</span>
-            </div>
-            <div class="res-card-title" style="font-size:1.15rem; line-height:1.4;">RKS Construction chooses Cognecto for enterprise-wide heavy equipment management</div>
-            <div class="res-card-blurb" style="font-size:13px;">PRNewswire reported RKS Construction’s enterprise-wide implementation of Cognecto’s Heavy Equipment Management Platform.</div>
-            <div class="res-card-footer" style="margin-top:auto; padding-top:1rem;">
-              <span class="res-card-cta" style="color:var(--blue);">Read More ↗</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://blog.spacecubed.com/cognectos-vision-for-transforming-mining-operations-in-western-australia-with-the-support-of-perth-landing-pad/" target="_blank" rel="noopener noreferrer" class="res-card news-card" data-news-category="accelerator">
-          <div class="res-card-img">
-            <img src="../../assets/images/mining_aerial_quarry.webp" alt="Cognecto featured for Western Australia mining expansion" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.3) 0%,#1A2540 100%); opacity:0.6;"></div>
-            <div style="position:absolute; top:1rem; left:1rem; z-index:2; background:rgba(255,255,255,0.9); backdrop-filter:blur(10px); border-radius:6px; padding:6px 12px; font-family:var(--display); font-size:12px; font-weight:800; color:var(--ink); box-shadow:0 4px 12px rgba(0,0,0,0.15);">Spacecubed</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:var(--blue); font-weight:700;">Accelerator</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">External Link</span>
-            </div>
-            <div class="res-card-title" style="font-size:1.15rem; line-height:1.4;">Cognecto featured for Western Australia mining expansion</div>
-            <div class="res-card-blurb" style="font-size:13px;">Spacecubed / Perth Landing Pad featured Cognecto’s vision for transforming mining operations in Western Australia.</div>
-            <div class="res-card-footer" style="margin-top:auto; padding-top:1rem;">
-              <span class="res-card-cta" style="color:var(--blue);">Read More ↗</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.businessstartupqatar.com/news/qatar-tasmu-accelerator-announces-25-startups/" target="_blank" rel="noopener noreferrer" class="res-card news-card" data-news-category="accelerator">
-          <div class="res-card-img">
-            <img src="https://images.pexels.com/photos/1004409/pexels-photo-1004409.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="Cognecto selected for Qatar TASMU Accelerator 2024" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.3) 0%,#1A2540 100%); opacity:0.6;"></div>
-            <div style="position:absolute; top:1rem; left:1rem; z-index:2; background:rgba(255,255,255,0.9); backdrop-filter:blur(10px); border-radius:6px; padding:6px 12px; font-family:var(--display); font-size:12px; font-weight:800; color:var(--ink); box-shadow:0 4px 12px rgba(0,0,0,0.15);">Startup Qatar</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:var(--blue); font-weight:700;">Accelerator</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">External Link</span>
-            </div>
-            <div class="res-card-title" style="font-size:1.15rem; line-height:1.4;">Cognecto selected for Qatar TASMU Accelerator 2024</div>
-            <div class="res-card-blurb" style="font-size:13px;">Business Startup Qatar reported Cognecto among the startups selected for TASMU Accelerator 2024.</div>
-            <div class="res-card-footer" style="margin-top:auto; padding-top:1rem;">
-              <span class="res-card-cta" style="color:var(--blue);">Read More ↗</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://www.cioinsiderindia.com/vendor/cognecto-leveraging-ai-to-offer-an-advanced-fleet-management-platform-cid-1406.html" target="_blank" rel="noopener noreferrer" class="res-card news-card" data-news-category="news">
-          <div class="res-card-img">
-            <img src="../../assets/images/highway_bro_main.webp" alt="CIO Insider profile on Cognecto’s heavy equipment platform" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.3) 0%,#1A2540 100%); opacity:0.6;"></div>
-            <div style="position:absolute; top:1rem; left:1rem; z-index:2; background:rgba(255,255,255,0.9); backdrop-filter:blur(10px); border-radius:6px; padding:6px 12px; font-family:var(--display); font-size:12px; font-weight:800; color:var(--ink); box-shadow:0 4px 12px rgba(0,0,0,0.15);">CIO Insider</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:var(--blue); font-weight:700;">News</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">External Link</span>
-            </div>
-            <div class="res-card-title" style="font-size:1.15rem; line-height:1.4;">CIO Insider profile on Cognecto’s heavy equipment platform</div>
-            <div class="res-card-blurb" style="font-size:13px;">CIO Insider describes Cognecto’s heavy equipment monitoring and optimisation platform for owned and rented assets.</div>
-            <div class="res-card-footer" style="margin-top:auto; padding-top:1rem;">
-              <span class="res-card-cta" style="color:var(--blue);">Read More ↗</span>
-            </div>
-          </div>
-        </a>
-        
-        <a href="https://www.einpresswire.com/article/551768201/cognecto-launches-new-product-enabling-ai-for-heavy-equipments-in-mining-construction-and-logistics" target="_blank" rel="noopener noreferrer" class="res-card news-card" data-news-category="news">
-          <div class="res-card-img">
-            <img src="../../assets/images/mining_worker_bulldozer.webp" alt="Cognecto edge device launch syndicated on EIN Presswire" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.3) 0%,#1A2540 100%); opacity:0.6;"></div>
-            <div style="position:absolute; top:1rem; left:1rem; z-index:2; background:rgba(255,255,255,0.9); backdrop-filter:blur(10px); border-radius:6px; padding:6px 12px; font-family:var(--display); font-size:12px; font-weight:800; color:var(--ink); box-shadow:0 4px 12px rgba(0,0,0,0.15);">EIN Presswire</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:var(--blue); font-weight:700;">News</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">External Link</span>
-            </div>
-            <div class="res-card-title" style="font-size:1.15rem; line-height:1.4;">Cognecto edge device launch syndicated on EIN Presswire</div>
-            <div class="res-card-blurb" style="font-size:13px;">EIN Presswire carried Cognecto’s product launch for an AI edge device for mining, construction, material handling, and logistics.</div>
-            <div class="res-card-footer" style="margin-top:auto; padding-top:1rem;">
-              <span class="res-card-cta" style="color:var(--blue);">Read More ↗</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://energy.economictimes.indiatimes.com/news/coal/ai-solution-company-cognecto-raises-rs-4-cr-in-seed-round-led-by-inflection-point-ventures/99644426" target="_blank" rel="noopener noreferrer" class="res-card news-card" data-news-category="funding">
-          <div class="res-card-img">
-            <img src="https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="ETEnergyWorld covers Cognecto seed funding" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.3) 0%,#1A2540 100%); opacity:0.6;"></div>
-            <div style="position:absolute; top:1rem; left:1rem; z-index:2; background:rgba(255,255,255,0.9); backdrop-filter:blur(10px); border-radius:6px; padding:6px 12px; font-family:var(--display); font-size:12px; font-weight:800; color:var(--ink); box-shadow:0 4px 12px rgba(0,0,0,0.15);">ETEnergyWorld</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:var(--blue); font-weight:700;">Funding</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">External Link</span>
-            </div>
-            <div class="res-card-title" style="font-size:1.15rem; line-height:1.4;">ETEnergyWorld covers Cognecto seed funding</div>
-            <div class="res-card-blurb" style="font-size:13px;">Economic Times EnergyWorld reported Cognecto’s ₹4 crore seed funding led by Inflection Point Ventures.</div>
-            <div class="res-card-footer" style="margin-top:auto; padding-top:1rem;">
-              <span class="res-card-cta" style="color:var(--blue);">Read More ↗</span>
-            </div>
-          </div>
-        </a>
-        <a href="https://india.entrepreneur.com/news-and-trends/ai-solution-company-cognecto-raises-inr-4-crore-in-seed/450030" target="_blank" rel="noopener noreferrer" class="res-card news-card" data-news-category="funding">
-          <div class="res-card-img">
-            <img src="https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="Entrepreneur India covers Cognecto funding" loading="lazy"/>
-            <div class="res-card-img-overlay" style="background:linear-gradient(160deg,rgba(14,27,53,0.3) 0%,#1A2540 100%); opacity:0.6;"></div>
-            <div style="position:absolute; top:1rem; left:1rem; z-index:2; background:rgba(255,255,255,0.9); backdrop-filter:blur(10px); border-radius:6px; padding:6px 12px; font-family:var(--display); font-size:12px; font-weight:800; color:var(--ink); box-shadow:0 4px 12px rgba(0,0,0,0.15);">Entrepreneur India</div>
-          </div>
-          <div class="res-card-body">
-            <div class="res-card-meta">
-              <span class="res-card-sector" style="color:var(--blue); font-weight:700;">Funding</span>
-              <span class="res-card-dot">·</span>
-              <span class="res-card-time">External Link</span>
-            </div>
-            <div class="res-card-title" style="font-size:1.15rem; line-height:1.4;">Entrepreneur India covers Cognecto funding</div>
-            <div class="res-card-blurb" style="font-size:13px;">Entrepreneur India covered Cognecto’s seed funding and its AI-led operational analytics for mining and construction.</div>
-            <div class="res-card-footer" style="margin-top:auto; padding-top:1rem;">
-              <span class="res-card-cta" style="color:var(--blue);">Read More ↗</span>
-            </div>
-          </div>
-        </a>
-        
-        
-      </div>
-      <div class="res-empty" id="news-empty" style="display:none;">No news items match this filter.</div>
-    </div><!-- /news-wrap -->
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="res-cta">
-  <div class="wrap">
-    <h2>Looking for something specific?</h2>
-    <p>Our team can share unpublished material from recent deployments — and connect you with the engineers behind it.</p>
-    <a href="#" class="btn-navy">Talk to our team</a>
-  </div>
-</section>
-
-<!-- FULL FOOTER (matches site standard) -->
 <footer>
   <div class="wrap">
     <div style="width:100%; margin-bottom:1.5rem; padding-bottom:1.5rem; border-bottom:1px solid rgba(255,255,255,0.08);">
@@ -3071,134 +2698,6 @@ function lsScroll(dir) {
   });
 })();
 
-
-
-
-// Tab Switching Logic
-document.addEventListener('DOMContentLoaded', function() {
-  const tabs = document.querySelectorAll('.res-main-tab');
-  const docFilters = document.getElementById('documents-filters');
-  const newsFilters = document.getElementById('news-filters');
-  const docWrap = document.getElementById('documents-wrap');
-  const newsWrap = document.getElementById('news-wrap');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', function() {
-      // Update active tab
-      tabs.forEach(t => {
-        t.classList.remove('active');
-        t.style.fontWeight = '500';
-        t.style.color = 'var(--ink-3)';
-        t.style.borderBottomColor = 'transparent';
-      });
-      this.classList.add('active');
-      this.style.fontWeight = '700';
-      this.style.color = 'var(--blue)';
-      this.style.borderBottomColor = 'var(--blue)';
-
-      // Show/Hide sections
-      if (this.getAttribute('data-target') === 'documents') {
-        docFilters.style.display = 'block';
-        docWrap.style.display = 'block';
-        newsFilters.style.display = 'none';
-        newsWrap.style.display = 'none';
-      } else {
-        docFilters.style.display = 'none';
-        docWrap.style.display = 'none';
-        newsFilters.style.display = 'block';
-        newsWrap.style.display = 'block';
-        // Make sure grid is shown (might be hidden by my inline style)
-        document.getElementById('news-grid').style.display = 'grid';
-      }
-    });
-  });
-
-  // News Filtering Logic
-  const newsFilterBtns = document.querySelectorAll('#news-filters .res-filter-pill');
-  const newsCards = document.querySelectorAll('.news-card');
-  const newsEmpty = document.getElementById('news-empty');
-
-  newsFilterBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      newsFilterBtns.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-      
-      const filter = this.getAttribute('data-news-filter');
-      let count = 0;
-      
-      newsCards.forEach(card => {
-        if (filter === 'all' || card.getAttribute('data-news-category') === filter) {
-          card.style.display = 'flex';
-          setTimeout(() => card.style.opacity = '1', 50);
-          count++;
-        } else {
-          card.style.opacity = '0';
-          setTimeout(() => card.style.display = 'none', 150);
-        }
-      });
-      
-      setTimeout(() => {
-        if (count === 0) {
-          newsEmpty.style.display = 'block';
-        } else {
-          newsEmpty.style.display = 'none';
-        }
-      }, 160);
-    });
-  });
-  
-  // Check hash on load to open News tab if needed
-  if (window.location.hash === '#news') {
-    document.querySelector('.res-main-tab[data-target="news"]').click();
-  }
-});
-
-
-// Filter logic — supports BOTH type + sector simultaneously
-(function(){
-  var typePills   = document.querySelectorAll('#filter-type .res-filter-pill');
-  var sectorPills = document.querySelectorAll('#filter-sector .res-filter-pill');
-  var cards = document.querySelectorAll('.res-card');
-  var empty = document.getElementById('res-empty');
-  var count = document.getElementById('filter-count');
-  var total = cards.length;
-
-  var activeType = 'all', activeSector = 'all';
-
-  function apply() {
-    var shown = 0;
-    cards.forEach(function(card){
-      var t = card.getAttribute('data-type') || '';
-      var s = card.getAttribute('data-sector') || '';
-      // Match if filter is "all" OR card matches the filter value
-      // Special: card.sector === "all" means platform-wide (matches every sector filter)
-      var typeMatch   = activeType   === 'all' || t === activeType;
-      var sectorMatch = activeSector === 'all' || s === activeSector || s === 'all';
-      if (typeMatch && sectorMatch) {
-        card.classList.remove('hidden');
-        shown++;
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-    count.textContent = 'Showing ' + shown + ' of ' + total + ' resources';
-    empty.classList.toggle('show', shown === 0);
-  }
-
-  function attach(pills, isType) {
-    pills.forEach(function(pill){
-      pill.addEventListener('click', function(){
-        pills.forEach(function(p){ p.classList.remove('active'); });
-        pill.classList.add('active');
-        if (isType) activeType = pill.getAttribute('data-filter');
-        else activeSector = pill.getAttribute('data-filter');
-        apply();
-      });
-    });
-  }
-  attach(typePills, true);
-  attach(sectorPills, false);
-})();
 
 // Mobile Menu Toggle
 (function() {
