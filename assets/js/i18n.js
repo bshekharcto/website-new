@@ -83,15 +83,15 @@
             function setLanguage(lang) {
                 try {
                     let domain = window.location.hostname;
-                    let cookieDomain = domain ? \`; domain=\${domain}\` : '';
+                    let cookieDomain = domain ? '; domain=' + domain : '';
                     if (lang === 'fr') {
-                        document.cookie = \`googtrans=/en/fr; path=/\${cookieDomain}\`;
-                        document.cookie = \`googtrans=/en/fr; path=/\`;
+                        document.cookie = 'googtrans=/en/fr; path=/' + cookieDomain;
+                        document.cookie = 'googtrans=/en/fr; path=/';
                     } else {
-                        document.cookie = \`googtrans=/en/en; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/\${cookieDomain}\`;
-                        document.cookie = \`googtrans=/en/en; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/\`;
-                        document.cookie = \`googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/\${cookieDomain}\`;
-                        document.cookie = \`googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/\`;
+                        document.cookie = 'googtrans=/en/en; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/' + cookieDomain;
+                        document.cookie = 'googtrans=/en/en; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+                        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/' + cookieDomain;
+                        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
                     }
                     window.location.reload();
                 } catch(e) {
