@@ -21,31 +21,40 @@
                 .skiptranslate iframe, .VIpgJd-Zvi9od-ORHb-OEVmcd, #goog-gt-tt, .VIpgJd-Zvi9od-aZ2wEe-wOHMyf { display: none !important; }
                 body { top: 0px !important; }
                 #custom-lang-switcher {
+                    position: fixed !important;
+                    top: 24px !important; /* Adjusted to vertically center with the menu bar */
+                    right: 20px !important;
+                    z-index: 2147483647 !important;
+                    background: rgba(255, 255, 255, 0.7) !important;
+                    backdrop-filter: blur(10px) !important;
+                    border-radius: 12px !important;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
                     display: flex !important;
                     align-items: center !important;
-                    gap: 8px !important;
-                    margin-right: 15px !important;
-                    z-index: 9999 !important;
+                    padding: 3px !important;
+                    border: 1px solid rgba(0,0,0,0.05) !important;
+                    font-family: 'Inter', system-ui, sans-serif !important;
                 }
                 .lang-btn {
                     background: transparent !important;
                     border: none !important;
-                    padding: 0 !important;
-                    font-size: 16px !important;
+                    padding: 4px 8px !important;
+                    font-size: 11px !important;
+                    font-weight: 600 !important;
                     cursor: pointer !important;
-                    opacity: 0.4 !important;
+                    border-radius: 8px !important;
+                    color: #888 !important;
                     outline: none !important;
                     transition: all 0.2s ease !important;
-                    filter: grayscale(100%) !important;
+                    letter-spacing: 0.5px !important;
                 }
                 .lang-btn:hover {
-                    opacity: 0.8 !important;
-                    filter: grayscale(30%) !important;
+                    color: #333 !important;
                 }
                 .lang-btn.active {
-                    opacity: 1 !important;
-                    filter: grayscale(0%) !important;
-                    transform: scale(1.15) !important;
+                    background: #ffffff !important;
+                    color: #111 !important;
+                    box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
                 }
                 #google_translate_element { display: none !important; }
             `;
@@ -56,21 +65,13 @@
             switcherDiv.id = 'custom-lang-switcher';
             switcherDiv.className = 'notranslate'; 
             switcherDiv.innerHTML = `
-                <button class="lang-btn" id="btn-en" title="English">🇬🇧</button>
-                <button class="lang-btn" id="btn-fr" title="Français">🇫🇷</button>
+                <button class="lang-btn" id="btn-en">EN</button>
+                <button class="lang-btn" id="btn-fr">FR</button>
                 <div id="google_translate_element"></div>
             `;
             
-            // Append to navbar right side if it exists, otherwise fallback to top of body
-            const navRight = document.querySelector('.nav-right');
-            if (navRight) {
-                navRight.insertBefore(switcherDiv, navRight.firstChild);
-            } else {
-                switcherDiv.style.position = 'fixed';
-                switcherDiv.style.top = '15px';
-                switcherDiv.style.right = '15px';
-                document.body.insertBefore(switcherDiv, document.body.firstChild);
-            }
+            // Append to body (outside menu bar)
+            document.body.insertBefore(switcherDiv, document.body.firstChild);
             console.log("i18n UI appended to DOM");
 
             function getCookie(name) {
