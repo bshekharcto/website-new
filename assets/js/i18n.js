@@ -22,70 +22,116 @@
                 body { top: 0px !important; }
                 #custom-lang-switcher {
                     position: fixed !important;
-                    top: 24px !important; /* Adjusted to vertically center with the menu bar */
+                    top: 24px !important;
                     right: 20px !important;
                     z-index: 2147483647 !important;
-                    background: rgba(255, 255, 255, 0.7) !important;
-                    backdrop-filter: blur(10px) !important;
-                    border-radius: 12px !important;
-                    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
-                    display: flex !important;
-                    align-items: center !important;
-                    padding: 3px !important;
-                    border: 1px solid rgba(0,0,0,0.05) !important;
                     font-family: 'Inter', system-ui, sans-serif !important;
                 }
                 .lang-btn {
-                    background: transparent !important;
-                    border: none !important;
-                    padding: 4px 8px !important;
-                    font-size: 11px !important;
+                    background: rgba(255, 255, 255, 0.7) !important;
+                    backdrop-filter: blur(10px) !important;
+                    border: 1px solid rgba(0,0,0,0.05) !important;
+                    border-radius: 12px !important;
+                    padding: 6px 12px !important;
+                    font-size: 12px !important;
                     font-weight: 600 !important;
+                    color: #444 !important;
                     cursor: pointer !important;
-                    border-radius: 8px !important;
-                    color: #888 !important;
-                    outline: none !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    gap: 6px !important;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
                     transition: all 0.2s ease !important;
-                    letter-spacing: 0.5px !important;
                 }
                 .lang-btn:hover {
-                    color: #333 !important;
+                    background: #fff !important;
+                    color: #000 !important;
                 }
-                .lang-btn.active {
-                    background: #ffffff !important;
-                    color: #111 !important;
-                    box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
+                .lang-dropdown {
+                    position: absolute !important;
+                    top: 100% !important;
+                    right: 0 !important;
+                    margin-top: 8px !important;
+                    background: #fff !important;
+                    border-radius: 8px !important;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+                    border: 1px solid rgba(0,0,0,0.05) !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    min-width: 120px !important;
+                    overflow: hidden !important;
+                    opacity: 0;
+                    pointer-events: none;
+                    transform: translateY(-10px);
+                    transition: all 0.2s ease !important;
+                }
+                .lang-dropdown.show {
+                    opacity: 1;
+                    pointer-events: auto;
+                    transform: translateY(0);
+                }
+                .lang-option {
+                    padding: 10px 16px !important;
+                    font-size: 12px !important;
+                    color: #555 !important;
+                    cursor: pointer !important;
+                    transition: background 0.2s !important;
+                }
+                .lang-option:hover {
+                    background: #f5f7fa !important;
+                    color: #000 !important;
                 }
                 #google_translate_element { display: none !important; }
             `;
             document.head.appendChild(style);
-
-            // 3. Inject UI
-            const switcherDiv = document.createElement('div');
-            switcherDiv.id = 'custom-lang-switcher';
-            switcherDiv.className = 'notranslate'; 
-            switcherDiv.innerHTML = `
-                <button class="lang-btn" id="btn-en">EN</button>
-                <button class="lang-btn" id="btn-fr">FR</button>
-                <div id="google_translate_element"></div>
-            `;
-            
-            // Append to body (outside menu bar)
-            document.body.insertBefore(switcherDiv, document.body.firstChild);
-            console.log("i18n UI appended to DOM");
 
             function getCookie(name) {
                 let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
                 if (match) return match[2];
                 return null;
             }
-
+            
             const currentLang = getCookie('googtrans');
-            if (currentLang && currentLang.includes('/fr')) {
-                document.getElementById('btn-fr').classList.add('active');
-            } else {
-                document.getElementById('btn-en').classList.add('active');
-            }
+            const isFr = currentLang && currentLang.includes('/fr');
+
+            // 3. Inject UI
+            const switcherDiv = document.createElement('div');
+            switcherDiv.id = 'custom-lang-switcher';
+            switcherDiv.className = 'notranslate'; 
+            switcherDiv.innerHTML = `
+                <button id="lang-menu-btn" class="lang-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <span id="lang-btn-text">${isFr ? 'FR' : 'EN'}</span>
+                </button>
+                <div id="lang-dropdown" class="lang-dropdown">
+                    <div class="lang-option" data-lang="en">English (EN)</div>
+                    <div class="lang-option" data-lang="fr">Français (FR)</div>
+                </div>
+                <div id="google_translate_element"></div>
+            `;
+            
+            // Append to body (outside menu bar)
+            document.body.insertBefore(switcherDiv, document.body.firstChild);
+            
+            const menuBtn = document.getElementById('lang-menu-btn');
+            const dropdown = document.getElementById('lang-dropdown');
+            
+            menuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('show');
+            });
+            
+            document.addEventListener('click', () => {
+                dropdown.classList.remove('show');
+            });
+            
+            document.querySelectorAll('.lang-option').forEach(opt => {
+                opt.addEventListener('click', function() {
+                    setLanguage(this.getAttribute('data-lang'));
+                });
+            });
+            
+            console.log("i18n UI appended to DOM");
 
             // 4. Change language logic
             function setLanguage(lang) {
