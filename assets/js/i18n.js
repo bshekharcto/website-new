@@ -22,32 +22,39 @@
                 body { top: 0px !important; }
                 #custom-lang-switcher {
                     position: fixed !important;
-                    top: 20px !important;
-                    right: 20px !important;
-                    z-index: 2147483647 !important; /* Max z-index */
-                    background: #ffffff !important;
-                    border-radius: 30px !important;
-                    box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+                    top: 15px !important;
+                    right: 15px !important;
+                    z-index: 2147483647 !important;
+                    background: rgba(255, 255, 255, 0.7) !important;
+                    backdrop-filter: blur(10px) !important;
+                    border-radius: 12px !important;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
                     display: flex !important;
                     align-items: center !important;
-                    padding: 5px !important;
-                    border: 2px solid #0056b3 !important;
-                    font-family: Arial, sans-serif !important;
+                    padding: 3px !important;
+                    border: 1px solid rgba(0,0,0,0.05) !important;
+                    font-family: 'Inter', system-ui, sans-serif !important;
                 }
                 .lang-btn {
-                    background: none !important;
+                    background: transparent !important;
                     border: none !important;
-                    padding: 8px 16px !important;
-                    font-size: 14px !important;
-                    font-weight: bold !important;
+                    padding: 4px 8px !important;
+                    font-size: 11px !important;
+                    font-weight: 600 !important;
                     cursor: pointer !important;
-                    border-radius: 20px !important;
-                    color: #333 !important;
+                    border-radius: 8px !important;
+                    color: #888 !important;
                     outline: none !important;
+                    transition: all 0.2s ease !important;
+                    letter-spacing: 0.5px !important;
+                }
+                .lang-btn:hover {
+                    color: #333 !important;
                 }
                 .lang-btn.active {
-                    background: #0056b3 !important;
-                    color: #ffffff !important;
+                    background: #ffffff !important;
+                    color: #111 !important;
+                    box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
                 }
                 #google_translate_element { display: none !important; }
             `;
