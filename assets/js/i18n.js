@@ -20,6 +20,7 @@
             style.innerHTML = `
                 .skiptranslate iframe, .VIpgJd-Zvi9od-ORHb-OEVmcd, #goog-gt-tt, .VIpgJd-Zvi9od-aZ2wEe-wOHMyf { display: none !important; }
                 body { top: 0px !important; }
+                .nav-wrap { padding-right: 100px !important; } /* Prevent overlap with lang switcher */
                 #custom-lang-switcher {
                     position: fixed !important;
                     top: 24px !important;
