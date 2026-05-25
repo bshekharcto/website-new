@@ -28,14 +28,13 @@
                     font-family: 'Inter', system-ui, sans-serif !important;
                 }
                 .lang-btn {
-                    background: rgba(255, 255, 255, 0.7) !important;
+                    background: rgba(255, 255, 255, 0.95) !important;
                     backdrop-filter: blur(10px) !important;
-                    border: 1px solid rgba(0,0,0,0.05) !important;
+                    border: 1px solid rgba(0,0,0,0.1) !important;
                     border-radius: 12px !important;
                     padding: 6px 12px !important;
-                    font-size: 12px !important;
-                    font-weight: 600 !important;
-                    color: #444 !important;
+                    font-size: 13px !important;
+                    font-weight: 700 !important;
                     cursor: pointer !important;
                     display: flex !important;
                     align-items: center !important;
@@ -43,9 +42,23 @@
                     box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
                     transition: all 0.2s ease !important;
                 }
+                .lang-btn.lang-en {
+                    color: #0056b3 !important;
+                    border-color: rgba(0, 86, 179, 0.3) !important;
+                }
+                .lang-btn.lang-en svg {
+                    stroke: #0056b3 !important;
+                }
+                .lang-btn.lang-fr {
+                    color: #d32f2f !important;
+                    border-color: rgba(211, 47, 47, 0.3) !important;
+                }
+                .lang-btn.lang-fr svg {
+                    stroke: #d32f2f !important;
+                }
                 .lang-btn:hover {
-                    background: #fff !important;
-                    color: #000 !important;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
+                    transform: translateY(-1px) !important;
                 }
                 .lang-dropdown {
                     position: absolute !important;
@@ -98,9 +111,10 @@
             const switcherDiv = document.createElement('div');
             switcherDiv.id = 'custom-lang-switcher';
             switcherDiv.className = 'notranslate'; 
+            const activeClass = isFr ? 'lang-fr' : 'lang-en';
             switcherDiv.innerHTML = `
-                <button id="lang-menu-btn" class="lang-btn">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <button id="lang-menu-btn" class="lang-btn ${activeClass}">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                     <span id="lang-btn-text">${isFr ? 'FR' : 'EN'}</span>
                 </button>
                 <div id="lang-dropdown" class="lang-dropdown">
@@ -152,14 +166,6 @@
                     console.error("setLanguage error:", e);
                 }
             }
-
-            document.getElementById('btn-en').addEventListener('click', () => {
-                if (!document.getElementById('btn-en').classList.contains('active')) setLanguage('en');
-            });
-
-            document.getElementById('btn-fr').addEventListener('click', () => {
-                if (!document.getElementById('btn-fr').classList.contains('active')) setLanguage('fr');
-            });
 
             // 5. IP Check Logic
             try {
