@@ -157,10 +157,33 @@
                         document.cookie = 'googtrans=/en/fr; path=/' + cookieDomain;
                         document.cookie = 'googtrans=/en/fr; path=/';
                     } else {
-                        document.cookie = 'googtrans=/en/en; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/' + cookieDomain;
-                        document.cookie = 'googtrans=/en/en; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
-                        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/' + cookieDomain;
-                        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+                        // English option: Clear ALL googtrans cookies across all parent domains and paths
+                        const paths = ['/', window.location.pathname];
+                        const lastSlashIndex = window.location.pathname.lastIndexOf('/');
+                        if (lastSlashIndex > 0) {
+                            paths.push(window.location.pathname.substring(0, lastSlashIndex));
+                        }
+                        
+                        const domains = ['', domain, '.' + domain];
+                        
+                        // Add parent subdomains
+                        let parts = domain.split('.');
+                        while (parts.length > 1) {
+                            let parentDomain = parts.join('.');
+                            domains.push(parentDomain);
+                            domains.push('.' + parentDomain);
+                            parts.shift();
+                        }
+                        
+                        // Clear cookies by setting expired dates
+                        paths.forEach(path => {
+                            if (!path) return;
+                            domains.forEach(dom => {
+                                let domStr = dom ? '; domain=' + dom : '';
+                                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=' + path + domStr;
+                                document.cookie = 'googtrans=/en/en; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=' + path + domStr;
+                            });
+                        });
                     }
                     window.location.reload();
                 } catch(e) {
