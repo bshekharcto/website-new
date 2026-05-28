@@ -1597,6 +1597,48 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
     display: none; /* Hide Get Started inside header on mobile to save space */
   }
 }
+
+/* Responsive Resource Filters for Mobile Viewports */
+@media (max-width: 860px) {
+  .res-filters {
+    top: 65px !important; /* Align flush below mobile nav bar (12px top + 53px height) */
+    padding: 0.65rem 0 !important;
+  }
+  .res-filter-row {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.35rem !important;
+  }
+  .res-filter-row:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+  .res-filter-label {
+    min-width: unset !important;
+    margin-bottom: 0.15rem;
+  }
+  .res-filter-group {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    padding-bottom: 6px; /* Space to prevent cutting off pill hover shadows/borders */
+    gap: 0.4rem !important;
+  }
+  .res-filter-group::-webkit-scrollbar {
+    display: none; /* Hide scrollbars for clean UI */
+  }
+  .res-filter-pill {
+    flex-shrink: 0 !important; /* Prevent pills from shrinking */
+  }
+  .res-filter-count {
+    margin-left: 0 !important;
+    margin-top: 0.25rem;
+    align-self: flex-start !important;
+  }
+  .res-main-tabs {
+    margin-bottom: 1.25rem !important;
+  }
+}
 </style>
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 </head>
@@ -2242,19 +2284,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
       </div>
     </div>
 
-      <div class="res-filter-stack" id="news-filters" style="display:none;">
-        <div class="res-filter-row" style="flex-wrap:wrap; gap:0.5rem;">
-          <span class="res-filter-label" style="margin-right:1rem; padding-top:0.3rem;">Category</span>
-          <button class="res-filter-pill active" data-news-filter="all">All</button>
-          <button class="res-filter-pill" data-news-filter="news">News</button>
-          <button class="res-filter-pill" data-news-filter="government-recognition">Government Recognition</button>
-          <button class="res-filter-pill" data-news-filter="funding">Funding</button>
-          <button class="res-filter-pill" data-news-filter="accelerator">Accelerator</button>
-          <button class="res-filter-pill" data-news-filter="customer-deployment">Customer Deployment</button>
-          <button class="res-filter-pill" data-news-filter="product-app-store">Product / App Store</button>
-          <button class="res-filter-pill" data-news-filter="company-verification">Company Verification</button>
-        </div>
-      </div>
+
   </div>
 </section>
 
@@ -2292,16 +2322,18 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);paddin
     </div>
 
       <div class="res-filter-stack" id="news-filters" style="display:none;">
-        <div class="res-filter-row" style="flex-wrap:wrap; gap:0.5rem;">
-          <span class="res-filter-label" style="margin-right:1rem; padding-top:0.3rem;">Category</span>
-          <button class="res-filter-pill active" data-news-filter="all">All</button>
-          <button class="res-filter-pill" data-news-filter="news">News</button>
-          <button class="res-filter-pill" data-news-filter="government-recognition">Government Recognition</button>
-          <button class="res-filter-pill" data-news-filter="funding">Funding</button>
-          <button class="res-filter-pill" data-news-filter="accelerator">Accelerator</button>
-          <button class="res-filter-pill" data-news-filter="customer-deployment">Customer Deployment</button>
-          <button class="res-filter-pill" data-news-filter="product-app-store">Product / App Store</button>
-          <button class="res-filter-pill" data-news-filter="company-verification">Company Verification</button>
+        <div class="res-filter-row">
+          <span class="res-filter-label">Category</span>
+          <div class="res-filter-group" id="filter-news-category">
+            <button class="res-filter-pill active" data-news-filter="all">All</button>
+            <button class="res-filter-pill" data-news-filter="news">News</button>
+            <button class="res-filter-pill" data-news-filter="government-recognition">Government Recognition</button>
+            <button class="res-filter-pill" data-news-filter="funding">Funding</button>
+            <button class="res-filter-pill" data-news-filter="accelerator">Accelerator</button>
+            <button class="res-filter-pill" data-news-filter="customer-deployment">Customer Deployment</button>
+            <button class="res-filter-pill" data-news-filter="product-app-store">Product / App Store</button>
+            <button class="res-filter-pill" data-news-filter="company-verification">Company Verification</button>
+          </div>
         </div>
       </div>
   </div>
