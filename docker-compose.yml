@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  cognecto-api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: cognecto-api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./api:/usr/src/app
+      - /usr/src/app/node_modules
+    env_file:
+      - ./api/.env
+    restart: always
+
+  cognecto-web:
+    image: nginx:alpine
+    container_name: cognecto-website
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/usr/share/nginx/html:rw
+    depends_on:
+      - cognecto-api
+    restart: always
